@@ -1,0 +1,473 @@
+{
+  "sections": [
+    {
+      "name": "Food XPERIENCE",
+      "description": "Local ingredients full of freshness",
+      "labelImage": "margherita-pizza-cropped.jpg",
+      "items": [
+        {
+          "name": "Breakfast",
+          "description": "Pose Eggs, Toasted Toast Bread, Bacon - Αυγά Ποσέ, Φρυγανισμένο Ψωμί Τοστ, Μπέικον",
+          "price": "6.00€"
+        },
+        {
+          "name": "Salad",
+          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive oil - Μαρούλι, Ντομάτα, Αγγούρι, Καλαμπόκι, Κρουτόν, Βαλσάμικο, Eλαιόλαδο.",
+          "price": "6.00€",
+          "label": "Vegan"
+        },
+        {
+          "name": "Caesar Salad - Chicken & Bacon",
+          "description": "Salad with chicken, bacon and homemade caesar dressing.",
+          "price": "7.00€"
+        },
+        {
+          "name": "Tuna Salad",
+          "description": "Salad with Tuna",
+          "price": "7.00€"
+        },
+        {
+          "name": "Greek Salad",
+          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil - Τομάτα, Φέτα, Αγγούρι, Κρεμμύδι, Πιπεριά, Ρίγανη, Ελαιόλαδο",
+          "price": "7.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Ntakos - Ντάκος",
+          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive oil, Capers - Κριθαροκουλούρο, Φέτα, Ντομάτα, Ελιές, Ρίγανη, Ελαιόλαδο, Κάπαρι",
+          "price": "6.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Tortillas - Τορτίγιας",
+          "description": "Edam, Lettuce, Tomato, Mayonnaise - Ένταμ, Μαρούλι, Ντομάτα, Μαγιονέζα",
+          "price": "5.00€"
+        },
+        {
+          "name": "Toast - Τοστ",
+          "description": "Ham, Edam - Ζαμπόν, Ένταμ",
+          "price": "3.00€"
+        },
+        {
+          "name": "Turkey Toast - Τοστ Γαλοπούλας",
+          "description": "Turkey, Edam - Γαλοπούλα, Ένταμ",
+          "price": "3.50€"
+        },
+        {
+          "name": "Club Sandwich",
+          "description": "Ham, Bacon, Edam, Lettuce, Tomato - Ζαμπόν, Μπέικον, Ένταμ, Μαρούλι, Ντομάτα",
+          "price": "8.00€"
+        },
+        {
+          "name": "Chicken Club Sandwich",
+          "description": "Chicken, Bacon, Edam, Lettuce, Tomato - Κοτόπουλο, Μπέικον, Ένταμ, Μαρούλι, Ντομάτα",
+          "price": "10.00€"
+        },
+        {
+          "name": "Cheeses Variety - Ποικιλία Τυριών",
+          "description": "A mix of local and European produce",
+          "price": "12.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Cold Cuts & Cheeses - Ποικιλία Τυριών & Αλλαντικών",
+          "description": "A mix of local and European produce",
+          "price": "12.00€"
+        },
+        {
+          "name": "Pizza Margherita",
+          "description": "Tomato, Mozzarella & Basil - Τομάτα, Μοτσαρέλα & Βασιλικός",
+          "price": "8.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Greek - Πίτσα Ελληνική",
+          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives - Τομάτα , Φέτα, Πιπεριά, Κρεμμύδι, Κάπαρη, Ελιές",
+          "price": "10.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Ham & Bacon",
+          "description": "Tomato, Mozzarella, Gouda, Ham, Bacon - Τομάτα, Μοτσαρέλα, Γκούντα, Ζαμπόν, Μπέικον",
+          "price": "10.00€"
+        },
+        {
+          "name": "Pizza Chicken - Πίτσα Κοτόπουλο",
+          "description": "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon - Τομάτα, Μοτσαρέλα, Γκούντα, Φιλετάκια Κοτόπουλο, Ζαμπόν, Μπέικον",
+          "price": "10.00€"
+        },
+        {
+          "name": "Burger Storm 240gr 100% beef",
+          "description": "Tomato, Lettuce, Mustard, Burger. - Ντομάτα, Μαρούλι, Μουστάρδα, Μπιφτέκι",
+          "price": "10.00€"
+        }
+      ]
+    },
+    {
+      "name": "VEGETERIAN FOOD XPERIENCE",
+      "description": "Local ingredients full of freshness",
+      "items": [
+        {
+          "name": "Salad - Σαλάτα",
+          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil - Μαρούλι, Ντομάτα, Αγγούρι, Καλαμπόκι, Κρουτόν, Βαλσάμικο, Eλαιόλαδο",
+          "price": "6.00€",
+          "label": "Vegan"
+        },
+        {
+          "name": "Greek Salad - Χωριάτικη Σαλάτα",
+          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil - Τομάτα, Φέτα, Αγγούρι, Κρεμμύδι, Πιπεριά, Ρίγανη, Ελαιόλαδο",
+          "price": "7.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Ntakos - Ντάκος",
+          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive Oil, Capers - Κριθαροκουλούρο, Φέτα, Ντομάτα, Ελιές, Ρίγανη, Ελαιόλαδο, Κάπαρι",
+          "price": "6.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Salad - Σαλάτα",
+          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil - Μαρούλι, Ντομάτα, Αγγούρι, Καλαμπόκι, Κρουτόν, Βαλσάμικο, Eλαιόλαδο",
+          "price": "6.00€",
+          "label": "Vegan"
+        },
+        {
+          "name": "Pizza Margherita",
+          "description": "Tomato, Mozzarella & Basil - Τομάτα, Μοτσαρέλα & Βασιλικός",
+          "price": "8.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Greek - Πίτσα Ελληνική",
+          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives - Τομάτα, Φέτα, Πιπεριά, Κρεμμύδι, Κάπαρη, Ελιές",
+          "price": "10.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Country Potatoes",
+          "description": "Air Fried Country Potatoes - Πατάτα Τηγανιτή σε φριτέζα αέρος",
+          "price": "5.00€",
+          "label": "Vegan"
+        }
+      ]
+    },
+    {
+      "name": "COCKTAILS - OUR SIGNATURES",
+      "description": "Seasonal ingredients compined for palate satisfaction",
+      "labelImage": "signature-cocktails-cropped.jpg",
+      "items": [
+        {
+          "name": "MILLION STARS",
+          "description": "Gin, Ibiscus Cordial, Black Salt",
+          "price": "9.00€",
+          "image": "million-stars.jpg"
+        },
+        {
+          "name": "GARDEN",
+          "description": "Gin, Green Apple Syrup, Cucumber Juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "FLORAL",
+          "description": "Gin, Green Apple Syrup, Cucumber Juice",
+          "price": "9.00€",
+          "image": "floral.jpg"
+        },
+        {
+          "name": "ELEMENT",
+          "description": "Gin, orange liquer, green apple syrup, ginger syrup",
+          "price": "9.00€",
+          "image": "element.jpg"
+        },
+        {
+          "name": "DREAMS COME TRUE",
+          "description": "Rum 5yrs old, orgeat & passion fruit syrup",
+          "price": "9.00€"
+        },
+        {
+          "name": "DOUBLE PASSION",
+          "description": "Vodka, passion fruit liquer & vanilla syrup",
+          "price": "9.00€"
+        },
+        {
+          "name": "CALIMTE",
+          "description": "Tequila, litsi liquer, coconut syrup, lime juice, black salt",
+          "price": "9.00€",
+          "image": "calimte.jpg"
+        },
+        {
+          "name": "MASTIC HUG",
+          "description": "Skinos (mastic liquer), ibiscus cordial",
+          "price": "9.00€",
+          "image": "mastic-hug.jpg"
+        },
+        {
+          "name": "MANIFESTO",
+          "description": "5yrs old tsipouro, lime & thyme cordial",
+          "price": "9.00€"
+        },
+        {
+          "name": "SUNSHINE",
+          "description": "Skinos (mastic liquer), thyme & basil cordial, fresh lime juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "TATTOO",
+          "description": "Sailor jerry rum, orange liquer, cinammon, honey, tonka & chilli",
+          "price": "9.00€"
+        },
+        {
+          "name": "HOT n JUICY",
+          "description": "An excuisite cocktail, that is different on every sip, tequila, orange liquier, chilli, pineapple. Ένα κοκτέιλ διαφορετικό σε κάθε γουλιά, κάθε φορά τέλειο.",
+          "price": "10.00€",
+          "image": "hot-n-juicy.jpg"
+        },
+        {
+          "name": "DON JULIO PALOMA",
+          "description": "A refreshing combination of Don Julio tequila and fresh pink grapefruit served with a splash of soda. Ένας δροσιστικός συνδυασμός τεκίλας Don Julio και φρέσκου ροζ γκρέιπφρουτ σερβιρισμένα με λίγη σόδα",
+          "price": "14.00€"
+        }
+      ]
+    },
+    {
+      "name": "COCKTAILS - CLASSICS",
+      "description": "All time classics with a touch of finess",
+      "items": [
+        {
+          "name": "APEROL SPRITZ",
+          "description": "Aperol, prosecco, orange twist, soda",
+          "price": "9.00€"
+        },
+        {
+          "name": "APPLE MARTINI",
+          "description": "Vodka, apple liquer, sugar syrup",
+          "price": "9.00€"
+        },
+        {
+          "name": "CAIPIRINHA",
+          "description": "Cachaca, black sugar, lime",
+          "price": "9.00€"
+        },
+        {
+          "name": "COSMOPOLITAN",
+          "description": "Vodka, cranberry juice, orange liquer, lime juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "DAIQUIRI",
+          "description": "White rum, sugar syrup, lime juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "DRY MARTINI",
+          "description": "Gin, dry vermouth, brine, olives",
+          "price": "9.00€"
+        },
+        {
+          "name": "MAI TAI",
+          "description": "Black & white rum, orgeat syrup, orange liqueur, lime juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "MANHATTAN",
+          "description": "Bourbon vermouth, angostura bitter, maraskino",
+          "price": "9.00€"
+        },
+        {
+          "name": "MARGARITA",
+          "description": "Tequila, orange liquer, lime juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "MOJITO",
+          "description": "White rum, black sugar, lime, mint, soda",
+          "price": "9.00€"
+        },
+        {
+          "name": "NEGRONI",
+          "description": "Gin, campari, vermouth, orange bitter",
+          "price": "9.00€"
+        },
+        {
+          "name": "OLD FASHIONED",
+          "description": "Bourbon, sugar, orange slices, bitters, maraskino",
+          "price": "9.00€"
+        },
+        {
+          "name": "SMOKED PALOMA",
+          "description": "Tequila, grapefruit, lemon juice, soda",
+          "price": "9.00€"
+        },
+        {
+          "name": "ZOMBIE",
+          "description": "White 5yrs & 7yrs rum, orange liqueur, lime & pineapple juice",
+          "price": "10.00€"
+        },
+        {
+          "name": "BRAMBLE",
+          "description": "London's dry Gin 'married' with lime and velvet blueberry cream",
+          "price": "9.00€"
+        },
+        {
+          "name": "PINA COLADA",
+          "description": "White rum, coconut cream, pineapple juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "SEX ON THE BEACH",
+          "description": "Vodka, cranberry juice, orange liquer, lime juice",
+          "price": "9.00€"
+        },
+        {
+          "name": "B52",
+          "description": "Baileys irish cream, Kahlua, Grand Marnier",
+          "price": "9.00€"
+        },
+        {
+          "name": "CUBA LIBRE",
+          "description": "White rum, cola, lime",
+          "price": "9.00€"
+        },
+        {
+          "name": "LONG ISLAND (ICE TEA)",
+          "description": "White rum, tequila, vodka, gin, lemon juice, triple sec (& coca cola)",
+          "price": "10.00€"
+        }
+      ]
+    },
+    {
+      "name": "COCKTAILS - ALCOHOL FREE",
+      "items": [
+        {
+          "name": "MOJITO VIRGIN",
+          "price": "6.00€"
+        },
+        {
+          "name": "PALOMA VIRGIN",
+          "price": "6.00€"
+        },
+        {
+          "name": "TROPICAL PASSION",
+          "price": "6.00€"
+        },
+        {
+          "name": "GINGERADE",
+          "price": "6.00€"
+        },
+        {
+          "name": "MANGO",
+          "price": "6.00€"
+        },
+        {
+          "name": "GREEN APPLE",
+          "price": "6.00€"
+        },
+        {
+          "name": "STRAWBERRY",
+          "price": "6.00€"
+        }
+      ]
+    },
+    {
+      "name": "DESSERTS",
+      "description": "Sweet delicacies, crafted to delight your senses and satisfy your cravings.",
+      "items": [
+        {
+          "name": "Ice Cream - Μπάλα Παγωτό",
+          "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio - Βανίλια, Σοκολάτα, Φράουλα, Μπανάνα, Φιστίκι",
+          "price": "2.50€"
+        },
+        {
+          "name": "Chocolate Souffle - Σουφλέ Σοκολάτας",
+          "description": "Truffle centre and wicked dark chocolate flavour",
+          "price": "5.00€"
+        },
+        {
+          "name": "Chocolate Souffle with Ice Cream - Σουφλέ Σοκολάτας με Παγωτό",
+          "description": "Decadent chocolate souffle paired with creamy ice cream",
+          "price": "7.00€"
+        },
+        {
+          "name": "Orange Pie - Πορτοκαλόπιτα",
+          "description": "Vibrant and refreshing orange flavor - Ζωντανή και αναζωογωνητική γεύση πορτοκαλιού",
+          "price": "5.00€"
+        },
+        {
+          "name": "Orange Pie with Ice Cream - Πορτοκαλόπιτα με Παγωτό",
+          "description": "Zesty orange pie paired with creamy ice cream",
+          "price": "7.00€"
+        },
+        {
+          "name": "Fruit Salad - Φρουτοσαλάτα",
+          "description": "A mix of fresh seasonal fruits - Μια μίξη από φρέσκα εποχιακά φρούτα",
+          "price": "8.00€"
+        }
+      ]
+    },
+    {
+      "name": "COFFEE & BEVERAGES",
+      "items": [
+        {
+          "name": "Greek Coffee - Ελληνικός",
+          "price": "2.50€"
+        },
+        {
+          "name": "Greek Coffee Double - Ελληνικός Διπλός",
+          "price": "3.00€"
+        },
+        {
+          "name": "Filter Coffee - Φίλτρου",
+          "price": "3.00€"
+        },
+        {
+          "name": "Instant Hot Nestle - Νες Καφέ",
+          "price": "3.00€"
+        },
+        {
+          "name": "Instant Cold Nestle - Φραπέ",
+          "price": "3.00€"
+        },
+        {
+          "name": "Instant with Vanilla Ice Cream - Φραπέ Παγωτό",
+          "price": "5.00€"
+        },
+        {
+          "name": "Espresso - Εσπρέσο",
+          "price": "2.50€"
+        },
+        {
+          "name": "Espresso Decaf - Εσπρέσο Ντεκαφεινέ",
+          "price": "3.00€"
+        },
+        {
+          "name": "Espresso Double - Εσπρέσο Διπλός",
+          "price": "3.50€"
+        },
+        {
+          "name": "Espresso Freddo - Εσπρέσο Κρύος",
+          "price": "3.50€"
+        },
+        {
+          "name": "Cappuccino Single - Καπουτσίνο μονό",
+          "price": "3.50€"
+        },
+        {
+          "name": "Cappuccino Double - Καπουτσίνο διπλό",
+          "price": "4.00€"
+        },
+        {
+          "name": "Cappuccino Freddo - Καπουτσίνο Κρύος",
+          "price": "3.50€"
+        },
+        {
+          "name": "Irish Coffee",
+          "price": "6.00€"
+        },
+        {
+          "name": "Milkshake",
+          "price": "6.00€"
+        }
+      ]
+    }
+  ]
+}

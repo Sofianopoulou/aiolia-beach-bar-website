@@ -7,6 +7,11 @@ import {
 } from "@remix-run/react";
 import "./tailwind.css";
 
+import type { LinksFunction } from "@remix-run/node";
+import stylesheet from "~/tailwind.css?url";
+import AppHeader from "./components/AppHeader";
+import Footer from "./components/Footer";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -17,7 +22,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <AppHeader />
+        <div>
+          <Outlet />
+        </div>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -28,3 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return <Outlet />;
 }
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
