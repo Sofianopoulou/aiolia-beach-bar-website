@@ -7,7 +7,6 @@ export default function Index() {
     <div>
       <MainSection />
       <Info />
-      <Info />
     </div>
   );
 }

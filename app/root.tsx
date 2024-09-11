@@ -23,7 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <AppHeader />
-        <div>
+        <div className="pt-20">
           <Outlet />
         </div>
         <Footer />

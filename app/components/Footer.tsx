@@ -13,7 +13,15 @@ export default function Footer() {
         <div className="flex-1 px-5 min-w-[200px]">
           <h4 className="text-lg mb-4 text-[#f39c12]">Contact Us</h4>
           <p className="mb-3">
-            📍 Zarifi 2, Nea Anchialos, Thessalía, Greece, 37400
+            📍{" "}
+            <a
+              href="https://maps.app.goo.gl/qj4jiLdteJgvzTCa7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#f39c12]"
+            >
+              Zarifi 2, Nea Anchialos, Thessalía, Greece, 37400
+            </a>
           </p>
           <p className="mb-3">
             🌐{" "}
@@ -32,7 +40,7 @@ export default function Footer() {
         {/* Social Media Section */}
         <div className="flex-1 px-5 min-w-[200px]">
           <h4 className="text-lg mb-4 text-[#f39c12]">Follow Us</h4>
-          <div className="flex gap-4">
+          <div className="flex gap-4 pb-4">
             <a
               href="https://www.facebook.com/AIOLIA.VOLOS/?locale=el_GR"
               target="_blank"

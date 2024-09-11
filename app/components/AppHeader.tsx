@@ -11,6 +11,10 @@ export default function AppHeader() {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
       <Header>
@@ -51,18 +55,21 @@ export default function AppHeader() {
             <Button
               asChild
               className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
+              onClick={closeMobileMenu}
             >
               <Link to="/blog">Blog</Link>
             </Button>
             <Button
               asChild
               className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
+              onClick={closeMobileMenu}
             >
               <Link to="/akademy">Aiolia Akademy</Link>
             </Button>
             <Button
               asChild
               className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
+              onClick={closeMobileMenu}
             >
               <Link to="/menu">Menu</Link>
             </Button>

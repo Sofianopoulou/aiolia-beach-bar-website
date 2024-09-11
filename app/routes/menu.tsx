@@ -32,7 +32,7 @@ const MenuPage: React.FC = () => {
   if (!data) return <p>No data available</p>;
 
   return (
-    <div className="p-5 bg-gray-100 pt-20">
+    <div className="p-5 bg-gray-100">
       {data.sections.map((section, index) => (
         <Section key={index} section={section} />
       ))}

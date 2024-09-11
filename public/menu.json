@@ -36,7 +36,8 @@
           "name": "Ntakos - Ντάκος",
           "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive oil, Capers - Κριθαροκουλούρο, Φέτα, Ντομάτα, Ελιές, Ρίγανη, Ελαιόλαδο, Κάπαρι",
           "price": "6.00€",
-          "label": "Vegetarian"
+          "label": "Vegetarian",
+          "image": "ntakos.jpg"
         },
         {
           "name": "Tortillas - Τορτίγιας",
@@ -98,8 +99,14 @@
         },
         {
           "name": "Burger Storm 240gr 100% beef",
-          "description": "Tomato, Lettuce, Mustard, Burger. - Ντομάτα, Μαρούλι, Μουστάρδα, Μπιφτέκι",
+          "description": "Tomato, Lettuce, Mustard, Burger - Ντομάτα, Μαρούλι, Μουστάρδα, Μπιφτέκι",
           "price": "10.00€"
+        },
+        {
+          "name": "Chicken Nuggets (12pcs) - Κοτομπουκιές (12τμχ)",
+          "description": "Tender pieces of chicken fillet with a crispy crust. Served with country-style potatoes, honey mustard, yogurt dip, pita bread and lime slices - Τρυφερά κομμάτια από κοτόπουλο φιλέτο, με τραγανή κρούστα. Σερβίρονται με πατάτες country, σάλτσα μουστάρδας με μέλι, σως γιαουρτιού, ψωμί πίτας και φέτες λάιμ",
+          "price": "12.00€",
+          "image": "chicken-nuggets.jpg"
         }
       ]
     },
@@ -123,7 +130,8 @@
           "name": "Ntakos - Ντάκος",
           "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive Oil, Capers - Κριθαροκουλούρο, Φέτα, Ντομάτα, Ελιές, Ρίγανη, Ελαιόλαδο, Κάπαρι",
           "price": "6.00€",
-          "label": "Vegetarian"
+          "label": "Vegetarian",
+          "image": "ntakos.jpg"
         },
         {
           "name": "Salad - Σαλάτα",
@@ -165,7 +173,8 @@
         {
           "name": "GARDEN",
           "description": "Gin, Green Apple Syrup, Cucumber Juice",
-          "price": "9.00€"
+          "price": "9.00€",
+          "image": "garden.jpg"
         },
         {
           "name": "FLORAL",
@@ -231,6 +240,7 @@
     },
     {
       "name": "COCKTAILS - CLASSICS",
+      "labelImage": "cocktails-classics.jpg",
       "description": "All time classics with a touch of finess",
       "items": [
         {
@@ -465,7 +475,310 @@
         },
         {
           "name": "Milkshake",
+          "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio - Βανίλια, Σοκολάτα, Φράουλα, Μπανάνα, Φιστίκι",
           "price": "6.00€"
+        },
+        {
+          "name": "Sorbet - Γρανίτα",
+          "description": "Strawberry, Green Apple, Mango, Passion Fruit - Φράουλα, Πράσινο Μήλο, Μάνγκο, Φρούτο του Πάθους",
+          "price": "5.00€"
+        },
+        {
+          "name": "Frozen Chocolate - Κρύα Σοκολάτα",
+          "price": "4.00€"
+        },
+        {
+          "name": "Hot Chocolate - Ζεστή Σοκολάτα",
+          "price": "4.00€"
+        },
+        {
+          "name": "Chocolate Viennois - Σοκολάτα Βιεννουά",
+          "price": "4.50€"
+        },
+        {
+          "name": "Cold Tea - Κρύο Τσάι",
+          "description": "Peach, Lemon, Green - Ροδάκινο, Λεμόνι, Πράσινο",
+          "price": "3.00€"
+        },
+        {
+          "name": "Freshly Squeezed Seasonal Fruit Juice - Φυσικός Χυμός Φρούτων Εποχής",
+          "price": "5.00€"
+        },
+        {
+          "name": "Freshly Squeezed Orange Fruit Juice - Φυσικός Χυμός Πορτοκάλι",
+          "price": "4.00€"
+        },
+        {
+          "name": "Fruit Juice Amita - Χυμός Φρούτων Amita",
+          "description": "Banana, Sour Cherry, Orange, Pineapple, Cranberry, Lemon, Mixed - Μπανάνα, Βύσσινο, Πορτοκάλι, Ανανάς, Κράνμπερι, Λεμόνι, Ανάμεικτος",
+          "price": "3.50€"
+        },
+        {
+          "name": "Refreshments - Αναψυκτικά",
+          "description": "Orangeade, Lemonade, Sour Cherryade, Sprite, Coca Cola (Zero) - Πορτοκαλάδα, Λεμονάδα, Βυσσινάδα, Sprite, Coca Cola (Zero)",
+          "price": "3.00€"
+        },
+        {
+          "name": "Grapefruit Soda",
+          "price": "6.00€"
+        },
+        {
+          "name": "Fresh Lemonade - Σπιτική Λεμονάδα",
+          "price": "5.00€"
+        },
+        {
+          "name": "Perrier Sparkling Water - Perrier Ανθρακούχο Νερό",
+          "price": "4.00€"
+        },
+        {
+          "name": "Still Water 0.5lt - Μεταλλικό Νερό 0.5lt",
+          "price": "0.50€"
+        }
+      ]
+    },
+    {
+      "name": "BEER & WINE",
+      "labelImage": "beer-wine.jpg",
+      "items": [
+        {
+          "name": "Amstel (330ml)",
+          "price": "4.00€"
+        },
+        {
+          "name": "Amstel Radler (330ml)",
+          "price": "4.00€"
+        },
+        {
+          "name": "Heineken (330ml)",
+          "price": "4.00€"
+        },
+        {
+          "name": "Heineken free (330ml)",
+          "price": "4.00€"
+        },
+        {
+          "name": "Corona (330ml)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Πλάστιγγα Urban (500ml)",
+          "price": "6.00€"
+        },
+        {
+          "name": "Πλάστιγγα Weiss (500ml)",
+          "price": "6.00€"
+        },
+        {
+          "name": "Murphy's Irish (500ml)",
+          "price": "6.00€"
+        },
+        {
+          "name": "Guiness Irish (440ml)",
+          "price": "6.00€"
+        },
+        {
+          "name": "Warsteiner Brauerei Premium (600ml)",
+          "price": "7.00€"
+        },
+        {
+          "name": "Kaiser Draft 330ml",
+          "price": "4.00€"
+        },
+        {
+          "name": "Kaiser Draft 500ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Carlsberg Draft 330ml",
+          "price": "4.00€"
+        },
+        {
+          "name": "Carlsberg Draft 500ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Cider (Μηλίτης) Μηλοκλέφτης 330ml",
+          "price": "5.00€"
+        },
+        {
+          "name": "Βίβλια Χώρα Λευκό Ποτήρι (150ml) - Vivlia Hora White Glass (150ml)",
+          "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
+          "price": "6.00€"
+        },
+        {
+          "name": "Βίβλια Χώρα Λευκό Φιάλη (750ml) - Vivlia Hora White Bottle (750ml)",
+          "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
+          "price": "28.00€"
+        },
+        {
+          "name": "Παυλίδης Θέμα Λευκό Ποτήρι (150ml) - Pavlidis Thema White Glass (150ml)",
+          "description": "Ασύρτικο, Sauvignon Blanc, Asirtiko",
+          "price": "6.00€"
+        },
+        {
+          "name": "Παυλίδης Θέμα Λευκό Φιάλη (750ml) - Pavlidis Thema White Bottle (750ml)",
+          "description": "Ασύρτικο, Sauvignon Blanc, Asirtiko",
+          "price": "28.00€"
+        },
+        {
+          "name": "Ρούσσας Λευκό Ποτήρι (150ml) - Roussas White Glass (150ml)",
+          "description": "Μαλαγουζιά, Malagouzia, Chardonnay",
+          "price": "6.00€"
+        },
+        {
+          "name": "Ρούσσας Λευκό Φιάλη (750ml) - Roussas White Bottle (750ml)",
+          "description": "Μαλαγουζιά, Malagouzia, Chardonnay",
+          "price": "28.00€"
+        },
+        {
+          "name": "Σκούρας Άκρες Λευκό Ποτήρι (150ml) - Skouras Akres White Glass (150ml)",
+          "description": "Ροδίτης 70%, Μοσχοφίλερο 30%",
+          "price": "5.00€"
+        },
+        {
+          "name": "Σκούρας Άκρες Λευκό Φιάλη (750ml) - Skouras Akres White Bottle (750ml)",
+          "description": "Ροδίτης 70%, Μοσχοφίλερο 30%",
+          "price": "26.00€"
+        },
+        {
+          "name": "Caramelo Λευκό Ποτήρι (150ml) - Caramelo White Glass (150ml)",
+          "description": "Απαλό λεμονί χρώμα. Στη μύτη αρώματα από εσπεριδοειδή και λευκά λουλούδια. Στο στόμα, απαλό και γλυκόπιοτο με φρουτώδεις γεύσεις",
+          "price": "5.00€"
+        },
+        {
+          "name": "Caramelo Λευκό Φιάλη (750ml) - Caramelo White Bottle (750ml) ",
+          "description": "Απαλό λεμονί χρώμα. Στη μύτη αρώματα από εσπεριδοειδή και λευκά λουλούδια. Στο στόμα, απαλό και γλυκόπιοτο με φρουτώδεις γεύσεις",
+          "price": "26.00€"
+        },
+        {
+          "name": "Βίβλια Χώρα Ροζέ Ποτήρι (150ml) - Vivlia Hora Rose Glass (150ml)",
+          "description": "Syrah 100%",
+          "price": "6.00€"
+        },
+        {
+          "name": "Βίβλια Χώρα Ροζέ Φιάλη (750ml) - Vivlia Hora Rose Bottle (750ml)",
+          "description": "Syrah 100%",
+          "price": "28.00€"
+        },
+        {
+          "name": "Παυλίδης Θέμα Ροζέ Ποτήρι (150ml) - Pavlidis Thema Rose Glass (150ml)",
+          "description": "Tempranillo",
+          "price": "6.00€"
+        },
+        {
+          "name": "Παυλίδης Θέμα Ροζέ Φιάλη (750ml) - Pavlidis Thema Rose Bottle (750ml)",
+          "description": "Tempranillo",
+          "price": "28.00€"
+        },
+        {
+          "name": "Σκούρας Άκρες Ροζέ Ποτήρι (150ml) - Skouras Akres Rose Glass (150ml)",
+          "description": "Αγιωργίτικο 70%, Μοσχοφίλερο 30%",
+          "price": "5.00€"
+        },
+        {
+          "name": "Σκούρας Άκρες Ροζέ Φιάλη (750ml) - Skouras Akres Rose Bottle (750ml)",
+          "description": "Αγιωργίτικο 70%, Μοσχοφίλερο 30%",
+          "price": "26.00€"
+        },
+        {
+          "name": "Βίβλια Χώρα Ερυθρό Ποτήρι (150ml) - Vivlia Hora Red Glass (150ml)",
+          "description": "Cabernet Sauvignon 50%, Merlot 50%",
+          "price": "6.50€"
+        },
+        {
+          "name": "Βίβλια Χώρα Ερυθρό Φιάλη (750ml) - Vivlia Hora Red Bottle (750ml)",
+          "description": "Cabernet Sauvignon 50%, Merlot 50%",
+          "price": "30.00€"
+        },
+        {
+          "name": "Παυλίδης Θέμα Ερυθρό Ποτήρι (150ml) - Pavlidis Thema Red Glass (150ml)",
+          "description": "Syrah, Αγιωργίτικο, Agiorgitiko",
+          "price": "6.50€"
+        },
+        {
+          "name": "Παυλίδης Θέμα Ερυθρό Φιάλη (750ml) - Pavlidis Thema Red Bottle (750ml)",
+          "description": "Syrah, Αγιωργίτικο, Agiorgitiko",
+          "price": "30.00€"
+        },
+        {
+          "name": "Ρούσσας Ερυθρό Ποτήρι (150ml) - Roussas Red Glass (150ml)",
+          "description": "Cabernet - Syrah",
+          "price": "6.00€"
+        },
+        {
+          "name": "Ρούσσας Ερυθρό Φιάλη (750ml) - Roussas Red Bottle (750ml)",
+          "description": "Cabernet - Syrah",
+          "price": "28.00€"
+        },
+        {
+          "name": "Σκούρας Άκρες Ερυθρό Ποτήρι (150ml) - Skouras Akres Red Glass (150ml)",
+          "description": "10% Cabernet Sauvignon, 90% Αγιωργίτικο",
+          "price": "6.00€"
+        },
+        {
+          "name": "Σκούρας Άκρες Ερυθρό Φιάλη (750ml) - Skouras Akres Red Bottle (750ml)",
+          "description": "10% Cabernet Sauvignon, 90% Αγιωργίτικο",
+          "price": "28.00€"
+        },
+        {
+          "name": "Caramelo Ερυθρό Ποτήρι (150ml) - Caramelo Red Glass (150ml)",
+          "description": "Λαμπερό κόκκινο χρώμα με βιολετί ανταύγειες. Στη μύτη αρώματα από μικρά κόκκινα φρούτα του δάσους. Στο στόμα, απαλό και γλυκόπιοτο",
+          "price": "5.00€"
+        },
+        {
+          "name": "Caramelo Ερυθρό Φιάλη (750ml) - Caramelo Red Bottle (750ml)",
+          "description": "Λαμπερό κόκκινο χρώμα με βιολετί ανταύγειες. Στη μύτη αρώματα από μικρά κόκκινα φρούτα του δάσους. Στο στόμα, απαλό και γλυκόπιοτο",
+          "price": "26.00€"
+        },
+        {
+          "name": "Coppiere Prosecco Glass (150ml)",
+          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling - Ιταλία, ξηρό, κομψό, φρουτώδες γεύση, Αφρώδης",
+          "price": "5.00€"
+        },
+        {
+          "name": "Coppiere Prosecco Bottle (750ml)",
+          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling - Ιταλία, ξηρό, κομψό, φρουτώδες γεύση, Αφρώδης",
+          "price": "22.00€"
+        },
+        {
+          "name": "Moscato D'asti Glass (175ml)",
+          "description": "Italy, citrus, floral and spice aromas, Sparkling - Ιταλία, αρώματα εσπεριδοειδών, λουλουδιών και μπαχαρικών",
+          "price": "5.00€"
+        },
+        {
+          "name": "Moscato D'asti Bottle (750ml)",
+          "description": "Italy, citrus, floral and spice aromas, Sparkling - Ιταλία, αρώματα εσπεριδοειδών, λουλουδιών και μπαχαρικών",
+          "price": "22.00€"
+        },
+        {
+          "name": "Bianconero (200ml)",
+          "description": "Rose Sparuling Κτήμα Τσιλιλή, Θεσσαλία",
+          "price": "7.00€"
+        },
+        {
+          "name": "Vinsanto Σαντορίνι Glass (80ml)",
+          "description": "85% Ασύρτικο, 15% Αηδάνι",
+          "price": "7.00€"
+        },
+        {
+          "name": "Vinsanto Σαντορίνι Bottle (500ml)",
+          "description": "85% Ασύρτικο, 15% Αηδάνι",
+          "price": "35.00€"
+        },
+        {
+          "name": "Real Sangria Spain Glass (150ml)",
+          "description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
+          "price": "4.00€"
+        },
+        {
+          "name": "Real Sangria Spain (500ml)",
+          "description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
+          "price": "10.00€"
+        },
+        {
+          "name": "Real Sangria Spain (1L)",
+          "description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
+          "price": "18.00€"
         }
       ]
     }
