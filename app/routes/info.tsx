@@ -20,10 +20,10 @@ export default function Info() {
       </div>
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
         <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
-          ⏰ Winter: From 19:00 till late at night
+          ⏰ From 19:00 till late at night September - May
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
-          ⏰ Summer: From 10:00 till late at night
+          ⏰ From 10:00 till late at night June - August
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
           🍸 Coffee, Drinks, Cocktails
