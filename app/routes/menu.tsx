@@ -28,7 +28,7 @@ const MenuPage: React.FC = () => {
     fetchData();
   }, []);
 
-  if (loading) return <LoadingScreen />;
+  if (loading) return <p>Shaking up your drinks...</p>;
   if (error) return <p>{error}</p>;
   if (!data) return <p>No data available</p>;
 
