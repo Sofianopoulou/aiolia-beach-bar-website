@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Section from "~/components/Section";
 import { MenuData } from "../types/types";
+import LoadingScreen from "~/components/LoadingScreen";
 
 const MenuPage: React.FC = () => {
   const [data, setData] = useState<MenuData | null>(null);
@@ -27,7 +28,7 @@ const MenuPage: React.FC = () => {
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingScreen />;
   if (error) return <p>{error}</p>;
   if (!data) return <p>No data available</p>;
 
