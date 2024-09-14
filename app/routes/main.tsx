@@ -9,7 +9,7 @@ export default function MainSection() {
       className="relative w-full h-[64vh] bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: `url(${img})` }}
     >
-      <div className="absolute inset-0 flex items-start justify-start text-start p-10 py-48">
+      <div className="absolute inset-0 flex items-start justify-start text-start p-10 py-20">
         <div className="bg-transparent border-4 border-[#5ad7d9] p-5 rounded-[18px] w-fit max-w-[90%] space-y-6">
           <Heading
             as="h1"
