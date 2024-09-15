@@ -781,6 +781,530 @@
           "price": "18.00€"
         }
       ]
+    },
+    {
+      "name": "WHISKEYS, BOURBON AND MALT",
+      "description": "Blended to premiums and everything in between",
+      "items": [
+        {
+          "name": "Four Roses 40% 60ml",
+          "description": "Bourbon",
+          "price": "8.00€"
+        },
+        {
+          "name": "Jameson 40% 60ml",
+          "description": "Irish",
+          "price": "7.00€"
+        },
+        {
+          "name": "Jim Beam 40% 60ml",
+          "description": "Bourbon",
+          "price": "8.00€"
+        },
+        {
+          "name": "Jack Daniels 40% 60ml",
+          "description": "Bourbon",
+          "price": "8.00€"
+        },
+        {
+          "name": "Jack Daniels Gentelmans 40% 60ml",
+          "description": "Bourbon",
+          "price": "9.00€"
+        },
+        {
+          "name": "L&G Woodford Reserve 40% 60ml",
+          "description": "Bourbon",
+          "price": "10.00€"
+        },
+        {
+          "name": "Wild Turkey 81 40% 60 ml",
+          "description": "Bourbon",
+          "price": "9.00€"
+        },
+        {
+          "name": "Wild Turkey Rare Breed 54,5% 60 ml",
+          "description": "Bourbon",
+          "price": "15.00€"
+        },
+        {
+          "name": "Cardhu 12yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Cardhu 18yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Glenfiddich 12yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "Glenfiddich 15yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Glenfiddich 18yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Lagavulin 16yrs 40% Islay 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Talisker 10yrs 45,8% Skye 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "The Singleton 12yrs 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "The Glenrothes 43% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "Ballantines 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Ballantines 12yrs 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Bells 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Canadian 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Chivas Regal 12yrs 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Chivas Regal 18yrs 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Cutty Sark 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Cutty Sark Storm 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Cutty Sark 12yrs 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Dewars 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Dewars 12yrs 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Dimple Golden Selection 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Famous Grouse 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Famous Grouse 12yrs 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Grant's 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Haig 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "J&B 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Johnnie Walker Red Label 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Johnnie Walker Black Label 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Johnnie Walker Double Black Label 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Johnnie Walker Gold Label 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Johnnie Walker Platinum Label 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "14.00€"
+        },
+        {
+          "name": "Teachers 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        },
+        {
+          "name": "Wild Geese 40% 60ml",
+          "description": "Blended Whiskey",
+          "price": "7.00€"
+        }
+      ]
+    },
+    {
+      "name": "COGNAC",
+      "items": [
+        {
+          "name": "Metaxa 3* 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Metaxa 5* 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Metaxa 7* 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Metaxa 12* 60ml",
+          "price": "10.00€"
+        }
+      ]
+    },
+    {
+      "name": "VODKA",
+      "items": [
+        {
+          "name": "Absolut 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Beluga 40% 60ml",
+          "price": "12.00€"
+        },
+        {
+          "name": "Belvedere 40% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Ciroc 40% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Finlandia 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Grey Goose 40% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Ketel One 40% 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Serkova 37,5% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Smirnoff North 20% / Red 37,5% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Snow Leopard 40% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Stolichnaya 38% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Stolichnaya Elite 40% 60ml",
+          "price": "15.00€"
+        },
+        {
+          "name": "Ursus Roter 21% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Perfect",
+          "price": "10.00€"
+        }
+      ]
+    },
+    {
+      "name": "GIN",
+      "items": [
+        {
+          "name": "Gordons 37,5% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Tanqueray 43,1% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Tanqueray 10 47,3% 60ml",
+          "price": "9.00€"
+        },
+        {
+          "name": "Bombay 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Beefeater 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Bulldog London 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Hendricks 41% 60ml",
+          "price": "9.00€"
+        },
+        {
+          "name": "Mataroa Mediterranean 41,5% 60ml",
+          "price": "9.00€"
+        }
+      ]
+    },
+    {
+      "name": "TEQUILA",
+      "items": [
+        {
+          "name": "Jose Cuervo Silver 38% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Jose Cuervo Gold 38% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Jose Curevo Black 38% 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Olmeca Reposado 38% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Olmeca Blanco 38% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Don Julio Reposado 38% 60ml",
+          "price": "9.00€"
+        },
+        {
+          "name": "Don Julio Blanco 38% 60ml",
+          "price": "9.00€"
+        }
+      ]
+    },
+    {
+      "name": "RUM",
+      "items": []
+    },
+    {
+      "name": "VERMOUTH, SHERRY & PORT",
+      "items": [
+        {
+          "name": "Otto's Athens 17% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Martini Bianco 14,4% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Martini Extra Dry 18% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Martini Rossato 15% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Martini Rosso 16% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Porto",
+          "price": "5.00€"
+        },
+        {
+          "name": "Grappa",
+          "price": "5.00€"
+        }
+      ]
+    },
+    {
+      "name": "LIQUEURS",
+      "items": [
+        {
+          "name": "Drambuie",
+          "price": "8.00€"
+        },
+        {
+          "name": "Southern Comfort",
+          "price": "7.00€"
+        },
+        {
+          "name": "Amaretto Di Saronno",
+          "price": "7.00€"
+        },
+        {
+          "name": "Baileys",
+          "price": "7.00€"
+        },
+        {
+          "name": "Frangelico",
+          "price": "7.00€"
+        },
+        {
+          "name": "Underberg",
+          "price": "3.00€"
+        },
+        {
+          "name": "Sambuca",
+          "price": "7.00€"
+        },
+        {
+          "name": "Cointreau",
+          "price": "7.00€"
+        },
+        {
+          "name": "Tia Maria",
+          "price": "7.00€"
+        },
+        {
+          "name": "Kahlúa",
+          "price": "7.00€"
+        },
+        {
+          "name": "Tendura",
+          "price": "7.00€"
+        }
+      ]
+    },
+    {
+      "name": "APERITIFS AND BITTERS",
+      "items": [
+        {
+          "name": "Mastiha Skinos",
+          "price": "7.00€"
+        },
+        {
+          "name": "Jagermeister",
+          "price": "7.00€"
+        },
+        {
+          "name": "Malibu Coconut Rum",
+          "price": "7.00€"
+        },
+        {
+          "name": "Aperol",
+          "price": "7.00€"
+        },
+        {
+          "name": "Campari",
+          "price": "7.00€"
+        },
+        {
+          "name": "Pimm's No 1",
+          "price": "7.00€"
+        }
+      ]
+    },
+    {
+      "name": "RTD",
+      "items": [
+        {
+          "name": "Gordons Space",
+          "price": "5.00€"
+        },
+        {
+          "name": "Red Bull",
+          "price": "5.00€"
+        },
+        {
+          "name": "Bacardi Breezer (Watermelon)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Cider (Μιλήτης)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Pink Grapefruit Soda",
+          "price": "6.00€"
+        }
+      ]
+    },
+    {
+      "name": "TSIPOURO",
+      "items": [
+        {
+          "name": "Thessaliko 50ml",
+          "price": "5.00€"
+        },
+        {
+          "name": "Ηδωνικό 50ml",
+          "price": "5.00€"
+        },
+        {
+          "name": "Δεκαράκι 60ml",
+          "price": "5.00€"
+        },
+        {
+          "name": "Manifesto",
+          "price": "8.00€"
+        }
+      ]
     }
   ]
 }
