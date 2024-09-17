@@ -12,7 +12,7 @@ type ActionData = {
   error?: string;
 };
 
-export const loader = async ({ request }: any) => {
+export const action = async ({ request }: any) => {
   const formData = await request.formData();
 
   const name = formData.get("name");
@@ -24,8 +24,8 @@ export const loader = async ({ request }: any) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Restaurant <sofianopouloulia@gmail.com>",
-      to: ["sofianopouloulia@gmail.com"],
+      from: "info@aiolia.gr",
+      to: ["info@aiolia.gr"],
       subject: `New Reservation from ${name}`,
       html: `
         <h1>New Reservation Details</h1>
@@ -39,11 +39,13 @@ export const loader = async ({ request }: any) => {
     });
 
     if (error) {
+      console.error("Resend API error:", error);
       return json({ error }, 400);
     }
 
     return redirect("/reservation-success");
   } catch (error) {
+    console.error("Catch block error:", error);
     return json({ error: "Failed to send reservation email." }, 500);
   }
 };
@@ -62,7 +64,7 @@ export default function ReservationForm() {
             <p className="text-gray-600">Please try again.</p>
           </div>
         ) : (
-          <form method="post" className="space-y-5">
+          <form method="post" action="/reservations" className="space-y-5">
             <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
               Make a Reservation
             </h2>
