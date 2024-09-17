@@ -2,13 +2,17 @@ import { json, redirect } from "@remix-run/node";
 import { Resend } from "resend";
 import { useActionData } from "@remix-run/react";
 
+if (!process.env.RESEND_API_KEY) {
+  throw new Error("RESEND_API_KEY is not set.");
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 type ActionData = {
   error?: string;
 };
 
-export const action = async ({ request }: any) => {
+export const loader = async ({ request }: any) => {
   const formData = await request.formData();
 
   const name = formData.get("name");
