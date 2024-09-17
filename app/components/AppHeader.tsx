@@ -24,18 +24,24 @@ export default function AppHeader() {
             <img src={logo} alt="Aiolia Beach Bar Logo" className="h-12" />
           </Link>
           <Flex className="hidden md:flex gap-4">
-            <Button
+            {/* <Button
               asChild
               className="bg-white text-bg-[#fa994f] text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] transition hover:bg-opacity-20 hover:scale-105"
             >
               <Link to="/blog">Blog</Link>
-            </Button>
+            </Button> */}
             <Button
               asChild
               className="bg-white text-bg-[#fa994f] text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] transition hover:bg-opacity-20 hover:scale-105"
             >
-              <Link to="/akademy">Aiolia Akademy</Link>
+              <Link to="/reservations">Reservations</Link>
             </Button>
+            {/* <Button
+              asChild
+              className="bg-white text-bg-[#fa994f] text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] transition hover:bg-opacity-20 hover:scale-105"
+            >
+              <Link to="/akademy">Aiolia Akademy</Link>
+            </Button> */}
             <Button
               asChild
               className="bg-white text-bg-[#fa994f] text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] transition hover:bg-opacity-20 hover:scale-105"
@@ -52,19 +58,26 @@ export default function AppHeader() {
         </Flex>
         {isMobileMenuOpen && (
           <Flex className="absolute top-14 left-0 right-0 bg-white flex flex-col items-center py-4 shadow-md">
-            <Button
+            {/* <Button
               asChild
               className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
               onClick={closeMobileMenu}
             >
               <Link to="/blog">Blog</Link>
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               asChild
               className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
               onClick={closeMobileMenu}
             >
               <Link to="/akademy">Aiolia Akademy</Link>
+            </Button> */}
+            <Button
+              asChild
+              className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
+              onClick={closeMobileMenu}
+            >
+              <Link to="/reservations">Reservations</Link>
             </Button>
             <Button
               asChild
