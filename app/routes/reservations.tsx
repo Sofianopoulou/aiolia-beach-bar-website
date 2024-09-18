@@ -21,17 +21,44 @@ export const action = async ({ request }: any) => {
   try {
     const { data, error } = await resend.emails.send({
       from: "info@aiolia.gr",
-      to: ["info@aiolia.gr"],
+      to: ["stathis@aiolia.gr"],
       subject: `New Reservation from ${name}`,
       html: `
-        <h1>New Reservation Details</h1>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Time:</strong> ${time}</p>
-        <p><strong>People:</strong> ${people}</p>
-        <p><strong>Table Preference:</strong> ${tablePreference}</p>
-        <p><strong>Comments:</strong> ${comments}</p>
-      `,
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+      <h1 style="color: #333; text-align: center;">New Reservation Details</h1>
+      
+      <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <tr>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Name:</strong></td>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${name}</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Date:</strong></td>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${date}</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Time:</strong></td>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${time}</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>People:</strong></td>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${people}</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Table Preference:</strong></td>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${tablePreference}</td>
+        </tr>
+        <tr>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Comments:</strong></td>
+          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${comments}</td>
+        </tr>
+      </table>
+
+      <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #999;">
+        <p>&copy; 2024 Aiolia Beach Bar</p>
+      </footer>
+    </div>
+  `,
     });
 
     if (error) {
@@ -65,7 +92,6 @@ export default function ReservationForm() {
               Make a Reservation
             </h2>
 
-            {/* Date */}
             <div>
               <label className="block text-gray-700 mb-2">Date</label>
               <input
@@ -76,7 +102,6 @@ export default function ReservationForm() {
               />
             </div>
 
-            {/* Time */}
             <div>
               <label className="block text-gray-700 mb-2">Time</label>
               <input
@@ -87,7 +112,6 @@ export default function ReservationForm() {
               />
             </div>
 
-            {/* People */}
             <div>
               <label className="block text-gray-700 mb-2">
                 Number of People
@@ -98,10 +122,10 @@ export default function ReservationForm() {
                 className="w-full p-3 border border-gray-300 rounded-md"
                 placeholder="e.g. 2"
                 required
+                min="1"
               />
             </div>
 
-            {/* Name */}
             <div>
               <label className="block text-gray-700 mb-2">Name</label>
               <input
@@ -113,7 +137,6 @@ export default function ReservationForm() {
               />
             </div>
 
-            {/* Table Preference (Optional) */}
             <div>
               <label className="block text-gray-700 mb-2">
                 Table Preference (Optional)
@@ -129,7 +152,6 @@ export default function ReservationForm() {
               </select>
             </div>
 
-            {/* Comments (Optional) */}
             <div>
               <label className="block text-gray-700 mb-2">
                 Comments (Optional)
@@ -141,7 +163,14 @@ export default function ReservationForm() {
               />
             </div>
 
-            {/* Submit Button */}
+            <div>
+              <p className="block text-gray-650">
+                {" "}
+                Table is kept for 20 minutes after reservation time. We
+                appreciate you being on time.
+              </p>
+            </div>
+
             <button
               type="submit"
               className="w-full p-3 bg-[#f39c12] text-white rounded-md hover:bg-[#e67e22] transition-colors"

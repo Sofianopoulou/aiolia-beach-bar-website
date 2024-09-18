@@ -33,7 +33,7 @@ const Section: React.FC<SectionProps> = ({ section }) => {
         <img
           src={section.labelImage}
           alt={`${section.name} label`}
-          className="w-full object-scale-down rounded-b-lg"
+          className="w-full h-auto object-cover rounded-b-lg"
         />
       )}
 

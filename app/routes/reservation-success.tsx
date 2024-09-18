@@ -5,6 +5,7 @@ export default function ReservationSuccess() {
       <p className="mt-4">
         We have received your reservation. We look forward to seeing you!
       </p>
+      <p className="mt-3">Cheers!</p>
     </div>
   );
 }
