@@ -1147,7 +1147,52 @@
     },
     {
       "name": "RUM",
-      "items": []
+      "items": [
+        {
+          "name": "Havana 3yrs 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Bacardi 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Pampero Blanco 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Sailor Jerry 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Bacardi 4anos 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Havana 8yrs 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Havana maestros 60ml",
+          "price": "12.00€"
+        },
+        {
+          "name": "Pampero Anejo 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Diplomatico Exclusiva 60ml",
+          "price": "15.00€"
+        },
+        {
+          "name": "Bacardi 8anos 60ml",
+          "price": "9.00€"
+        },
+        {
+          "name": "Ron Zacapa 23 60ml",
+          "price": "15.00€"
+        }
+      ]
     },
     {
       "name": "VERMOUTH, SHERRY & PORT",
