@@ -6,7 +6,7 @@ export default function Info() {
         <h3 className="text-2xl text-gray-800 mb-4 font-sans">
           Welcome to Aiolia Beach Bar
         </h3>
-        <p className="text-base leading-7 text-gray-600 mb-4 font-serif">
+        <p className="text-base leading-7 text-gray-600 mb-4 font-sans">
           At Aiolia, we curate an unparalleled dining experience, offering
           mouthwatering delights that captivate your taste buds. Immerse
           yourself in the heart of seaside bliss as you savor our signature
@@ -19,19 +19,19 @@ export default function Info() {
         </p>
       </div>
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
-        <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
+        <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           ⏰ From 19:00 till late at night September - May
         </p>
-        <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
+        <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           ⏰ From 10:00 till late at night June - August
         </p>
-        <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
+        <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           🍸 Coffee, Drinks, Cocktails
         </p>
-        <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
+        <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           🥪 Pizza, Salads, Desserts
         </p>
-        <p className="text-xl leading-7 text-gray-700 mb-4 font-serif">
+        <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           📌 Nea Anchialos | Volos
         </p>
       </div>
