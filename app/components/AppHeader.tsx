@@ -11,7 +11,8 @@ export default function AppHeader() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [isMobileLanguageMenuOpen, setMobileLanguageMenuOpen] = useState(false);
-  const mobileMenuRef = useRef<HTMLDivElement>(null); // Ref for the mobile menu
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -23,10 +24,6 @@ export default function AppHeader() {
 
   const toggleMobileLanguageMenu = () => {
     setMobileLanguageMenuOpen(!isMobileLanguageMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
   };
 
   const changeLanguage = async (lang: string) => {
@@ -45,9 +42,12 @@ export default function AppHeader() {
   // Logic for closing mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // Check if click is outside the mobile menu and the hamburger icon
       if (
         mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node)
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target as Node)
       ) {
         setMobileMenuOpen(false);
       }
@@ -132,12 +132,14 @@ export default function AppHeader() {
           <Button
             asChild
             className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
+            onClick={toggleMobileMenu}
           >
             <Link to="/reservations">{t("Reservations")}</Link>
           </Button>
           <Button
             asChild
             className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
+            onClick={toggleMobileMenu}
           >
             <Link to="/menu">{t("Menu")}</Link>
           </Button>
