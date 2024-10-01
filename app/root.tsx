@@ -19,7 +19,7 @@ import i18next from "~/i18next.server";
 
 import { useLoaderData } from "@remix-run/react";
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ request }: any) {
   let locale = await i18next.getLocale(request);
   return json({ locale });
 }
