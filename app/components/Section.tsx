@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Section as SectionType } from "../types/types";
 import { Flex } from "@radix-ui/themes";
 import MenuItem from "./MenuItem";
+import { useTranslation } from "react-i18next";
 
 interface SectionProps {
   section: SectionType;
 }
 
 const Section: React.FC<SectionProps> = ({ section }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSection = () => {
@@ -23,8 +25,10 @@ const Section: React.FC<SectionProps> = ({ section }) => {
     >
       <Flex className="flex justify-between items-center p-4 bg-[#fa994f] rounded-t-lg">
         <div className="flex flex-col items-start">
-          <h2 className="text-white font-bold">{section.name}</h2>
-          <p className="text-white text-sm font-bold">{section.description}</p>
+          <h2 className="text-white font-bold">{t(section.name)}</h2>
+          <p className="text-white text-sm font-bold">
+            {t(section.description)}
+          </p>
         </div>
         <span className="text-white text-lg">{isOpen ? "▲" : "▼"}</span>
       </Flex>

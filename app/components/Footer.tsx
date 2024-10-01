@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "@remix-run/react";
+import { useTranslation } from "react-i18next";
 
 import fblogo from "../assets/facebook.png";
 import iglogo from "../assets/instagram.png";
 import ytlogo from "../assets/youtube.png";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-[#121212] text-[#ecf0f1] py-10 flex justify-center">
       <div className="max-w-screen-xl w-full flex flex-col gap-8">
         <div className="flex justify-between flex-col md:flex-row">
           {/* Contact Information Section */}
           <div className="flex-1 px-5 min-w-[200px]">
-            <h4 className="text-lg mb-4 text-[#f39c12]">Contact Us</h4>
+            <h4 className="text-lg mb-4 text-[#f39c12]">{t("Contact Us")}</h4>
             <p className="mb-3">
               📍{" "}
               <a
@@ -21,13 +24,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-[#f39c12]"
               >
-                Zarifi 2, Nea Anchialos, Thessalía, Greece, 37400
+                {t("Zarifi 2, Nea Anchialos, Thessalía, Greece, 37400")}
               </a>
             </p>
             <p className="mb-3">
               📅{" "}
               <Link to="/reservations" className="hover:text-[#f39c12]">
-                Make a Reservation
+                {t("Make a Reservation")}
               </Link>
             </p>
             <p className="mb-3">
@@ -38,7 +41,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-[#f39c12]"
               >
-                Find us on TripAdvisor
+                {t("Find us on TripAdvisor")}
               </a>
             </p>
             <p className="mb-3">📞 2428077424</p>
@@ -46,7 +49,7 @@ export default function Footer() {
 
           {/* Social Media Section */}
           <div className="flex-1 px-5 min-w-[200px]">
-            <h4 className="text-lg mb-4 text-[#f39c12]">Follow Us</h4>
+            <h4 className="text-lg mb-4 text-[#f39c12]">{t("Follow Us")}</h4>
             <div className="flex gap-4 pb-4">
               <a
                 href="https://www.facebook.com/AIOLIA.VOLOS/?locale=el_GR"
@@ -78,10 +81,10 @@ export default function Footer() {
           {/* Mailing List Section */}
           <div className="flex-1 px-5 min-w-[200px]">
             <h4 className="text-lg mb-4 text-[#f39c12]">
-              Join Our Mailing List
+              {t("Join Our Mailing List")}
             </h4>
             <p className="mb-3">
-              Subscribe to get the latest updates and offers.
+              {t("Subscribe to get the latest updates and offers.")}
             </p>
             <form
               action="/subscribe"
@@ -91,7 +94,7 @@ export default function Footer() {
               <input
                 type="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder={t("Enter your email")}
                 required
                 className="p-3 rounded-md text-black"
               />
@@ -99,7 +102,7 @@ export default function Footer() {
                 type="submit"
                 className="p-3 bg-[#f39c12] rounded-md text-white hover:bg-[#e67e22] transition-colors"
               >
-                Subscribe
+                {t("Subscribe")}
               </button>
             </form>
           </div>

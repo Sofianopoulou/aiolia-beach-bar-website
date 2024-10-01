@@ -1,18 +1,18 @@
 {
   "sections": [
     {
-      "name": "Food XPERIENCE",
+      "name": "FOOD XPERIENCE",
       "description": "Local ingredients full of freshness",
       "labelImage": "margherita-pizza-cropped.jpg",
       "items": [
         {
           "name": "Breakfast",
-          "description": "Pose Eggs, Toasted Toast Bread, Bacon - Αυγά Ποσέ, Φρυγανισμένο Ψωμί Τοστ, Μπέικον",
+          "description": "Pose Eggs, Toasted Toast Bread, Bacon",
           "price": "6.00€"
         },
         {
           "name": "Salad",
-          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive oil - Μαρούλι, Ντομάτα, Αγγούρι, Καλαμπόκι, Κρουτόν, Βαλσάμικο, Eλαιόλαδο.",
+          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil",
           "price": "6.00€",
           "label": "Vegan"
         },
@@ -28,83 +28,83 @@
         },
         {
           "name": "Greek Salad",
-          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil - Τομάτα, Φέτα, Αγγούρι, Κρεμμύδι, Πιπεριά, Ρίγανη, Ελαιόλαδο",
+          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil",
           "price": "7.00€",
           "label": "Vegetarian"
         },
         {
-          "name": "Ntakos - Ντάκος",
-          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive oil, Capers - Κριθαροκουλούρο, Φέτα, Ντομάτα, Ελιές, Ρίγανη, Ελαιόλαδο, Κάπαρι",
+          "name": "Ntakos",
+          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive oil, Capers",
           "price": "6.00€",
           "label": "Vegetarian",
           "image": "ntakos.jpg"
         },
         {
-          "name": "Tortillas - Τορτίγιας",
-          "description": "Edam, Lettuce, Tomato, Mayonnaise - Ένταμ, Μαρούλι, Ντομάτα, Μαγιονέζα",
+          "name": "Tortillas",
+          "description": "Edam, Lettuce, Tomato, Mayonnaise",
           "price": "5.00€"
         },
         {
-          "name": "Toast - Τοστ",
-          "description": "Ham, Edam - Ζαμπόν, Ένταμ",
+          "name": "Toast",
+          "description": "Ham, Edam",
           "price": "3.00€"
         },
         {
-          "name": "Turkey Toast - Τοστ Γαλοπούλας",
-          "description": "Turkey, Edam - Γαλοπούλα, Ένταμ",
+          "name": "Turkey Toast",
+          "description": "Turkey, Edam",
           "price": "3.50€"
         },
         {
           "name": "Club Sandwich",
-          "description": "Ham, Bacon, Edam, Lettuce, Tomato - Ζαμπόν, Μπέικον, Ένταμ, Μαρούλι, Ντομάτα",
+          "description": "Ham, Bacon, Edam, Lettuce, Tomato",
           "price": "8.00€"
         },
         {
           "name": "Chicken Club Sandwich",
-          "description": "Chicken, Bacon, Edam, Lettuce, Tomato - Κοτόπουλο, Μπέικον, Ένταμ, Μαρούλι, Ντομάτα",
+          "description": "Chicken, Bacon, Edam, Lettuce, Tomato",
           "price": "10.00€"
         },
         {
-          "name": "Cheeses Variety - Ποικιλία Τυριών",
+          "name": "Cheeses Variety",
           "description": "A mix of local and European produce",
           "price": "12.00€",
           "label": "Vegetarian"
         },
         {
-          "name": "Cold Cuts & Cheeses - Ποικιλία Τυριών & Αλλαντικών",
+          "name": "Cold Cuts & Cheeses",
           "description": "A mix of local and European produce",
           "price": "12.00€"
         },
         {
           "name": "Pizza Margherita",
-          "description": "Tomato, Mozzarella & Basil - Τομάτα, Μοτσαρέλα & Βασιλικός",
+          "description": "Tomato, Mozzarella & Basil",
           "price": "8.00€",
           "label": "Vegetarian"
         },
         {
-          "name": "Pizza Greek - Πίτσα Ελληνική",
-          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives - Τομάτα , Φέτα, Πιπεριά, Κρεμμύδι, Κάπαρη, Ελιές",
+          "name": "Pizza Greek",
+          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives",
           "price": "10.00€",
           "label": "Vegetarian"
         },
         {
           "name": "Pizza Ham & Bacon",
-          "description": "Tomato, Mozzarella, Gouda, Ham, Bacon - Τομάτα, Μοτσαρέλα, Γκούντα, Ζαμπόν, Μπέικον",
+          "description": "Tomato, Mozzarella, Gouda, Ham, Bacon",
           "price": "10.00€"
         },
         {
-          "name": "Pizza Chicken - Πίτσα Κοτόπουλο",
-          "description": "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon - Τομάτα, Μοτσαρέλα, Γκούντα, Φιλετάκια Κοτόπουλο, Ζαμπόν, Μπέικον",
+          "name": "Pizza Chicken",
+          "description": "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon",
           "price": "10.00€"
         },
         {
           "name": "Burger Storm 240gr 100% beef",
-          "description": "Tomato, Lettuce, Mustard, Burger - Ντομάτα, Μαρούλι, Μουστάρδα, Μπιφτέκι",
+          "description": "Tomato, Lettuce, Mustard, Burger",
           "price": "10.00€"
         },
         {
-          "name": "Chicken Nuggets (12pcs) - Κοτομπουκιές (12τμχ)",
-          "description": "Tender pieces of chicken fillet with a crispy crust. Served with country-style potatoes, honey mustard, yogurt dip, pita bread and lime slices - Τρυφερά κομμάτια από κοτόπουλο φιλέτο, με τραγανή κρούστα. Σερβίρονται με πατάτες country, σάλτσα μουστάρδας με μέλι, σως γιαουρτιού, ψωμί πίτας και φέτες λάιμ",
+          "name": "Chicken Nuggets (12pcs)",
+          "description": "Tender pieces of chicken fillet with a crispy crust. Served with country-style potatoes, honey mustard, yogurt dip, pita bread and lime slices",
           "price": "12.00€",
           "image": "chicken-nuggets.jpg"
         }
@@ -115,45 +115,45 @@
       "description": "Local ingredients full of freshness",
       "items": [
         {
-          "name": "Salad - Σαλάτα",
-          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil - Μαρούλι, Ντομάτα, Αγγούρι, Καλαμπόκι, Κρουτόν, Βαλσάμικο, Eλαιόλαδο",
+          "name": "Salad",
+          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil",
           "price": "6.00€",
           "label": "Vegan"
         },
         {
-          "name": "Greek Salad - Χωριάτικη Σαλάτα",
-          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil - Τομάτα, Φέτα, Αγγούρι, Κρεμμύδι, Πιπεριά, Ρίγανη, Ελαιόλαδο",
+          "name": "Greek Salad",
+          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil",
           "price": "7.00€",
           "label": "Vegetarian"
         },
         {
-          "name": "Ntakos - Ντάκος",
-          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive Oil, Capers - Κριθαροκουλούρο, Φέτα, Ντομάτα, Ελιές, Ρίγανη, Ελαιόλαδο, Κάπαρι",
+          "name": "Ntakos",
+          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive Oil, Capers",
           "price": "6.00€",
           "label": "Vegetarian",
           "image": "ntakos.jpg"
         },
         {
-          "name": "Salad - Σαλάτα",
-          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil - Μαρούλι, Ντομάτα, Αγγούρι, Καλαμπόκι, Κρουτόν, Βαλσάμικο, Eλαιόλαδο",
+          "name": "Salad",
+          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil",
           "price": "6.00€",
           "label": "Vegan"
         },
         {
           "name": "Pizza Margherita",
-          "description": "Tomato, Mozzarella & Basil - Τομάτα, Μοτσαρέλα & Βασιλικός",
+          "description": "Tomato, Mozzarella & Basil",
           "price": "8.00€",
           "label": "Vegetarian"
         },
         {
-          "name": "Pizza Greek - Πίτσα Ελληνική",
-          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives - Τομάτα, Φέτα, Πιπεριά, Κρεμμύδι, Κάπαρη, Ελιές",
+          "name": "Pizza Greek",
+          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives",
           "price": "10.00€",
           "label": "Vegetarian"
         },
         {
           "name": "Country Potatoes",
-          "description": "Air Fried Country Potatoes - Πατάτα Τηγανιτή σε φριτέζα αέρος",
+          "description": "Air Fried Country Potatoes",
           "price": "5.00€",
           "label": "Vegan"
         }
@@ -178,62 +178,62 @@
         },
         {
           "name": "FLORAL",
-          "description": "Gin, Green Apple Syrup, Cucumber Juice",
+          "description": "Infused Gin with Blue Chinese Tea, Ginger Syrup, Elderflower",
           "price": "9.00€",
           "image": "floral.jpg"
         },
         {
           "name": "ELEMENT",
-          "description": "Gin, orange liquer, green apple syrup, ginger syrup",
+          "description": "Gin, Orange Liquer, Green Apple Syrup, Ginger Syrup",
           "price": "9.00€",
           "image": "element.jpg"
         },
         {
           "name": "DREAMS COME TRUE",
-          "description": "Rum 5yrs old, orgeat & passion fruit syrup",
+          "description": "Rum 5yrs old, Orgeat & Passion Fruit Syrup",
           "price": "9.00€"
         },
         {
           "name": "DOUBLE PASSION",
-          "description": "Vodka, passion fruit liquer & vanilla syrup",
+          "description": "Vodka, Passion Fruit Liquer & Vanilla Syrup",
           "price": "9.00€"
         },
         {
           "name": "CALIMTE",
-          "description": "Tequila, litsi liquer, coconut syrup, lime juice, black salt",
+          "description": "Tequila, Litsi Liquer, Coconut Syrup, Lime Juice, Black Salt",
           "price": "9.00€",
           "image": "calimte.jpg"
         },
         {
           "name": "MASTIC HUG",
-          "description": "Skinos (mastic liquer), ibiscus cordial",
+          "description": "Skinos (mastic liquer), Ibiscus Cordial",
           "price": "9.00€",
           "image": "mastic-hug.jpg"
         },
         {
           "name": "MANIFESTO",
-          "description": "5yrs old tsipouro, lime & thyme cordial",
+          "description": "5yrs old Tsipouro, Lime & Thyme Cordial",
           "price": "9.00€"
         },
         {
           "name": "SUNSHINE",
-          "description": "Skinos (mastic liquer), thyme & basil cordial, fresh lime juice",
+          "description": "Skinos (mastic liquer), Thyme & Basil Cordial, Fresh Lime Juice",
           "price": "9.00€"
         },
         {
           "name": "TATTOO",
-          "description": "Sailor jerry rum, orange liquer, cinammon, honey, tonka & chilli",
+          "description": "Sailor Jerry Rum, Orange Liquer, Cinammon, Honey, Tonka & Chilli",
           "price": "9.00€"
         },
         {
           "name": "HOT n JUICY",
-          "description": "An excuisite cocktail, that is different on every sip, tequila, orange liquier, chilli, pineapple. Ένα κοκτέιλ διαφορετικό σε κάθε γουλιά, κάθε φορά τέλειο.",
+          "description": "An excuisite cocktail, that is different on every sip, tequila, orange liquier, chilli, pineapple.",
           "price": "10.00€",
           "image": "hot-n-juicy.jpg"
         },
         {
           "name": "DON JULIO PALOMA",
-          "description": "A refreshing combination of Don Julio tequila and fresh pink grapefruit served with a splash of soda. Ένας δροσιστικός συνδυασμός τεκίλας Don Julio και φρέσκου ροζ γκρέιπφρουτ σερβιρισμένα με λίγη σόδα",
+          "description": "A refreshing combination of Don Julio tequila and fresh pink grapefruit served with a splash of soda.",
           "price": "14.00€"
         }
       ]
@@ -245,102 +245,102 @@
       "items": [
         {
           "name": "APEROL SPRITZ",
-          "description": "Aperol, prosecco, orange twist, soda",
+          "description": "Aperol, Prosecco, Orange Twist, Soda",
           "price": "9.00€"
         },
         {
           "name": "APPLE MARTINI",
-          "description": "Vodka, apple liquer, sugar syrup",
+          "description": "Vodka, Apple Liquer, Sugar Syrup",
           "price": "9.00€"
         },
         {
           "name": "CAIPIRINHA",
-          "description": "Cachaca, black sugar, lime",
+          "description": "Cachaca, Black Sugar, Lime",
           "price": "9.00€"
         },
         {
           "name": "COSMOPOLITAN",
-          "description": "Vodka, cranberry juice, orange liquer, lime juice",
+          "description": "Vodka, Cranberry Juice, Orange Liquer, Lime Juice",
           "price": "9.00€"
         },
         {
           "name": "DAIQUIRI",
-          "description": "White rum, sugar syrup, lime juice",
+          "description": "White Rum, Sugar Syrup, Lime Juice",
           "price": "9.00€"
         },
         {
           "name": "DRY MARTINI",
-          "description": "Gin, dry vermouth, brine, olives",
+          "description": "Gin, Dry Vermouth, Brine, Olives",
           "price": "9.00€"
         },
         {
           "name": "MAI TAI",
-          "description": "Black & white rum, orgeat syrup, orange liqueur, lime juice",
+          "description": "Black & White Rum, Orgeat Syrup, Orange Liqueur, Lime Juice",
           "price": "9.00€"
         },
         {
           "name": "MANHATTAN",
-          "description": "Bourbon vermouth, angostura bitter, maraskino",
+          "description": "Bourbon Vermouth, Angostura Bitter, Maraskino",
           "price": "9.00€"
         },
         {
           "name": "MARGARITA",
-          "description": "Tequila, orange liquer, lime juice",
+          "description": "Tequila, Orange Liquer, Lime Juice",
           "price": "9.00€"
         },
         {
           "name": "MOJITO",
-          "description": "White rum, black sugar, lime, mint, soda",
+          "description": "White Rum, Black Sugar, Lime, Mint, Soda",
           "price": "9.00€"
         },
         {
           "name": "NEGRONI",
-          "description": "Gin, campari, vermouth, orange bitter",
+          "description": "Gin, Campari, Vermouth, Orange Bitter",
           "price": "9.00€"
         },
         {
           "name": "OLD FASHIONED",
-          "description": "Bourbon, sugar, orange slices, bitters, maraskino",
+          "description": "Bourbon, Sugar, Orange Slices, Bitters, Maraskino",
           "price": "9.00€"
         },
         {
           "name": "SMOKED PALOMA",
-          "description": "Tequila, grapefruit, lemon juice, soda",
+          "description": "Tequila, Grapefruit, Lemon Juice, Soda",
           "price": "9.00€"
         },
         {
           "name": "ZOMBIE",
-          "description": "White 5yrs & 7yrs rum, orange liqueur, lime & pineapple juice",
+          "description": "White 5yrs & 7yrs Rum, Orange Liqueur, Lime & Pineapple Juice",
           "price": "10.00€"
         },
         {
           "name": "BRAMBLE",
-          "description": "London's dry Gin 'married' with lime and velvet blueberry cream",
+          "description": "London's dry Gin 'married' with Lime and Velvet Blueberry Cream",
           "price": "9.00€"
         },
         {
           "name": "PINA COLADA",
-          "description": "White rum, coconut cream, pineapple juice",
+          "description": "White Rum, Coconut Cream, Pineapple Juice",
           "price": "9.00€"
         },
         {
           "name": "SEX ON THE BEACH",
-          "description": "Vodka, cranberry juice, orange liquer, lime juice",
+          "description": "Vodka, Cranberry Juice, Orange Liquer, Lime Juice",
           "price": "9.00€"
         },
         {
           "name": "B52",
-          "description": "Baileys irish cream, Kahlua, Grand Marnier",
+          "description": "Baileys Irish Cream, Kahlua, Grand Marnier",
           "price": "9.00€"
         },
         {
           "name": "CUBA LIBRE",
-          "description": "White rum, cola, lime",
+          "description": "White Rum, Cola, Lime",
           "price": "9.00€"
         },
         {
           "name": "LONG ISLAND (ICE TEA)",
-          "description": "White rum, tequila, vodka, gin, lemon juice, triple sec (& coca cola)",
+          "description": "White rum, Tequila, Vodka, Gin, Lemon Juice, Triple Sec (& Coca Cola)",
           "price": "10.00€"
         }
       ]
@@ -383,33 +383,33 @@
       "description": "Sweet delicacies, crafted to delight your senses and satisfy your cravings.",
       "items": [
         {
-          "name": "Ice Cream - Μπάλα Παγωτό",
-          "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio - Βανίλια, Σοκολάτα, Φράουλα, Μπανάνα, Φιστίκι",
+          "name": "Ice Cream",
+          "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio",
           "price": "2.50€"
         },
         {
-          "name": "Chocolate Souffle - Σουφλέ Σοκολάτας",
+          "name": "Chocolate Souffle",
           "description": "Truffle centre and wicked dark chocolate flavour",
           "price": "5.00€"
         },
         {
-          "name": "Chocolate Souffle with Ice Cream - Σουφλέ Σοκολάτας με Παγωτό",
+          "name": "Chocolate Souffle with Ice Cream",
           "description": "Decadent chocolate souffle paired with creamy ice cream",
           "price": "7.00€"
         },
         {
-          "name": "Orange Pie - Πορτοκαλόπιτα",
-          "description": "Vibrant and refreshing orange flavor - Ζωντανή και αναζωογωνητική γεύση πορτοκαλιού",
+          "name": "Orange Pie",
+          "description": "Vibrant and refreshing orange flavor",
           "price": "5.00€"
         },
         {
-          "name": "Orange Pie with Ice Cream - Πορτοκαλόπιτα με Παγωτό",
+          "name": "Orange Pie with Ice Cream",
           "description": "Zesty orange pie paired with creamy ice cream",
           "price": "7.00€"
         },
         {
-          "name": "Fruit Salad - Φρουτοσαλάτα",
-          "description": "A mix of fresh seasonal fruits - Μια μίξη από φρέσκα εποχιακά φρούτα",
+          "name": "Fruit Salad",
+          "description": "A mix of fresh seasonal fruits",
           "price": "8.00€"
         }
       ]
@@ -418,55 +418,55 @@
       "name": "COFFEE & BEVERAGES",
       "items": [
         {
-          "name": "Greek Coffee - Ελληνικός",
+          "name": "Greek Coffee",
           "price": "2.50€"
         },
         {
-          "name": "Greek Coffee Double - Ελληνικός Διπλός",
+          "name": "Greek Coffee Double",
           "price": "3.00€"
         },
         {
-          "name": "Filter Coffee - Φίλτρου",
+          "name": "Filter Coffee",
           "price": "3.00€"
         },
         {
-          "name": "Instant Hot Nestle - Νες Καφέ",
+          "name": "Instant Hot Nestle",
           "price": "3.00€"
         },
         {
-          "name": "Instant Cold Nestle - Φραπέ",
+          "name": "Instant Cold Nestle",
           "price": "3.00€"
         },
         {
-          "name": "Instant with Vanilla Ice Cream - Φραπέ Παγωτό",
+          "name": "Instant with Vanilla Ice Cream",
           "price": "5.00€"
         },
         {
-          "name": "Espresso - Εσπρέσο",
+          "name": "Espresso",
           "price": "2.50€"
         },
         {
-          "name": "Espresso Decaf - Εσπρέσο Ντεκαφεινέ",
+          "name": "Espresso Decaf",
           "price": "3.00€"
         },
         {
-          "name": "Espresso Double - Εσπρέσο Διπλός",
+          "name": "Espresso Double",
           "price": "3.50€"
         },
         {
-          "name": "Espresso Freddo - Εσπρέσο Κρύος",
+          "name": "Espresso Freddo",
           "price": "3.50€"
         },
         {
-          "name": "Cappuccino Single - Καπουτσίνο μονό",
+          "name": "Cappuccino Single",
           "price": "3.50€"
         },
         {
-          "name": "Cappuccino Double - Καπουτσίνο διπλό",
+          "name": "Cappuccino Double",
           "price": "4.00€"
         },
         {
-          "name": "Cappuccino Freddo - Καπουτσίνο Κρύος",
+          "name": "Cappuccino Freddo",
           "price": "3.50€"
         },
         {
@@ -475,47 +475,47 @@
         },
         {
           "name": "Milkshake",
-          "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio - Βανίλια, Σοκολάτα, Φράουλα, Μπανάνα, Φιστίκι",
+          "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio",
           "price": "6.00€"
         },
         {
-          "name": "Sorbet - Γρανίτα",
-          "description": "Strawberry, Green Apple, Mango, Passion Fruit - Φράουλα, Πράσινο Μήλο, Μάνγκο, Φρούτο του Πάθους",
+          "name": "Sorbet",
+          "description": "Strawberry, Green Apple, Mango, Passion Fruit",
           "price": "5.00€"
         },
         {
-          "name": "Frozen Chocolate - Κρύα Σοκολάτα",
+          "name": "Frozen Chocolate",
           "price": "4.00€"
         },
         {
-          "name": "Hot Chocolate - Ζεστή Σοκολάτα",
+          "name": "Hot Chocolate",
           "price": "4.00€"
         },
         {
-          "name": "Chocolate Viennois - Σοκολάτα Βιεννουά",
+          "name": "Chocolate Viennois",
           "price": "4.50€"
         },
         {
-          "name": "Cold Tea - Κρύο Τσάι",
-          "description": "Peach, Lemon, Green - Ροδάκινο, Λεμόνι, Πράσινο",
+          "name": "Cold Tea",
+          "description": "Peach, Lemon, Green",
           "price": "3.00€"
         },
         {
-          "name": "Freshly Squeezed Seasonal Fruit Juice - Φυσικός Χυμός Φρούτων Εποχής",
+          "name": "Freshly Squeezed Seasonal Fruit Juice",
           "price": "5.00€"
         },
         {
-          "name": "Freshly Squeezed Orange Fruit Juice - Φυσικός Χυμός Πορτοκάλι",
+          "name": "Freshly Squeezed Orange Fruit Juice",
           "price": "4.00€"
         },
         {
-          "name": "Fruit Juice Amita - Χυμός Φρούτων Amita",
-          "description": "Banana, Sour Cherry, Orange, Pineapple, Cranberry, Lemon, Mixed - Μπανάνα, Βύσσινο, Πορτοκάλι, Ανανάς, Κράνμπερι, Λεμόνι, Ανάμεικτος",
+          "name": "Fruit Juice Amita",
+          "description": "Banana, Sour Cherry, Orange, Pineapple, Cranberry, Lemon, Mixed",
           "price": "3.50€"
         },
         {
-          "name": "Refreshments - Αναψυκτικά",
-          "description": "Orangeade, Lemonade, Sour Cherryade, Sprite, Coca Cola (Zero) - Πορτοκαλάδα, Λεμονάδα, Βυσσινάδα, Sprite, Coca Cola (Zero)",
+          "name": "Refreshments",
+          "description": "Orangeade, Lemonade, Sour Cherryade, Sprite, Coca Cola (Zero)",
           "price": "3.00€"
         },
         {
@@ -523,15 +523,15 @@
           "price": "6.00€"
         },
         {
-          "name": "Fresh Lemonade - Σπιτική Λεμονάδα",
+          "name": "Fresh Lemonade",
           "price": "5.00€"
         },
         {
-          "name": "Perrier Sparkling Water - Perrier Ανθρακούχο Νερό",
+          "name": "Perrier Sparkling Water",
           "price": "4.00€"
         },
         {
-          "name": "Still Water 0.5lt - Μεταλλικό Νερό 0.5lt",
+          "name": "Still Water 0.5lt",
           "price": "0.50€"
         }
       ]
@@ -601,148 +601,148 @@
           "price": "5.00€"
         },
         {
-          "name": "Βίβλια Χώρα Λευκό Ποτήρι (150ml) - Vivlia Hora White Glass (150ml)",
+          "name": "Vivlia Hora White Glass (150ml)",
           "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
           "price": "6.00€"
         },
         {
-          "name": "Βίβλια Χώρα Λευκό Φιάλη (750ml) - Vivlia Hora White Bottle (750ml)",
+          "name": "Vivlia Hora White Bottle (750ml)",
           "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
           "price": "28.00€"
         },
         {
-          "name": "Παυλίδης Θέμα Λευκό Ποτήρι (150ml) - Pavlidis Thema White Glass (150ml)",
+          "name": "Pavlidis Thema White Glass (150ml)",
           "description": "Ασύρτικο, Sauvignon Blanc, Asirtiko",
           "price": "6.00€"
         },
         {
-          "name": "Παυλίδης Θέμα Λευκό Φιάλη (750ml) - Pavlidis Thema White Bottle (750ml)",
+          "name": "Pavlidis Thema White Bottle (750ml)",
           "description": "Ασύρτικο, Sauvignon Blanc, Asirtiko",
           "price": "28.00€"
         },
         {
-          "name": "Ρούσσας Λευκό Ποτήρι (150ml) - Roussas White Glass (150ml)",
+          "name": "Roussas White Glass (150ml)",
           "description": "Μαλαγουζιά, Malagouzia, Chardonnay",
           "price": "6.00€"
         },
         {
-          "name": "Ρούσσας Λευκό Φιάλη (750ml) - Roussas White Bottle (750ml)",
+          "name": "Roussas White Bottle (750ml)",
           "description": "Μαλαγουζιά, Malagouzia, Chardonnay",
           "price": "28.00€"
         },
         {
-          "name": "Σκούρας Άκρες Λευκό Ποτήρι (150ml) - Skouras Akres White Glass (150ml)",
+          "name": "Skouras Akres White Glass (150ml)",
           "description": "Ροδίτης 70%, Μοσχοφίλερο 30%",
           "price": "5.00€"
         },
         {
-          "name": "Σκούρας Άκρες Λευκό Φιάλη (750ml) - Skouras Akres White Bottle (750ml)",
+          "name": "Skouras Akres White Bottle (750ml)",
           "description": "Ροδίτης 70%, Μοσχοφίλερο 30%",
           "price": "26.00€"
         },
         {
-          "name": "Caramelo Λευκό Ποτήρι (150ml) - Caramelo White Glass (150ml)",
+          "name": "Caramelo White Glass (150ml)",
           "description": "Απαλό λεμονί χρώμα. Στη μύτη αρώματα από εσπεριδοειδή και λευκά λουλούδια. Στο στόμα, απαλό και γλυκόπιοτο με φρουτώδεις γεύσεις",
           "price": "5.00€"
         },
         {
-          "name": "Caramelo Λευκό Φιάλη (750ml) - Caramelo White Bottle (750ml) ",
+          "name": "Caramelo White Bottle (750ml)",
           "description": "Απαλό λεμονί χρώμα. Στη μύτη αρώματα από εσπεριδοειδή και λευκά λουλούδια. Στο στόμα, απαλό και γλυκόπιοτο με φρουτώδεις γεύσεις",
           "price": "26.00€"
         },
         {
-          "name": "Βίβλια Χώρα Ροζέ Ποτήρι (150ml) - Vivlia Hora Rose Glass (150ml)",
+          "name": "Vivlia Hora Rose Glass (150ml)",
           "description": "Syrah 100%",
           "price": "6.00€"
         },
         {
-          "name": "Βίβλια Χώρα Ροζέ Φιάλη (750ml) - Vivlia Hora Rose Bottle (750ml)",
+          "name": "Vivlia Hora Rose Bottle (750ml)",
           "description": "Syrah 100%",
           "price": "28.00€"
         },
         {
-          "name": "Παυλίδης Θέμα Ροζέ Ποτήρι (150ml) - Pavlidis Thema Rose Glass (150ml)",
+          "name": "Pavlidis Thema Rose Glass (150ml)",
           "description": "Tempranillo",
           "price": "6.00€"
         },
         {
-          "name": "Παυλίδης Θέμα Ροζέ Φιάλη (750ml) - Pavlidis Thema Rose Bottle (750ml)",
+          "name": "Pavlidis Thema Rose Bottle (750ml)",
           "description": "Tempranillo",
           "price": "28.00€"
         },
         {
-          "name": "Σκούρας Άκρες Ροζέ Ποτήρι (150ml) - Skouras Akres Rose Glass (150ml)",
+          "name": "Skouras Akres Rose Glass (150ml)",
           "description": "Αγιωργίτικο 70%, Μοσχοφίλερο 30%",
           "price": "5.00€"
         },
         {
-          "name": "Σκούρας Άκρες Ροζέ Φιάλη (750ml) - Skouras Akres Rose Bottle (750ml)",
+          "name": "Skouras Akres Rose Bottle (750ml)",
           "description": "Αγιωργίτικο 70%, Μοσχοφίλερο 30%",
           "price": "26.00€"
         },
         {
-          "name": "Βίβλια Χώρα Ερυθρό Ποτήρι (150ml) - Vivlia Hora Red Glass (150ml)",
+          "name": "Vivlia Hora Red Glass (150ml)",
           "description": "Cabernet Sauvignon 50%, Merlot 50%",
           "price": "6.50€"
         },
         {
-          "name": "Βίβλια Χώρα Ερυθρό Φιάλη (750ml) - Vivlia Hora Red Bottle (750ml)",
+          "name": "Vivlia Hora Red Bottle (750ml)",
           "description": "Cabernet Sauvignon 50%, Merlot 50%",
           "price": "30.00€"
         },
         {
-          "name": "Παυλίδης Θέμα Ερυθρό Ποτήρι (150ml) - Pavlidis Thema Red Glass (150ml)",
+          "name": "Pavlidis Thema Red Glass (150ml)",
           "description": "Syrah, Αγιωργίτικο, Agiorgitiko",
           "price": "6.50€"
         },
         {
-          "name": "Παυλίδης Θέμα Ερυθρό Φιάλη (750ml) - Pavlidis Thema Red Bottle (750ml)",
+          "name": "Pavlidis Thema Red Bottle (750ml)",
           "description": "Syrah, Αγιωργίτικο, Agiorgitiko",
           "price": "30.00€"
         },
         {
-          "name": "Ρούσσας Ερυθρό Ποτήρι (150ml) - Roussas Red Glass (150ml)",
+          "name": "Roussas Red Glass (150ml)",
           "description": "Cabernet - Syrah",
           "price": "6.00€"
         },
         {
-          "name": "Ρούσσας Ερυθρό Φιάλη (750ml) - Roussas Red Bottle (750ml)",
+          "name": "Roussas Red Bottle (750ml)",
           "description": "Cabernet - Syrah",
           "price": "28.00€"
         },
         {
-          "name": "Σκούρας Άκρες Ερυθρό Ποτήρι (150ml) - Skouras Akres Red Glass (150ml)",
+          "name": "Skouras Akres Red Glass (150ml)",
           "description": "10% Cabernet Sauvignon, 90% Αγιωργίτικο",
           "price": "6.00€"
         },
         {
-          "name": "Σκούρας Άκρες Ερυθρό Φιάλη (750ml) - Skouras Akres Red Bottle (750ml)",
+          "name": "Skouras Akres Red Bottle (750ml)",
           "description": "10% Cabernet Sauvignon, 90% Αγιωργίτικο",
           "price": "28.00€"
         },
         {
-          "name": "Caramelo Ερυθρό Ποτήρι (150ml) - Caramelo Red Glass (150ml)",
+          "name": "Caramelo Red Glass (150ml)",
           "description": "Λαμπερό κόκκινο χρώμα με βιολετί ανταύγειες. Στη μύτη αρώματα από μικρά κόκκινα φρούτα του δάσους. Στο στόμα, απαλό και γλυκόπιοτο",
           "price": "5.00€"
         },
         {
-          "name": "Caramelo Ερυθρό Φιάλη (750ml) - Caramelo Red Bottle (750ml)",
+          "name": "Caramelo Red Bottle (750ml)",
           "description": "Λαμπερό κόκκινο χρώμα με βιολετί ανταύγειες. Στη μύτη αρώματα από μικρά κόκκινα φρούτα του δάσους. Στο στόμα, απαλό και γλυκόπιοτο",
           "price": "26.00€"
         },
         {
           "name": "Coppiere Prosecco Glass (150ml)",
-          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling - Ιταλία, ξηρό, κομψό, φρουτώδες γεύση, Αφρώδης",
+          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling",
           "price": "5.00€"
         },
         {
           "name": "Coppiere Prosecco Bottle (750ml)",
-          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling - Ιταλία, ξηρό, κομψό, φρουτώδες γεύση, Αφρώδης",
+          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling",
           "price": "22.00€"
         },
         {
           "name": "Moscato D'asti Glass (175ml)",
-          "description": "Italy, citrus, floral and spice aromas, Sparkling - Ιταλία, αρώματα εσπεριδοειδών, λουλουδιών και μπαχαρικών",
+          "description": "Italy, citrus, floral and spice aromas, Sparkling",
           "price": "5.00€"
         },
         {
@@ -1338,11 +1338,11 @@
           "price": "5.00€"
         },
         {
-          "name": "Ηδωνικό 50ml",
+          "name": "Idoniko 50ml",
           "price": "5.00€"
         },
         {
-          "name": "Δεκαράκι 60ml",
+          "name": "Dekaraki 60ml",
           "price": "5.00€"
         },
         {

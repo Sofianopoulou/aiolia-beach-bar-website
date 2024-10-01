@@ -1,10 +1,14 @@
+import { useTranslation } from "react-i18next";
+
 export default function Info() {
+  const { t } = useTranslation();
+
   return (
     <div className="space-y-6 pt-4 pb-4">
       {" "}
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
         <h3 className="text-2xl text-gray-800 mb-4 font-sans">
-          Welcome to Aiolia Beach Bar
+          {t("Welcome to Aiolia Beach Bar")}
         </h3>
         <p className="text-base leading-7 text-gray-600 mb-4 font-sans">
           At Aiolia, we curate an unparalleled dining experience, offering
@@ -20,19 +24,19 @@ export default function Info() {
       </div>
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          ⏰ From 19:00 till late at night September - May
+          ⏰ {t("From 19:00 till late at night September - May")}
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          ⏰ From 10:00 till late at night June - August
+          ⏰ {t("From 10:00 till late at night June - August")}
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          🍸 Coffee, Drinks, Cocktails
+          🍸 {t("Coffee, Drinks, Cocktails")}
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          🥪 Pizza, Salads, Desserts
+          🥪 {t("Pizza, Salads, Desserts")}
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          📌 Nea Anchialos | Volos
+          📌 {t("Nea Anchialos | Volos")}
         </p>
       </div>
     </div>
