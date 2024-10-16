@@ -21,7 +21,7 @@ export const action = async ({ request }: any) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "info@aiolia.gr",
+      from: "stathis@aiolia.gr",
       to: ["stathis@aiolia.gr"],
       subject: `New Reservation from ${name}`,
       html: `
@@ -169,7 +169,7 @@ export default function ReservationForm() {
               <p className="block text-gray-650">
                 {" "}
                 {t(
-                  "Table is kept for 20 minutes after reservation time. We appreciate you being on time."
+                  "Table is kept for 15 minutes after reservation time. We appreciate you being on time."
                 )}
               </p>
             </div>

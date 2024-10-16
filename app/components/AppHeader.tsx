@@ -28,41 +28,11 @@ export default function AppHeader() {
 
   const changeLanguage = async (lang: string) => {
     console.log(`Attempting to change language to: ${lang}`);
-    try {
-      await i18n.changeLanguage(lang); // Wait for the language to change
-      console.log(`Language changed to: ${i18n.language}`);
-    } catch (error) {
-      console.error(`Error changing language: ${error}`);
-    }
+    i18n.changeLanguage(lang);
     setLanguageMenuOpen(false); // Close the desktop dropdown
     setMobileLanguageMenuOpen(false); // Close the mobile dropdown
     setMobileMenuOpen(false); // Close the mobile menu
   };
-
-  // Logic for closing mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      // Check if click is outside the mobile menu and the hamburger icon
-      if (
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node) &&
-        hamburgerRef.current &&
-        !hamburgerRef.current.contains(event.target as Node)
-      ) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    if (isMobileMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMobileMenuOpen]);
 
   return (
     <Header>
