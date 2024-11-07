@@ -4,6 +4,7 @@ import { useActionData } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const email = process.env.EMAIL as string;
 
 type ActionData = {
   error?: string;
@@ -21,8 +22,8 @@ export const action = async ({ request }: any) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "stathis@aiolia.gr",
-      to: ["stathis@aiolia.gr"],
+      from: email,
+      to: [email],
       subject: `New Reservation from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
