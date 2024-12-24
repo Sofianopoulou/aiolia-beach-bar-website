@@ -375,6 +375,11 @@
         {
           "name": "STRAWBERRY",
           "price": "6.00€"
+        },
+        {
+          "name": "Tanqueray 0.0% & Tonic",
+          "price": "6.00€",
+          "description": "The great taste of Tanqueray, without alcohol."
         }
       ]
     },
