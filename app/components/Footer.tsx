@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import fblogo from "../assets/facebook.png";
 import iglogo from "../assets/instagram.png";
 import ytlogo from "../assets/youtube.png";
+import inlogo from "../assets/linkedin.png";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -74,6 +75,14 @@ export default function Footer() {
                 className="hover:scale-110 transition-transform"
               >
                 <img src={ytlogo} alt="YouTube" className="w-8 h-8" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/aiolia-beach-bar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={inlogo} alt="LinkedIn" className="w-8 h-8" />
               </a>
             </div>
           </div>

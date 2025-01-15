@@ -21,7 +21,11 @@ import { useLoaderData } from "@remix-run/react";
 
 export async function loader({ request }: any) {
   let locale = await i18next.getLocale(request);
-  return json({ locale });
+  return new Response(JSON.stringify({ locale }), {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
 
 export let handle = {
@@ -33,8 +37,8 @@ export let handle = {
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  // Get the locale from the loader
-  let { locale } = useLoaderData<typeof loader>();
+  let data = useLoaderData<typeof loader>();
+  let locale = data?.locale || "en";
 
   let { i18n } = useTranslation();
 
