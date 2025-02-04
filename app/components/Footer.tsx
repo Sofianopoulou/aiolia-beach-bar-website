@@ -45,6 +45,12 @@ export default function Footer() {
                 {t("Find us on TripAdvisor")}
               </a>
             </p>
+            <p className="mb-3">
+              🌊{" "}
+              <Link to="/jobs" className="hover:text-[#f39c12]">
+                {t("Job Opportunities")}
+              </Link>
+            </p>
             <p className="mb-3">📞 2428077424</p>
           </div>
 

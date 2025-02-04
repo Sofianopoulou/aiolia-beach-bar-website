@@ -100,7 +100,8 @@
         {
           "name": "Burger Storm 240gr 100% beef",
           "description": "Tomato, Lettuce, Mustard, Burger",
-          "price": "10.00€"
+          "price": "10.00€",
+          "image": "burger.jpg"
         },
         {
           "name": "Chicken Nuggets (12pcs)",
