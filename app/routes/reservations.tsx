@@ -81,7 +81,7 @@ export default function ReservationForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-lg">
+      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-lg m-8">
         {actionData?.error ? (
           <div className="text-center">
             <h3 className="text-2xl text-red-600 font-semibold mb-4">

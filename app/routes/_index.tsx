@@ -1,4 +1,3 @@
-import { Flex } from "@radix-ui/themes";
 import MainSection from "./main";
 import Info from "./info";
 

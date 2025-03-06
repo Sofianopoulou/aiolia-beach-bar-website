@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "@remix-run/react";
-import { Button, Flex, Heading } from "@radix-ui/themes";
+import { Button, Heading } from "@radix-ui/themes";
 import img from "../assets/beach-bar.jpg";
 
 export default function MainSection() {

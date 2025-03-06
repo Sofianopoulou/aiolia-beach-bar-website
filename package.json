@@ -25,7 +25,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^15.0.2",
     "remix-i18next": "^6.4.1",
-    "resend": "^4.0.0"
+    "resend": "^4.0.0",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.11.2",

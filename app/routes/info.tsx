@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import MainCarousel from "~/components/MainCarousel";
 
 export default function Info() {
   const { t } = useTranslation();
@@ -17,6 +18,10 @@ export default function Info() {
           🏖️🍹
         </p>
       </div>
+      {/* <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
+        <MainCarousel />
+      </div> */}
+      <MainCarousel />
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           ⏰ {t("From 19:00 till late at night September - May")}
