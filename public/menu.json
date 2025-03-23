@@ -192,12 +192,14 @@
         {
           "name": "DREAMS COME TRUE",
           "description": "Rum 5yrs old, Orgeat & Passion Fruit Syrup",
-          "price": "9.00€"
+          "price": "9.00€",
+          "image": "dreams-come-true.jpg"
         },
         {
           "name": "DOUBLE PASSION",
           "description": "Vodka, Passion Fruit Liquer & Vanilla Syrup",
-          "price": "9.00€"
+          "price": "9.00€",
+          "image": "double-passion.jpg"
         },
         {
           "name": "CALIMTE",
