@@ -216,12 +216,14 @@
         {
           "name": "MANIFESTO",
           "description": "5yrs old Tsipouro, Lime & Thyme Cordial",
-          "price": "9.00€"
+          "price": "9.00€",
+          "image": "manifesto.jpg"
         },
         {
           "name": "SUNSHINE",
           "description": "Skinos (mastic liquer), Thyme & Basil Cordial, Fresh Lime Juice",
-          "price": "9.00€"
+          "price": "9.00€",
+          "image": "sunshine.jpg"
         },
         {
           "name": "TATTOO",
