@@ -85,9 +85,11 @@ export default function ReservationForm() {
         {actionData?.error ? (
           <div className="text-center">
             <h3 className="text-2xl text-red-600 font-semibold mb-4">
-              Failed to submit reservation!
+              {t("Failed to submit reservation!")}
             </h3>
-            <p className="text-gray-600">Please try again.</p>
+            <p className="text-gray-600">
+              {t("Please call us on 24280 77424 for making your reservation.")}
+            </p>
           </div>
         ) : (
           <form method="post" action="/reservations" className="space-y-5">
