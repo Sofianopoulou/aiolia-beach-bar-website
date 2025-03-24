@@ -1,10 +1,7 @@
 import { json, redirect } from "@remix-run/node";
-import { Resend } from "resend";
 import { useActionData } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-const email = process.env.EMAIL as string;
+import nodemailer from "nodemailer";
 
 type ActionData = {
   error?: string;
@@ -12,7 +9,6 @@ type ActionData = {
 
 export const action = async ({ request }: any) => {
   const formData = await request.formData();
-
   const name = formData.get("name");
   const date = formData.get("date");
   const time = formData.get("time");
@@ -20,57 +16,35 @@ export const action = async ({ request }: any) => {
   const tablePreference = formData.get("tablePreference") || "No preference";
   const comments = formData.get("comments") || "No comments";
 
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || "465"),
+    secure: true,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
   try {
-    const { data, error } = await resend.emails.send({
-      from: email,
-      to: [email],
+    await transporter.sendMail({
+      from: `"Aiolia Beach Bar" <${process.env.SMTP_USER}>`,
+      to: "info@aiolia.gr",
       subject: `New Reservation from ${name}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-      <h1 style="color: #333; text-align: center;">New Reservation Details</h1>
-      
-      <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-        <tr>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Name:</strong></td>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${name}</td>
-        </tr>
-        <tr>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Date:</strong></td>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${date}</td>
-        </tr>
-        <tr>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Time:</strong></td>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${time}</td>
-        </tr>
-        <tr>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>People:</strong></td>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${people}</td>
-        </tr>
-        <tr>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Table Preference:</strong></td>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${tablePreference}</td>
-        </tr>
-        <tr>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;"><strong>Comments:</strong></td>
-          <td style="border-bottom: 1px solid #eee; padding: 10px 0;">${comments}</td>
-        </tr>
-      </table>
-
-      <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #999;">
-        <p>&copy; 2024 Aiolia Beach Bar</p>
-      </footer>
-    </div>
-  `,
+        <h2>New Reservation</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Date:</strong> ${date}</p>
+        <p><strong>Time:</strong> ${time}</p>
+        <p><strong>People:</strong> ${people}</p>
+        <p><strong>Table Preference:</strong> ${tablePreference}</p>
+        <p><strong>Comments:</strong> ${comments}</p>
+      `,
     });
-
-    if (error) {
-      console.error("Resend API error:", error);
-      return json({ error }, 400);
-    }
 
     return redirect("/reservation-success");
   } catch (error) {
-    console.error("Catch block error:", error);
+    console.error("Email sending failed:", error);
     return json({ error: "Failed to send reservation email." }, 500);
   }
 };
