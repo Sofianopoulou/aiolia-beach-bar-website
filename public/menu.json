@@ -57,12 +57,14 @@
         {
           "name": "Sandwich",
           "description": "Ham, Edam, Lettuce, Tomato - Served in two buns of fermented bread",
-          "price": "3.50€"
+          "price": "3.50€",
+          "image": "sandwich.jpg"
         },
         {
           "name": "Chicken Sandwich",
           "description": "Chicken, Ham, Edam, Lettuce, Tomato - Served in two buns of fermented bread",
-          "price": "5.00€"
+          "price": "5.00€",
+          "image": "chicken-sandwich.jpg"
         },
         {
           "name": "Club Sandwich",
@@ -122,7 +124,8 @@
         {
           "name": "Soutzoukakia Giaourtlou (6pcs)",
           "description": "Homemade soutzoukakia with lamb, pork & beef, served with warm pita bread and creamy greek yoghurt.",
-          "price": "8.00€"
+          "price": "8.00€",
+          "image": "soutzoukakia.jpg"
         }
       ]
     },
