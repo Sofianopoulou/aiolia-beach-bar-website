@@ -124,7 +124,7 @@ export default function Footer() {
         </div>
 
         <div className="w-full text-center text-sm mt-6">
-          &copy; 2024 Aiolia Beach Bar
+          &copy; 2025 Aiolia Beach Bar
         </div>
       </div>
     </footer>
