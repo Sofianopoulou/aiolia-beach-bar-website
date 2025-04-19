@@ -108,6 +108,11 @@
           "description": "Tender pieces of chicken fillet with a crispy crust. Served with country-style potatoes, honey mustard, yogurt dip, pita bread and lime slices",
           "price": "12.00€",
           "image": "chicken-nuggets.jpg"
+        },
+        {
+          "name": "Soutzoukakia Giaourtlou (6pcs)",
+          "description": "Homemade soutzoukakia with lamb, pork & beef, served with warm pita bread and creamy greek yoghurt.",
+          "price": "8.00€"
         }
       ]
     },
@@ -1345,15 +1350,15 @@
       "items": [
         {
           "name": "Thessaliko 50ml",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Idoniko 50ml",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Dekaraki 60ml",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Manifesto",
