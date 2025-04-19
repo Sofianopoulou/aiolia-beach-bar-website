@@ -24,10 +24,10 @@ export default function Info() {
       <MainCarousel />
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[90%] mx-auto text-center border border-gray-200">
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          ⏰ {t("From 19:00 till late at night September - May")}
+          ⏰ {t("From 19:00 till late at night October - April")}
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
-          ⏰ {t("From 10:00 till late at night June - August")}
+          ⏰ {t("From 10:00 till late at night May - September")}
         </p>
         <p className="text-xl leading-7 text-gray-700 mb-4 font-sans">
           🍸 {t("Coffee, Drinks, Cocktails")}
