@@ -186,67 +186,67 @@
         {
           "name": "MILLION STARS",
           "description": "Gin, Ibiscus Cordial, Black Salt",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "million-stars.jpg"
         },
         {
           "name": "GARDEN",
           "description": "Gin, Green Apple Syrup, Cucumber Juice",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "garden.jpg"
         },
         {
           "name": "FLORAL",
           "description": "Infused Gin with Blue Chinese Tea, Ginger Syrup, Elderflower",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "floral.jpg"
         },
         {
           "name": "ELEMENT",
           "description": "Gin, Orange Liquer, Green Apple Syrup, Ginger Syrup",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "element.jpg"
         },
         {
           "name": "DREAMS COME TRUE",
           "description": "Rum 5yrs old, Orgeat & Passion Fruit Syrup",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "dreams-come-true.jpg"
         },
         {
           "name": "DOUBLE PASSION",
           "description": "Vodka, Passion Fruit Liquer & Vanilla Syrup",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "double-passion.jpg"
         },
         {
           "name": "CALIMTE",
           "description": "Tequila, Litsi Liquer, Coconut Syrup, Lime Juice, Black Salt",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "calimte.jpg"
         },
         {
           "name": "MASTIC HUG",
           "description": "Skinos (mastic liquer), Ibiscus Cordial",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "mastic-hug.jpg"
         },
         {
           "name": "MANIFESTO",
           "description": "5yrs old Tsipouro, Lime & Thyme Cordial",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "manifesto.jpg"
         },
         {
           "name": "SUNSHINE",
           "description": "Skinos (mastic liquer), Thyme & Basil Cordial, Fresh Lime Juice",
-          "price": "9.00€",
+          "price": "10.00€",
           "image": "sunshine.jpg"
         },
         {
           "name": "TATTOO",
           "description": "Sailor Jerry Rum, Orange Liquer, Cinammon, Honey, Tonka & Chilli",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "HOT n JUICY",
@@ -269,67 +269,67 @@
         {
           "name": "APEROL SPRITZ",
           "description": "Aperol, Prosecco, Orange Twist, Soda",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "APPLE MARTINI",
           "description": "Vodka, Apple Liquer, Sugar Syrup",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "CAIPIRINHA",
           "description": "Cachaca, Black Sugar, Lime",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "COSMOPOLITAN",
           "description": "Vodka, Cranberry Juice, Orange Liquer, Lime Juice",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "DAIQUIRI",
           "description": "White Rum, Sugar Syrup, Lime Juice",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "DRY MARTINI",
           "description": "Gin, Dry Vermouth, Brine, Olives",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "MAI TAI",
           "description": "Black & White Rum, Orgeat Syrup, Orange Liqueur, Lime Juice",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "MANHATTAN",
           "description": "Bourbon Vermouth, Angostura Bitter, Maraskino",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "MARGARITA",
           "description": "Tequila, Orange Liquer, Lime Juice",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "MOJITO",
           "description": "White Rum, Black Sugar, Lime, Mint, Soda",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "NEGRONI",
           "description": "Gin, Campari, Vermouth, Orange Bitter",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "OLD FASHIONED",
           "description": "Bourbon, Sugar, Orange Slices, Bitters, Maraskino",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "SMOKED PALOMA",
           "description": "Tequila, Grapefruit, Lemon Juice, Soda",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "ZOMBIE",
@@ -339,27 +339,27 @@
         {
           "name": "BRAMBLE",
           "description": "London's dry Gin 'married' with Lime and Velvet Blueberry Cream",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "PINA COLADA",
           "description": "White Rum, Coconut Cream, Pineapple Juice",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "SEX ON THE BEACH",
           "description": "Vodka, Cranberry Juice, Orange Liquer, Lime Juice",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "B52",
           "description": "Baileys Irish Cream, Kahlua, Grand Marnier",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "CUBA LIBRE",
           "description": "White Rum, Cola, Lime",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "LONG ISLAND (ICE TEA)",
