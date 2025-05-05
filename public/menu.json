@@ -19,17 +19,17 @@
         {
           "name": "Caesar Salad - Chicken & Bacon",
           "description": "Salad with chicken, bacon and homemade caesar dressing.",
-          "price": "7.00€"
+          "price": "8.00€"
         },
         {
           "name": "Tuna Salad",
           "description": "Salad with Tuna",
-          "price": "7.00€"
+          "price": "8.00€"
         },
         {
           "name": "Greek Salad",
           "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil",
-          "price": "7.00€",
+          "price": "8.00€",
           "label": "Vegetarian"
         },
         {
@@ -42,7 +42,7 @@
         {
           "name": "Tortillas",
           "description": "Edam, Lettuce, Tomato, Mayonnaise",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Toast",
@@ -269,7 +269,7 @@
         {
           "name": "APEROL SPRITZ",
           "description": "Aperol, Prosecco, Orange Twist, Soda",
-          "price": "10.00€"
+          "price": "9.00€"
         },
         {
           "name": "APPLE MARTINI",
@@ -334,7 +334,7 @@
         {
           "name": "ZOMBIE",
           "description": "White 5yrs & 7yrs Rum, Orange Liqueur, Lime & Pineapple Juice",
-          "price": "10.00€"
+          "price": "12.00€"
         },
         {
           "name": "BRAMBLE",
@@ -364,7 +364,7 @@
         {
           "name": "LONG ISLAND (ICE TEA)",
           "description": "White rum, Tequila, Vodka, Gin, Lemon Juice, Triple Sec (& Coca Cola)",
-          "price": "10.00€"
+          "price": "12.00€"
         }
       ]
     },
@@ -373,35 +373,35 @@
       "items": [
         {
           "name": "MOJITO VIRGIN",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "PALOMA VIRGIN",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "TROPICAL PASSION",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "GINGERADE",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "MANGO",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "GREEN APPLE",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "STRAWBERRY",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Tanqueray 0.0% & Tonic",
-          "price": "6.00€",
+          "price": "7.00€",
           "description": "The great taste of Tanqueray, without alcohol."
         }
       ]
@@ -418,22 +418,22 @@
         {
           "name": "Chocolate Souffle",
           "description": "Truffle centre and wicked dark chocolate flavour",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Chocolate Souffle with Ice Cream",
           "description": "Decadent chocolate souffle paired with creamy ice cream",
-          "price": "7.00€"
+          "price": "8.00€"
         },
         {
           "name": "Orange Pie",
           "description": "Vibrant and refreshing orange flavor",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Orange Pie with Ice Cream",
           "description": "Zesty orange pie paired with creamy ice cream",
-          "price": "7.00€"
+          "price": "8.00€"
         },
         {
           "name": "Fruit Salad",
@@ -459,15 +459,15 @@
         },
         {
           "name": "Instant Hot Nestle",
-          "price": "3.00€"
+          "price": "3.50€"
         },
         {
           "name": "Instant Cold Nestle",
-          "price": "3.00€"
+          "price": "3.50€"
         },
         {
           "name": "Instant with Vanilla Ice Cream",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Espresso",
@@ -504,7 +504,7 @@
         {
           "name": "Milkshake",
           "description": "Vanilla, Chocolate, Strawberry, Banana, Pistachio",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Sorbet",
@@ -570,39 +570,39 @@
       "items": [
         {
           "name": "Amstel (330ml)",
-          "price": "4.00€"
-        },
-        {
-          "name": "Amstel Radler (330ml)",
-          "price": "4.00€"
-        },
-        {
-          "name": "Heineken (330ml)",
-          "price": "4.00€"
-        },
-        {
-          "name": "Heineken free (330ml)",
-          "price": "4.00€"
-        },
-        {
-          "name": "Corona (330ml)",
           "price": "5.00€"
         },
         {
-          "name": "Πλάστιγγα Urban (500ml)",
+          "name": "Amstel Radler (330ml)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Heineken (330ml)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Heineken free (330ml)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Corona (330ml)",
           "price": "6.00€"
+        },
+        {
+          "name": "Πλάστιγγα Urban (500ml)",
+          "price": "7.00€"
         },
         {
           "name": "Πλάστιγγα Weiss (500ml)",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Murphy's Irish (500ml)",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Guiness Irish (440ml)",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Warsteiner Brauerei Premium (600ml)",
@@ -610,23 +610,23 @@
         },
         {
           "name": "Kaiser Draft 330ml",
-          "price": "4.00€"
+          "price": "5.00€"
         },
         {
           "name": "Kaiser Draft 500ml",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Carlsberg Draft 330ml",
-          "price": "4.00€"
+          "price": "5.00€"
         },
         {
           "name": "Carlsberg Draft 500ml",
-          "price": "6.00€"
+          "price": "7.00€"
         },
         {
           "name": "Cider (Μηλίτης) Μηλοκλέφτης 330ml",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Vivlia Hora White Glass (150ml)",
@@ -823,6 +823,11 @@
           "name": "Jameson 40% 60ml",
           "description": "Irish",
           "price": "7.00€"
+        },
+        {
+          "name": "Jameson black barel 40% 60ml",
+          "description": "Irish",
+          "price": "9.00€"
         },
         {
           "name": "Jim Beam 40% 60ml",
@@ -1338,7 +1343,7 @@
       "items": [
         {
           "name": "Gordons Space",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Red Bull",
@@ -1346,11 +1351,11 @@
         },
         {
           "name": "Bacardi Breezer (Watermelon)",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Cider (Μιλήτης)",
-          "price": "5.00€"
+          "price": "6.00€"
         },
         {
           "name": "Pink Grapefruit Soda",
@@ -1363,15 +1368,15 @@
       "items": [
         {
           "name": "Thessaliko 50ml",
-          "price": "6.00€"
+          "price": "5.00€"
         },
         {
           "name": "Idoniko 50ml",
-          "price": "6.00€"
+          "price": "5.00€"
         },
         {
           "name": "Dekaraki 60ml",
-          "price": "6.00€"
+          "price": "5.00€"
         },
         {
           "name": "Manifesto",
