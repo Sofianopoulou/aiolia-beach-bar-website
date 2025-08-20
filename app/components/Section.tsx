@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Section as SectionType } from "../types/types";
-import { Flex } from "@radix-ui/themes";
+import { Flex, Box } from "@radix-ui/themes";
 import MenuItem from "./MenuItem";
 import { useTranslation } from "react-i18next";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Text } from "./ui/Text";
 
 interface SectionProps {
   section: SectionType;
@@ -17,20 +19,31 @@ const Section: React.FC<SectionProps> = ({ section }) => {
   };
 
   return (
-    <div
-      className={`mb-5 bg-white rounded-lg shadow-md transition-colors cursor-pointer ${
-        isOpen ? "bg-white" : ""
-      }`}
-      onClick={toggleSection}
-    >
-      <Flex className="flex justify-between items-center p-4 bg-[#fa994f] rounded-t-lg">
-        <div className="flex flex-col items-start">
-          <h2 className="text-white font-bold">{t(section.name)}</h2>
-          <p className="text-white text-sm font-bold">
+    <Box className="mb-5 rounded-lg shadow-md transition-colors cursor-pointer">
+      <Flex
+        justify="between"
+        align="center"
+        px="4"
+        py="3"
+        className="rounded-t-lg"
+        style={{ backgroundColor: "var(--accent-9)" }}
+        onClick={toggleSection}
+      >
+        <Flex direction="column" align="start">
+          <Text size="3" weight="bold" className="text-white">
+            {t(section.name)}
+          </Text>
+          <Text size="2" weight="bold" className="text-white">
             {t(section.description)}
-          </p>
-        </div>
-        <span className="text-white text-lg">{isOpen ? "▲" : "▼"}</span>
+          </Text>
+        </Flex>
+        <Flex justify="end" className="ml-auto">
+          {isOpen ? (
+            <ChevronUpIcon className="h-5 w-5 text-white" />
+          ) : (
+            <ChevronDownIcon className="h-5 w-5 text-white" />
+          )}
+        </Flex>
       </Flex>
 
       {section.labelImage && (
@@ -38,17 +51,18 @@ const Section: React.FC<SectionProps> = ({ section }) => {
           src={section.labelImage}
           alt={`${section.name} label`}
           className="w-full h-auto object-cover rounded-b-lg"
+          onClick={toggleSection}
         />
       )}
 
       {isOpen && (
-        <div className="p-4">
+        <Box px="4" py="3">
           {section.items.map((item, index) => (
             <MenuItem key={index} item={item} />
           ))}
-        </div>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 

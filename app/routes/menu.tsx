@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Section from "~/components/Section";
 import { MenuData } from "../types/types";
-import LoadingScreen from "~/components/LoadingScreen";
 
 const MenuPage: React.FC = () => {
   const [data, setData] = useState<MenuData | null>(null);
@@ -33,7 +32,7 @@ const MenuPage: React.FC = () => {
   if (!data) return <p>No data available</p>;
 
   return (
-    <div className="p-5 bg-gray-100">
+    <div className="p-5">
       {data.sections.map((section, index) => (
         <Section key={index} section={section} />
       ))}

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.radix-themes {
+  --my-brand-color: #fa994f;
+  --orange-9: var(--my-brand-color);
+  --orange-a9: var(--my-brand-color);
+}

@@ -1,159 +1,133 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "@remix-run/react";
-import { Button, Flex } from "@radix-ui/themes";
-import logo from "../assets/logo.png";
+import { Flex, Box } from "@radix-ui/themes";
+import logo from "../assets/logo-transparent.png";
 import { ProgressBar } from "./ProgressBar";
 import { useTranslation } from "react-i18next";
+import { Button } from "./ui/Button";
+import { Text } from "./ui/Text";
+import { Bars3Icon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@radix-ui/react-popover";
 
 export default function AppHeader() {
-  let { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isLanguageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [isMobileLanguageMenuOpen, setMobileLanguageMenuOpen] = useState(false);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const hamburgerRef = useRef<HTMLButtonElement>(null);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const toggleLanguageMenu = () => {
-    setLanguageMenuOpen(!isLanguageMenuOpen);
-  };
-
-  const toggleMobileLanguageMenu = () => {
-    setMobileLanguageMenuOpen(!isMobileLanguageMenuOpen);
-  };
+  const [isPopoverOpen, setPopoverOpen] = useState(false);
 
   const changeLanguage = async (lang: string) => {
-    console.log(`Attempting to change language to: ${lang}`);
     i18n.changeLanguage(lang);
-    setLanguageMenuOpen(false); // Close the desktop dropdown
-    setMobileLanguageMenuOpen(false); // Close the mobile dropdown
     setMobileMenuOpen(false); // Close the mobile menu
   };
 
+  const handleLanguageChange = (lang: string) => {
+    changeLanguage(lang);
+    setPopoverOpen(false); // Close the popover
+  };
+
   return (
-    <Header>
+    <Box className="fixed top-0 left-0 w-full z-50 bg-[var(--color-background)] text-[var(--color-text)]">
       <ProgressBar />
-      <Flex className="w-full flex justify-between items-center px-4 py-3">
-        <Link to="/" className="logo">
+      <Flex justify="between" align="center" px="3" py="3">
+        <Link to="/" className="logo flex-shrink-0">
           <img src={logo} alt="Aiolia Beach Bar Logo" className="h-12" />
         </Link>
-        <Flex className="hidden md:flex gap-4 items-center">
-          <Button
-            asChild
-            className="bg-white text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] transition hover:bg-opacity-20 hover:scale-105"
-          >
-            <Link to="/reservations">{t("Reservations")}</Link>
-          </Button>
-          <Button
-            asChild
-            className="bg-white text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] transition hover:bg-opacity-20 hover:scale-105"
-          >
-            <Link to="/menu">{t("Menu")}</Link>
-          </Button>
-
-          {/* Desktop Language Dropdown */}
-          <div className="relative">
-            <Button
-              className="bg-white text-[#fa994f] font-bold py-2 px-4 rounded-full border-2 border-[#fa994f] hover:bg-opacity-20 hover:scale-105 transition flex items-center gap-2"
-              onClick={toggleLanguageMenu}
-            >
-              {i18n.language === "en" ? t("English") : t("Greek")}{" "}
-              {/* Dynamic label */}
-              <span>{isLanguageMenuOpen ? "▲" : "▼"}</span>
+        <Flex gap="2" align="center" className="ml-auto">
+          <Flex gap="2" display={{ initial: "none", md: "flex" }}>
+            <Button radius="full" size="3" variant="outline">
+              <Link to="/reservations">
+                <Text className="text-[#fa994f] font-bold">
+                  {t("Reservations")}
+                </Text>
+              </Link>
             </Button>
-            {isLanguageMenuOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white border-2 border-[#fa994f] rounded-lg shadow-lg z-10">
-                <Button
-                  className="block w-full text-left py-2 px-4 hover:bg-[#fa994f] hover:text-white transition"
-                  onClick={() => changeLanguage("en")}
-                >
-                  {t("English")}
+            <Button radius="full" size="3" variant="outline">
+              <Link to="/menu">
+                <Text className="text-[#fa994f] font-bold">{t("Menu")}</Text>
+              </Link>
+            </Button>
+            <Popover open={isPopoverOpen} onOpenChange={setPopoverOpen}>
+              <PopoverTrigger asChild>
+                <Button radius="full" size="3" variant="outline">
+                  <Text className="text-[#fa994f] font-bold">
+                    {i18n.language === "en" ? t("English") : t("Greek")}
+                  </Text>
+                  <ChevronDownIcon className="h-5 w-5 text-[#fa994f]" />
                 </Button>
-                <Button
-                  className="block w-full text-left py-2 px-4 hover:bg-[#fa994f] hover:text-white transition"
-                  onClick={() => changeLanguage("el")}
-                >
-                  {t("Greek")}
-                </Button>
-              </div>
-            )}
-          </div>
+              </PopoverTrigger>
+              <PopoverContent className="bg-white p-4 shadow-md rounded-md">
+                <Flex direction="column" gap="2">
+                  <Button
+                    radius="full"
+                    size="2"
+                    variant="outline"
+                    onClick={() => handleLanguageChange("en")}
+                  >
+                    <Text className="text-[#fa994f] font-bold">English</Text>
+                  </Button>
+                  <Button
+                    radius="full"
+                    size="2"
+                    variant="outline"
+                    onClick={() => handleLanguageChange("el")}
+                  >
+                    <Text className="text-[#fa994f] font-bold">Greek</Text>
+                  </Button>
+                </Flex>
+              </PopoverContent>
+            </Popover>
+          </Flex>
+          <Flex gap="2" display={{ initial: "flex", md: "none" }}>
+            <Popover>
+              <PopoverTrigger>
+                <Bars3Icon className="h-7 w-7 text-[#fa994f]" />
+              </PopoverTrigger>
+              <PopoverContent className="bg-white p-4 shadow-md rounded-md">
+                <Flex direction="column" gap="2" align="stretch">
+                  <Button
+                    size="3"
+                    variant="outline"
+                    className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold hover:opacity-90"
+                  >
+                    <Link to="/reservations" className="w-full text-center">
+                      <Text className="text-[#fa994f] font-bold">
+                        {t("Reservations")}
+                      </Text>
+                    </Link>
+                  </Button>
+                  <Button
+                    size="3"
+                    variant="outline"
+                    className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold hover:opacity-90"
+                  >
+                    <Link to="/menu" className="w-full text-center">
+                      <Text className="text-[#fa994f] font-bold">
+                        {t("Menu")}
+                      </Text>
+                    </Link>
+                  </Button>
+                  <Button
+                    size="3"
+                    variant="outline"
+                    className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold hover:opacity-90"
+                    onClick={() =>
+                      changeLanguage(i18n.language === "en" ? "el" : "en")
+                    }
+                  >
+                    <Text className="text-[#fa994f] font-bold">
+                      {i18n.language === "en" ? t("Greek") : t("English")}
+                    </Text>
+                  </Button>
+                </Flex>
+              </PopoverContent>
+            </Popover>
+          </Flex>
         </Flex>
-
-        {/* Mobile Menu Button */}
-        <Button
-          className="block md:hidden text-[#fa994f] text-3xl"
-          onClick={toggleMobileMenu}
-        >
-          &#9776;
-        </Button>
       </Flex>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <Flex
-          ref={mobileMenuRef}
-          className="absolute top-14 left-0 right-0 bg-white flex flex-col items-center py-4 shadow-md"
-        >
-          <Button
-            asChild
-            className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
-            onClick={toggleMobileMenu}
-          >
-            <Link to="/reservations">{t("Reservations")}</Link>
-          </Button>
-          <Button
-            asChild
-            className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold"
-            onClick={toggleMobileMenu}
-          >
-            <Link to="/menu">{t("Menu")}</Link>
-          </Button>
-
-          {/* Mobile Language Dropdown */}
-          <div className="relative w-full text-center">
-            <Button
-              className="w-full text-center py-4 border-2 border-[#fa994f] rounded-lg mb-2 text-[#fa994f] font-bold flex items-center justify-center"
-              onClick={toggleMobileLanguageMenu}
-            >
-              {i18n.language === "en" ? t("English") : t("Greek")}{" "}
-              <span>{isMobileLanguageMenuOpen ? "▲" : "▼"}</span>
-            </Button>
-            {isMobileLanguageMenuOpen && (
-              <div className="absolute w-full bg-white border-2 border-[#fa994f] rounded-lg shadow-lg z-10">
-                <Button
-                  className="block w-full text-center py-2 px-4 hover:bg-[#fa994f] hover:text-white transition"
-                  onClick={() => changeLanguage("en")}
-                >
-                  {t("English")}
-                </Button>
-                <Button
-                  className="block w-full text-center py-2 px-4 hover:bg-[#fa994f] hover:text-white transition"
-                  onClick={() => changeLanguage("el")}
-                >
-                  {t("Greek")}
-                </Button>
-              </div>
-            )}
-          </div>
-        </Flex>
-      )}
-    </Header>
-  );
-}
-
-interface HeaderProps {
-  children: React.ReactNode;
-}
-
-export function Header({ children }: HeaderProps) {
-  return (
-    <div className="fixed top-0 left-0 w-full flex flex-col bg-white shadow-lg z-10">
-      {children}
-    </div>
+    </Box>
   );
 }

@@ -18,6 +18,8 @@ import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
 
 import { useLoaderData } from "@remix-run/react";
+import { Theme, ThemePanel } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 
 export async function loader({ request }: any) {
   let locale = await i18next.getLocale(request);
@@ -57,13 +59,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <AppHeader />
-        <div className="pt-20">
-          <Outlet />
-        </div>
-        <Footer />
-        <ScrollRestoration />
-        <Scripts />
+        <Theme accentColor="orange" panelBackground="translucent">
+          <ThemePanel />
+          <AppHeader />
+          <div className="pt-20">
+            <Outlet />
+          </div>
+          <Footer />
+          <ScrollRestoration />
+          <Scripts />
+        </Theme>
       </body>
     </html>
   );
