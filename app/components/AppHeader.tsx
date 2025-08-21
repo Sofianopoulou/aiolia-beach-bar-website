@@ -6,12 +6,18 @@ import { ProgressBar } from "./ProgressBar";
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/Button";
 import { Text } from "./ui/Text";
-import { Bars3Icon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  CheckIcon,
+  ChevronDownIcon,
+  GlobeAltIcon,
+} from "@heroicons/react/24/outline";
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from "@radix-ui/react-popover";
+import { Select } from "./ui/Select";
 
 export default function AppHeader() {
   const { t, i18n } = useTranslation();
@@ -50,36 +56,24 @@ export default function AppHeader() {
                 <Text className="text-[#fa994f] font-bold">{t("Menu")}</Text>
               </Link>
             </Button>
-            <Popover open={isPopoverOpen} onOpenChange={setPopoverOpen}>
-              <PopoverTrigger asChild>
-                <Button radius="full" size="3" variant="outline">
+            <Select.Root
+              size="3"
+              value={i18n.language}
+              onValueChange={(lng) => changeLanguage(lng)}
+            >
+              <Select.Trigger radius="full">
+                <Flex as="span" align="center" gap="2">
+                  <GlobeAltIcon className="h-5 w-5 text-[#fa994f]" />
                   <Text className="text-[#fa994f] font-bold">
                     {i18n.language === "en" ? t("English") : t("Greek")}
                   </Text>
-                  <ChevronDownIcon className="h-5 w-5 text-[#fa994f]" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="bg-white p-4 shadow-md rounded-md">
-                <Flex direction="column" gap="2">
-                  <Button
-                    radius="full"
-                    size="2"
-                    variant="outline"
-                    onClick={() => handleLanguageChange("en")}
-                  >
-                    <Text className="text-[#fa994f] font-bold">English</Text>
-                  </Button>
-                  <Button
-                    radius="full"
-                    size="2"
-                    variant="outline"
-                    onClick={() => handleLanguageChange("el")}
-                  >
-                    <Text className="text-[#fa994f] font-bold">Greek</Text>
-                  </Button>
                 </Flex>
-              </PopoverContent>
-            </Popover>
+              </Select.Trigger>
+              <Select.Content position="popper" sideOffset={5}>
+                <Select.Item value="en">{t("English")}</Select.Item>
+                <Select.Item value="el">{t("Greek")}</Select.Item>
+              </Select.Content>
+            </Select.Root>
           </Flex>
           <Flex gap="2" display={{ initial: "flex", md: "none" }}>
             <Popover>
@@ -88,40 +82,59 @@ export default function AppHeader() {
               </PopoverTrigger>
               <PopoverContent className="bg-white p-4 shadow-md rounded-md">
                 <Flex direction="column" gap="2" align="stretch">
-                  <Button
-                    size="3"
-                    variant="outline"
-                    className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold hover:opacity-90"
-                  >
+                  <Button size="3" variant="outline">
                     <Link to="/reservations" className="w-full text-center">
                       <Text className="text-[#fa994f] font-bold">
                         {t("Reservations")}
                       </Text>
                     </Link>
                   </Button>
-                  <Button
-                    size="3"
-                    variant="outline"
-                    className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold hover:opacity-90"
-                  >
+                  <Button size="3" variant="outline">
                     <Link to="/menu" className="w-full text-center">
                       <Text className="text-[#fa994f] font-bold">
                         {t("Menu")}
                       </Text>
                     </Link>
                   </Button>
-                  <Button
-                    size="3"
-                    variant="outline"
-                    className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold hover:opacity-90"
-                    onClick={() =>
-                      changeLanguage(i18n.language === "en" ? "el" : "en")
-                    }
-                  >
-                    <Text className="text-[#fa994f] font-bold">
-                      {i18n.language === "en" ? t("Greek") : t("English")}
-                    </Text>
-                  </Button>
+                  <Popover>
+                    <PopoverTrigger>
+                      <Button size="3" variant="outline">
+                        <GlobeAltIcon className="h-5 w-5 text-[#fa994f]" />
+                        <Text className="text-[#fa994f] font-bold">
+                          {i18n.language === "el" ? t("Greek") : t("English")}
+                        </Text>
+                        <ChevronDownIcon className="h-4 w- 4text-[#fa994f]" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="bg-white p-4 shadow-md rounded-md">
+                      <Flex direction="column" gap="2" align="stretch">
+                        <Button
+                          size="3"
+                          variant="outline"
+                          onClick={() => changeLanguage("el")}
+                        >
+                          {i18n.language === "el" && (
+                            <CheckIcon className="h-4 w-4 text-[#fa994f] " />
+                          )}
+                          <Text className="text-[#fa994f] font-bold">
+                            {t("Greek")}
+                          </Text>
+                        </Button>
+                        <Button
+                          size="3"
+                          variant="outline"
+                          onClick={() => changeLanguage("en")}
+                        >
+                          {i18n.language === "en" && (
+                            <CheckIcon className="h-4 w-4 text-[#fa994f] " />
+                          )}
+                          <Text className="text-[#fa994f] font-bold">
+                            {t("English")}
+                          </Text>
+                        </Button>
+                      </Flex>
+                    </PopoverContent>
+                  </Popover>
                 </Flex>
               </PopoverContent>
             </Popover>
