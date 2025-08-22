@@ -23,16 +23,10 @@ export default function AppHeader() {
   const { t, i18n } = useTranslation();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isPopoverOpen, setPopoverOpen] = useState(false);
 
   const changeLanguage = async (lang: string) => {
     i18n.changeLanguage(lang);
-    setMobileMenuOpen(false); // Close the mobile menu
-  };
-
-  const handleLanguageChange = (lang: string) => {
-    changeLanguage(lang);
-    setPopoverOpen(false); // Close the popover
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -46,14 +40,14 @@ export default function AppHeader() {
           <Flex gap="2" display={{ initial: "none", md: "flex" }}>
             <Button radius="full" size="3" variant="outline">
               <Link to="/reservations">
-                <Text className="text-[#fa994f] font-bold">
+                <Text className="text-[--accent] font-bold">
                   {t("Reservations")}
                 </Text>
               </Link>
             </Button>
             <Button radius="full" size="3" variant="outline">
               <Link to="/menu">
-                <Text className="text-[#fa994f] font-bold">{t("Menu")}</Text>
+                <Text className="text-[--accent]  font-bold">{t("Menu")}</Text>
               </Link>
             </Button>
             <Select.Root
@@ -63,8 +57,8 @@ export default function AppHeader() {
             >
               <Select.Trigger radius="full">
                 <Flex as="span" align="center" gap="2">
-                  <GlobeAltIcon className="h-5 w-5 text-[#fa994f]" />
-                  <Text className="text-[#fa994f] font-bold">
+                  <GlobeAltIcon className="h-5 w-5 text-[--accent] " />
+                  <Text className="text-[--accent]  font-bold">
                     {i18n.language === "en" ? t("English") : t("Greek")}
                   </Text>
                 </Flex>
@@ -76,22 +70,37 @@ export default function AppHeader() {
             </Select.Root>
           </Flex>
           <Flex gap="2" display={{ initial: "flex", md: "none" }}>
-            <Popover>
+            <Popover open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <PopoverTrigger>
-                <Bars3Icon className="h-7 w-7 text-[#fa994f]" />
+                <Bars3Icon
+                  className="h-7 w-7 text-[var(--accent)]"
+                  onClick={() => setMobileMenuOpen(true)}
+                />
               </PopoverTrigger>
-              <PopoverContent className="bg-white p-4 shadow-md rounded-md">
+              <PopoverContent className="p-4 shadow-md rounded-md z-50 bg-[var(--color-background)] text-[var(--color-text)]">
                 <Flex direction="column" gap="2" align="stretch">
-                  <Button size="3" variant="outline">
+                  <Button
+                    size="3"
+                    variant="outline"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                    }}
+                  >
                     <Link to="/reservations" className="w-full text-center">
-                      <Text className="text-[#fa994f] font-bold">
+                      <Text className="text-[--accent]  font-bold">
                         {t("Reservations")}
                       </Text>
                     </Link>
                   </Button>
-                  <Button size="3" variant="outline">
+                  <Button
+                    size="3"
+                    variant="outline"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                    }}
+                  >
                     <Link to="/menu" className="w-full text-center">
-                      <Text className="text-[#fa994f] font-bold">
+                      <Text className="text-[--accent]  font-bold">
                         {t("Menu")}
                       </Text>
                     </Link>
@@ -99,36 +108,42 @@ export default function AppHeader() {
                   <Popover>
                     <PopoverTrigger>
                       <Button size="3" variant="outline">
-                        <GlobeAltIcon className="h-5 w-5 text-[#fa994f]" />
-                        <Text className="text-[#fa994f] font-bold">
+                        <GlobeAltIcon className="h-5 w-5 text-[var(--accent)]" />
+                        <Text className="text-[--accent]  font-bold">
                           {i18n.language === "el" ? t("Greek") : t("English")}
                         </Text>
-                        <ChevronDownIcon className="h-4 w- 4text-[#fa994f]" />
+                        <ChevronDownIcon className="h-4 w-4 text-[var(--accent)]" />
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="bg-white p-4 shadow-md rounded-md">
+                    <PopoverContent className="p-4 shadow-md rounded-md z-50 bg-[var(--color-background)] text-[var(--color-text)]">
                       <Flex direction="column" gap="2" align="stretch">
                         <Button
                           size="3"
                           variant="outline"
-                          onClick={() => changeLanguage("el")}
+                          onClick={() => {
+                            changeLanguage("el");
+                            setMobileMenuOpen(false);
+                          }}
                         >
                           {i18n.language === "el" && (
-                            <CheckIcon className="h-4 w-4 text-[#fa994f] " />
+                            <CheckIcon className="h-4 w-4 text-[var(--accent)]" />
                           )}
-                          <Text className="text-[#fa994f] font-bold">
+                          <Text className="text-[--accent]  font-bold">
                             {t("Greek")}
                           </Text>
                         </Button>
                         <Button
                           size="3"
                           variant="outline"
-                          onClick={() => changeLanguage("en")}
+                          onClick={() => {
+                            changeLanguage("en");
+                            setMobileMenuOpen(false);
+                          }}
                         >
                           {i18n.language === "en" && (
-                            <CheckIcon className="h-4 w-4 text-[#fa994f] " />
+                            <CheckIcon className="h-4 w-4 text-[var(--accent)] " />
                           )}
-                          <Text className="text-[#fa994f] font-bold">
+                          <Text className="text-[--accent] font-bold">
                             {t("English")}
                           </Text>
                         </Button>

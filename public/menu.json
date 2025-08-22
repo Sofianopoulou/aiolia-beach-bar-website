@@ -180,7 +180,7 @@
     },
     {
       "name": "COCKTAILS - OUR SIGNATURES",
-      "description": "Seasonal ingredients compined for palate satisfaction",
+      "description": "Seasonal ingredients combined for palate satisfaction",
       "labelImage": "signature-cocktails-cropped.jpg",
       "items": [
         {
@@ -203,7 +203,7 @@
         },
         {
           "name": "ELEMENT",
-          "description": "Gin, Orange Liquer, Green Apple Syrup, Ginger Syrup",
+          "description": "Gin, Orange Liqueur, Green Apple Syrup, Ginger Syrup",
           "price": "10.00€",
           "image": "element.jpg"
         },
@@ -215,19 +215,19 @@
         },
         {
           "name": "DOUBLE PASSION",
-          "description": "Vodka, Passion Fruit Liquer & Vanilla Syrup",
+          "description": "Vodka, Passion Fruit Liqueur & Vanilla Syrup",
           "price": "10.00€",
           "image": "double-passion.jpg"
         },
         {
           "name": "CALIMTE",
-          "description": "Tequila, Litsi Liquer, Coconut Syrup, Lime Juice, Black Salt",
+          "description": "Tequila, Litsi Liqueur, Coconut Syrup, Lime Juice, Black Salt",
           "price": "10.00€",
           "image": "calimte.jpg"
         },
         {
           "name": "MASTIC HUG",
-          "description": "Skinos (mastic liquer), Ibiscus Cordial",
+          "description": "Skinos (mastic liqueur), Ibiscus Cordial",
           "price": "10.00€",
           "image": "mastic-hug.jpg"
         },
@@ -239,18 +239,18 @@
         },
         {
           "name": "SUNSHINE",
-          "description": "Skinos (mastic liquer), Thyme & Basil Cordial, Fresh Lime Juice",
+          "description": "Skinos (mastic liqueur), Thyme & Basil Cordial, Fresh Lime Juice",
           "price": "10.00€",
           "image": "sunshine.jpg"
         },
         {
           "name": "TATTOO",
-          "description": "Sailor Jerry Rum, Orange Liquer, Cinammon, Honey, Tonka & Chilli",
+          "description": "Sailor Jerry Rum, Orange Liqueur, Cinnamon, Honey, Tonka & Chilli",
           "price": "10.00€"
         },
         {
           "name": "HOT n JUICY",
-          "description": "An excuisite cocktail, that is different on every sip, tequila, orange liquier, chilli, pineapple.",
+          "description": "An exquisite cocktail, that is different on every sip, tequila, orange liquier, chilli, pineapple.",
           "price": "10.00€",
           "image": "hot-n-juicy.jpg"
         },
@@ -273,7 +273,7 @@
         },
         {
           "name": "APPLE MARTINI",
-          "description": "Vodka, Apple Liquer, Sugar Syrup",
+          "description": "Vodka, Apple Liqueur, Sugar Syrup",
           "price": "10.00€"
         },
         {
@@ -283,7 +283,7 @@
         },
         {
           "name": "COSMOPOLITAN",
-          "description": "Vodka, Cranberry Juice, Orange Liquer, Lime Juice",
+          "description": "Vodka, Cranberry Juice, Orange Liqueur, Lime Juice",
           "price": "10.00€"
         },
         {
@@ -308,7 +308,7 @@
         },
         {
           "name": "MARGARITA",
-          "description": "Tequila, Orange Liquer, Lime Juice",
+          "description": "Tequila, Orange Liqueur, Lime Juice",
           "price": "10.00€"
         },
         {
@@ -348,7 +348,7 @@
         },
         {
           "name": "SEX ON THE BEACH",
-          "description": "Vodka, Cranberry Juice, Orange Liquer, Lime Juice",
+          "description": "Vodka, Cranberry Juice, Orange Liqueur, Lime Juice",
           "price": "10.00€"
         },
         {

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --accent: #fa994f;
+}
+
 .radix-themes {
   --my-brand-color: #fa994f;
   --orange-9: var(--my-brand-color);
