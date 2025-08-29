@@ -37,6 +37,7 @@ export let handle = {
   // or if you did not set one, set it to the i18next default namespace "translation"
   i18n: "common",
 };
+import { SpeedInsights } from "@vercel/speed-insights/remix";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   let data = useLoaderData<typeof loader>();
@@ -59,6 +60,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <SpeedInsights />
         <Theme accentColor="orange" panelBackground="translucent">
           {/* <ThemePanel /> */}
           <AppHeader />

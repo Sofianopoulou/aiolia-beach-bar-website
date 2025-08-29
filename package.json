@@ -16,6 +16,7 @@
     "@remix-run/node": "^2.11.2",
     "@remix-run/react": "^2.11.2",
     "@remix-run/serve": "^2.11.2",
+    "@vercel/speed-insights": "^1.2.0",
     "dotenv": "^16.4.5",
     "framer-motion": "^12.23.12",
     "i18next": "^23.16.8",
