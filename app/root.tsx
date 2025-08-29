@@ -60,7 +60,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Theme accentColor="orange" panelBackground="translucent">
-          <ThemePanel />
+          {/* <ThemePanel /> */}
           <AppHeader />
           <div className="pt-20">
             <Outlet />
