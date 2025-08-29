@@ -2,6 +2,7 @@ import {
   json,
   Links,
   Meta,
+  MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -82,4 +83,18 @@ export default function App() {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
+];
+
+export const meta: MetaFunction = () => [
+  { title: "Aiolia Beach Bar - Your Ultimate Seaside Experience" },
+  {
+    name: "description",
+    content:
+      "Discover Aiolia Beach Bar in Nea Anchialos. Enjoy signature cocktails, gourmet pizzas, and seaside bliss. Perfect for unforgettable moments.",
+  },
+  {
+    name: "keywords",
+    content:
+      "Aiolia Beach Bar, Nea Anchialos, Volos, seaside bar, gourmet pizza, signature cocktails, beach vibes",
+  },
 ];
