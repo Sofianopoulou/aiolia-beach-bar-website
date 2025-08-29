@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import MainCarousel from "~/components/MainCarousel";
+import MainCarousel from "~/components/InteractiveGrid";
 
 export default function Info() {
   const { t } = useTranslation();
