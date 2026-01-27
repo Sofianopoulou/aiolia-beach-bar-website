@@ -10,6 +10,14 @@ import inlogo from "../assets/linkedin.png";
 export default function Footer() {
   const { t } = useTranslation();
 
+  const trackConversion = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17830813564/vyAVCLKDxdcbEPy-srZC",
+      });
+    }
+  };
+
   return (
     <footer className="bg-[#121212] text-[#ecf0f1] py-10 flex justify-center">
       <div className="max-w-screen-xl w-full flex flex-col gap-8">
@@ -24,6 +32,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#f39c12]"
+                onClick={trackConversion}
               >
                 {t("Zarifi 2, Nea Anchialos, Thessalía, Greece, 37400")}
               </a>
@@ -46,12 +55,30 @@ export default function Footer() {
               </a>
             </p>
             <p className="mb-3">
+              ⭐{" "}
+              <a
+                href="https://search.google.com/local/writereview?placeid=ChIJi1gmLb9CpxQRBTAEdeqJHsA&source=g.page.m.ia._&laa=nmx-review-solicitation-ia2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#f39c12]"
+              >
+                {t("Rate us on Google")}
+              </a>
+            </p>
+
+            <p className="mb-3">
               🌊{" "}
               <Link to="/jobs" className="hover:text-[#f39c12]">
                 {t("Job Opportunities")}
               </Link>
             </p>
-            <p className="mb-3">📞 2428077424</p>
+            <a
+              href="tel:+302428077424"
+              className="hover:text-[#f39c12]"
+              onClick={trackConversion}
+            >
+              📞 2428077424
+            </a>
           </div>
 
           {/* Social Media Section */}
