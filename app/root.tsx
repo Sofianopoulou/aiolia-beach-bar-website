@@ -60,6 +60,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
 
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
         {/* Google tag (gtag.js) */}
         <script
           async
