@@ -1,51 +1,44 @@
 import { json, redirect } from "@remix-run/node";
 import { useActionData } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
-import nodemailer from "nodemailer";
+import { sendReservationEmail } from "~/utils/mail.server";
 
-type ActionData = {
-  error?: string;
-};
+type ActionData = { error?: string };
 
 export const action = async ({ request }: any) => {
   const formData = await request.formData();
-  const name = formData.get("name");
-  const date = formData.get("date");
-  const time = formData.get("time");
-  const people = formData.get("people");
-  const tablePreference = formData.get("tablePreference") || "No preference";
-  const comments = formData.get("comments") || "No comments";
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || "465"),
-    secure: true,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
+  const name = String(formData.get("name") ?? "").trim();
+  const date = String(formData.get("date") ?? "").trim();
+  const time = String(formData.get("time") ?? "").trim();
+  const people = String(formData.get("people") ?? "").trim();
+  const tablePreference = String(formData.get("tablePreference") ?? "").trim();
+  const comments = String(formData.get("comments") ?? "").trim();
+
+  if (!name || !date || !time || !people) {
+    return json<ActionData>(
+      { error: "Missing required fields." },
+      { status: 400 }
+    );
+  }
 
   try {
-    await transporter.sendMail({
-      from: `"Aiolia Beach Bar" <${process.env.SMTP_USER}>`,
-      to: "info@aiolia.gr",
-      subject: `New Reservation from ${name}`,
-      html: `
-        <h2>New Reservation</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Time:</strong> ${time}</p>
-        <p><strong>People:</strong> ${people}</p>
-        <p><strong>Table Preference:</strong> ${tablePreference}</p>
-        <p><strong>Comments:</strong> ${comments}</p>
-      `,
+    await sendReservationEmail({
+      name,
+      date,
+      time,
+      people,
+      tablePreference,
+      comments,
     });
 
     return redirect("/reservation-success");
   } catch (error) {
     console.error("Email sending failed:", error);
-    return json({ error: "Failed to send reservation email." }, 500);
+    return json<ActionData>(
+      { error: "Failed to send reservation email." },
+      { status: 500 }
+    );
   }
 };
 
