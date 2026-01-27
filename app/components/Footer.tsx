@@ -77,7 +77,7 @@ export default function Footer() {
               className="hover:text-[#f39c12]"
               onClick={trackConversion}
             >
-              📞 2428077424
+              📞 24280 77424
             </a>
           </div>
 
