@@ -57,13 +57,13 @@
         {
           "name": "Sandwich",
           "description": "Ham, Edam, Lettuce, Tomato - Served in two buns of fermented bread",
-          "price": "3.50€",
+          "price": "5.00€",
           "image": "sandwich.jpg"
         },
         {
           "name": "Chicken Sandwich",
           "description": "Chicken, Ham, Edam, Lettuce, Tomato - Served in two buns of fermented bread",
-          "price": "5.00€",
+          "price": "7.00€",
           "image": "chicken-sandwich.jpg"
         },
         {
@@ -101,13 +101,18 @@
         },
         {
           "name": "Pizza Ham & Bacon",
-          "description": "Tomato, Mozzarella, Gouda, Ham, Bacon",
+          "description": "Tomato, Mozzarella, Ham, Bacon",
           "price": "10.00€"
         },
         {
           "name": "Pizza Chicken",
-          "description": "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon",
-          "price": "10.00€"
+          "description": "Tomato, Mozzarella, Chicken fillets, Ham, Bacon",
+          "price": "12.00€"
+        },
+        {
+          "name": "Pizza Special",
+          "description": "Choose your toppings",
+          "price": "12.00€"
         },
         {
           "name": "Burger Storm 240gr 100% beef",
@@ -159,6 +164,12 @@
           "label": "Vegan"
         },
         {
+          "name": "Country Potatoes",
+          "description": "Air Fried Country Potatoes",
+          "price": "5.00€",
+          "label": "Vegan"
+        },
+        {
           "name": "Pizza Margherita",
           "description": "Tomato, Mozzarella & Basil",
           "price": "8.00€",
@@ -171,10 +182,10 @@
           "label": "Vegetarian"
         },
         {
-          "name": "Country Potatoes",
-          "description": "Air Fried Country Potatoes",
-          "price": "5.00€",
-          "label": "Vegan"
+          "name": "Cheeses Variety",
+          "description": "A mix of local and European produce",
+          "price": "12.00€",
+          "label": "Vegetarian"
         }
       ]
     },

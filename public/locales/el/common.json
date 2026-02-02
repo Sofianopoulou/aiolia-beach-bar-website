@@ -62,9 +62,10 @@
   "Pizza Greek": "Πίτσα Ελληνική",
   "Tomato, Feta, Peppers, Onion, Capers, Olives": "Τομάτα, Φέτα, Πιπεριά, Κρεμμύδι, Κάπαρη, Ελιές",
   "Pizza Ham & Bacon": "Πίτσα Ζαμπόν & Μπέικον",
-  "Tomato, Mozzarella, Gouda, Ham, Bacon": "Τομάτα, Μοτσαρέλα, Γκούντα, Ζαμπόν, Μπέικον",
+  "Tomato, Mozzarella, Ham, Bacon": "Τομάτα, Μοτσαρέλα, Ζαμπόν, Μπέικον",
   "Pizza Chicken": "Πίτσα Κοτόπουλο",
-  "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon": "Τομάτα, Μοτσαρέλα, Γκούντα, Φιλετάκια Κοτόπουλο, Ζαμπόν, Μπέικον",
+  "Pizza Special": "Πίτσα Σπέσιαλ",
+  "Tomato, Mozzarella, Chicken fillets, Ham, Bacon": "Τομάτα, Μοτσαρέλα, Φιλετάκια Κοτόπουλο, Ζαμπόν, Μπέικον",
   "Burger Storm 240gr 100% beef": "Burger Storm 240γρ 100% μοσχάρι",
   "Tomato, Lettuce, Mustard, Burger": "Ντομάτα, Μαρούλι, Μουστάρδα, Μπιφτέκι",
   "Chicken Nuggets (12pcs)": "Κοτομπουκιές (12τμχ)",
@@ -227,5 +228,6 @@
   "Your table will be held for 15 minutes after your reservation time. If you’re running late, feel free to call us on": "Το τραπέζι σας διατηρείται για 15 λεπτά μετά την ώρα της κράτησης. Αν καθυστερήσετε, μπορείτε να μας καλέσετε στο",
   "See you by the sea": "Ραντεβού δίπλα στη θάλασσα",
   "Reserve your spot by the sea.": "Κλείστε τη θέση σας δίπλα στη θάλασσα.",
-  "Your table will be held for 15 minutes after your reservation time. If you’re running late, give us a call — we’ll do our best to help.": "Το τραπέζι σας διατηρείται για 15 λεπτά μετά την ώρα της κράτησης. Αν καθυστερήσετε, καλέστε μας — θα κάνουμε το καλύτερο δυνατό για να βοηθήσουμε."
+  "Your table will be held for 15 minutes after your reservation time. If you’re running late, give us a call — we’ll do our best to help.": "Το τραπέζι σας διατηρείται για 15 λεπτά μετά την ώρα της κράτησης. Αν καθυστερήσετε, καλέστε μας — θα κάνουμε το καλύτερο δυνατό για να βοηθήσουμε.",
+  "Choose your toppings": "Διαλέξτε τα υλικά της επιλογής σας"
 }

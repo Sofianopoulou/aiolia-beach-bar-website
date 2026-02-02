@@ -62,9 +62,10 @@
   "Pizza Greek": "Pizza Greek",
   "Tomato, Feta, Peppers, Onion, Capers, Olives": "Tomato, Feta, Peppers, Onion, Capers, Olives",
   "Pizza Ham & Bacon": "Pizza Ham & Bacon",
-  "Tomato, Mozzarella, Gouda, Ham, Bacon": "Tomato, Mozzarella, Gouda, Ham, Bacon",
+  "Tomato, Mozzarella, Ham, Bacon": "Tomato, Mozzarella, Ham, Bacon",
   "Pizza Chicken": "Pizza Chicken",
-  "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon": "Tomato, Mozzarella, Gouda, Chicken fillets, Ham, Bacon",
+  "Pizza Special": "Pizza Special",
+  "Tomato, Mozzarella, Chicken fillets, Ham, Bacon": "Tomato, Mozzarella, Chicken fillets, Ham, Bacon",
   "Burger Storm 240gr 100% beef": "Burger Storm 240gr 100% beef",
   "Tomato, Lettuce, Mustard, Burger": "Tomato, Lettuce, Mustard, Burger",
   "Chicken Nuggets (12pcs)": "Chicken Nuggets (12pcs)",
@@ -227,5 +228,6 @@
   "Your table will be held for 15 minutes after your reservation time. If you’re running late, feel free to call us on": "Your table will be held for 15 minutes after your reservation time. If you’re running late, feel free to call us on",
   "See you by the sea": "See you by the sea",
   "Reserve your spot by the sea.": "Reserve your spot by the sea.",
-  "Your table will be held for 15 minutes after your reservation time. If you’re running late, give us a call — we’ll do our best to help.": "Your table will be held for 15 minutes after your reservation time. If you’re running late, give us a call — we’ll do our best to help."
+  "Your table will be held for 15 minutes after your reservation time. If you’re running late, give us a call — we’ll do our best to help.": "Your table will be held for 15 minutes after your reservation time. If you’re running late, give us a call — we’ll do our best to help.",
+  "Choose your toppings": "Choose your toppings"
 }
