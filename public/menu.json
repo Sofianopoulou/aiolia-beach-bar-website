@@ -7,46 +7,46 @@
       "items": [
         {
           "name": "Breakfast",
-          "description": "Pose Eggs, Toasted Toast Bread, Bacon",
-          "price": "6.00€"
+          "description": "Breakfast Description",
+          "price": "8.00€"
         },
         {
           "name": "Salad",
-          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil",
+          "description": "Salad Description",
           "price": "6.00€",
           "label": "Vegan"
         },
         {
           "name": "Caesar Salad - Chicken & Bacon",
-          "description": "Salad with chicken, bacon and homemade caesar dressing.",
+          "description": "Caesar Salad Description",
           "price": "8.00€"
         },
         {
           "name": "Tuna Salad",
-          "description": "Salad with Tuna",
+          "description": "Tuna Salad Description",
           "price": "8.00€"
         },
         {
           "name": "Greek Salad",
-          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil",
+          "description": "Greek Salad Description",
           "price": "8.00€",
           "label": "Vegetarian"
         },
         {
           "name": "Ntakos",
-          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive oil, Capers",
+          "description": "Ntakos Description",
           "price": "6.00€",
           "label": "Vegetarian",
           "image": "ntakos.jpg"
         },
         {
           "name": "Tortillas",
-          "description": "Edam, Lettuce, Tomato, Mayonnaise",
+          "description": "Tortillas Description",
           "price": "6.00€"
         },
         {
           "name": "Toast",
-          "description": "Ham, Edam",
+          "description": "Toast Description",
           "price": "3.00€"
         },
         {
@@ -56,24 +56,24 @@
         },
         {
           "name": "Sandwich",
-          "description": "Ham, Edam, Lettuce, Tomato - Served in two buns of fermented bread",
+          "description": "Sandwich Description",
           "price": "5.00€",
           "image": "sandwich.jpg"
         },
         {
           "name": "Chicken Sandwich",
-          "description": "Chicken, Ham, Edam, Lettuce, Tomato - Served in two buns of fermented bread",
+          "description": "Chicken Sandwich Description",
           "price": "7.00€",
           "image": "chicken-sandwich.jpg"
         },
         {
           "name": "Club Sandwich",
-          "description": "Ham, Bacon, Edam, Lettuce, Tomato",
+          "description": "Club Sandwich Description",
           "price": "8.00€"
         },
         {
           "name": "Chicken Club Sandwich",
-          "description": "Chicken, Bacon, Edam, Lettuce, Tomato",
+          "description": "Chicken Club Sandwich Description",
           "price": "10.00€"
         },
         {
@@ -95,42 +95,45 @@
         },
         {
           "name": "Pizza Greek",
-          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives",
+          "description": "Pizza Greek Description",
           "price": "10.00€",
           "label": "Vegetarian"
         },
         {
           "name": "Pizza Ham & Bacon",
-          "description": "Tomato, Mozzarella, Ham, Bacon",
+          "description": "Pizza Ham & Bacon Description",
           "price": "10.00€"
         },
         {
           "name": "Pizza Chicken",
-          "description": "Tomato, Mozzarella, Chicken fillets, Ham, Bacon",
+          "description": "Pizza Chicken Description",
           "price": "12.00€"
         },
         {
           "name": "Pizza Special",
-          "description": "Choose your toppings",
-          "price": "12.00€"
+          "description": "Pizza Special Description",
+          "price": "11.00€"
         },
         {
           "name": "Burger Storm 240gr 100% beef",
-          "description": "Tomato, Lettuce, Mustard, Burger",
+          "description": "Burger Storm Description",
           "price": "10.00€",
           "image": "burger.jpg"
         },
         {
           "name": "Chicken Nuggets (12pcs)",
-          "description": "Tender pieces of chicken fillet with a crispy crust. Served with country-style potatoes, yoghurt dip, pita bread and lime slices",
+          "description": "Chicken Nuggets Description",
           "price": "12.00€",
           "image": "chicken-nuggets.jpg"
         },
         {
           "name": "Soutzoukakia Giaourtlou (6pcs)",
-          "description": "Homemade soutzoukakia with lamb, pork & beef, served with warm pita bread and creamy greek yoghurt.",
+          "description": "Soutzoukakia Description",
           "price": "10.00€",
           "image": "soutzoukakia.jpg"
+        },
+        {
+          "description": "Notice"
         }
       ]
     },
@@ -140,28 +143,22 @@
       "items": [
         {
           "name": "Salad",
-          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil",
+          "description": "Salad Description",
           "price": "6.00€",
           "label": "Vegan"
         },
         {
           "name": "Greek Salad",
-          "description": "Tomato, Feta, Cucumber, Onion, Olives, Peppers, Oregano, Olive Oil",
+          "description": "Greek Salad Description",
           "price": "7.00€",
           "label": "Vegetarian"
         },
         {
           "name": "Ntakos",
-          "description": "Barley rusks, Feta, Tomato, Olives, Oregano, Olive Oil, Capers",
+          "description": "Ntakos Description",
           "price": "6.00€",
           "label": "Vegetarian",
           "image": "ntakos.jpg"
-        },
-        {
-          "name": "Salad",
-          "description": "Lettuce, Tomato, Cucumber, Corn, Croutons, Balsamic, Olive Oil",
-          "price": "6.00€",
-          "label": "Vegan"
         },
         {
           "name": "Country Potatoes",
@@ -177,7 +174,7 @@
         },
         {
           "name": "Pizza Greek",
-          "description": "Tomato, Feta, Peppers, Onion, Capers, Olives",
+          "description": "Pizza Greek Description",
           "price": "10.00€",
           "label": "Vegetarian"
         },
@@ -186,6 +183,9 @@
           "description": "A mix of local and European produce",
           "price": "12.00€",
           "label": "Vegetarian"
+        },
+        {
+          "description": "Notice"
         }
       ]
     },
@@ -313,11 +313,6 @@
           "price": "10.00€"
         },
         {
-          "name": "MANHATTAN",
-          "description": "Bourbon Vermouth, Angostura Bitter, Maraskino",
-          "price": "10.00€"
-        },
-        {
           "name": "MARGARITA",
           "description": "Tequila, Orange Liqueur, Lime Juice",
           "price": "10.00€"
@@ -391,6 +386,10 @@
           "price": "7.00€"
         },
         {
+          "name": "PINA COLADA VIRGIN",
+          "price": "7.00€"
+        },
+        {
           "name": "TROPICAL PASSION",
           "price": "7.00€"
         },
@@ -419,6 +418,7 @@
     },
     {
       "name": "DESSERTS",
+      "labelImage": "desserts.jpg",
       "description": "Sweet delicacies, crafted to delight your senses and satisfy your cravings.",
       "items": [
         {
@@ -428,7 +428,7 @@
         },
         {
           "name": "Chocolate Souffle",
-          "description": "Truffle centre and wicked dark chocolate flavour",
+          "description": "Chocolate Souffle Description",
           "price": "6.00€"
         },
         {
@@ -455,6 +455,7 @@
     },
     {
       "name": "COFFEE & BEVERAGES",
+      "labelImage": "coffee.jpg",
       "items": [
         {
           "name": "Greek Coffee",
@@ -576,8 +577,8 @@
       ]
     },
     {
-      "name": "BEER & WINE",
-      "labelImage": "beer-wine.jpg",
+      "name": "BEER",
+      "labelImage": "beer.jpg",
       "items": [
         {
           "name": "Amstel (330ml)",
@@ -638,7 +639,13 @@
         {
           "name": "Cider (Μηλίτης) Μηλοκλέφτης 330ml",
           "price": "6.00€"
-        },
+        }
+      ]
+    },
+    {
+      "name": "WINES",
+      "labelImage": "wines.jpg",
+      "items": [
         {
           "name": "Vivlia Hora White Glass (150ml)",
           "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
@@ -677,16 +684,6 @@
         {
           "name": "Skouras Akres White Bottle (750ml)",
           "description": "Ροδίτης 70%, Μοσχοφίλερο 30%",
-          "price": "26.00€"
-        },
-        {
-          "name": "Caramelo White Glass (150ml)",
-          "description": "Απαλό λεμονί χρώμα. Στη μύτη αρώματα από εσπεριδοειδή και λευκά λουλούδια. Στο στόμα, απαλό και γλυκόπιοτο με φρουτώδεις γεύσεις",
-          "price": "5.00€"
-        },
-        {
-          "name": "Caramelo White Bottle (750ml)",
-          "description": "Απαλό λεμονί χρώμα. Στη μύτη αρώματα από εσπεριδοειδή και λευκά λουλούδια. Στο στόμα, απαλό και γλυκόπιοτο με φρουτώδεις γεύσεις",
           "price": "26.00€"
         },
         {
@@ -760,24 +757,30 @@
           "price": "28.00€"
         },
         {
-          "name": "Caramelo Red Glass (150ml)",
-          "description": "Λαμπερό κόκκινο χρώμα με βιολετί ανταύγειες. Στη μύτη αρώματα από μικρά κόκκινα φρούτα του δάσους. Στο στόμα, απαλό και γλυκόπιοτο",
+          "name": "Moschato White (150ml)",
           "price": "5.00€"
         },
         {
-          "name": "Caramelo Red Bottle (750ml)",
-          "description": "Λαμπερό κόκκινο χρώμα με βιολετί ανταύγειες. Στη μύτη αρώματα από μικρά κόκκινα φρούτα του δάσους. Στο στόμα, απαλό και γλυκόπιοτο",
-          "price": "26.00€"
-        },
-        {
-          "name": "Coppiere Prosecco Glass (150ml)",
-          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling",
+          "name": "Moschato Rose (150ml)",
           "price": "5.00€"
         },
         {
-          "name": "Coppiere Prosecco Bottle (750ml)",
+          "name": "Moschato Red Semisweet (150ml)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Syrah Red (150ml)",
+          "price": "5.00€"
+        },
+        {
+          "name": "Prosecco Glass (150ml)",
           "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling",
-          "price": "22.00€"
+          "price": "6.00€"
+        },
+        {
+          "name": "Prosecco Bottle (750ml)",
+          "description": "Italy, extra dry, elegant, fresh and fruit flavor, Sparkling",
+          "price": "25.00€"
         },
         {
           "name": "Moscato D'asti Glass (175ml)",
@@ -787,36 +790,21 @@
         {
           "name": "Moscato D'asti Bottle (750ml)",
           "description": "Italy, citrus, floral and spice aromas, Sparkling - Ιταλία, αρώματα εσπεριδοειδών, λουλουδιών και μπαχαρικών",
-          "price": "22.00€"
-        },
-        {
-          "name": "Bianconero (200ml)",
-          "description": "Rose Sparuling Κτήμα Τσιλιλή, Θεσσαλία",
-          "price": "7.00€"
-        },
-        {
-          "name": "Vinsanto Σαντορίνι Glass (80ml)",
-          "description": "85% Ασύρτικο, 15% Αηδάνι",
-          "price": "7.00€"
-        },
-        {
-          "name": "Vinsanto Σαντορίνι Bottle (500ml)",
-          "description": "85% Ασύρτικο, 15% Αηδάνι",
-          "price": "35.00€"
+          "price": "25.00€"
         },
         {
           "name": "Real Sangria Spain Glass (150ml)",
-          "description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
+          "description": "Sangria Description",
           "price": "5.00€"
         },
         {
           "name": "Real Sangria Spain (500ml)",
-          "description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
+          "description": "Sangria Description",
           "price": "10.00€"
         },
         {
           "name": "Real Sangria Spain (1L)",
-          "description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
+          "description": "Sangria Description",
           "price": "18.00€"
         }
       ]
