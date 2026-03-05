@@ -6,6 +6,89 @@
       "labelImage": "margherita-pizza-cropped.jpg",
       "items": [
         {
+          "name": "Burger Storm 240gr 100% beef",
+          "description": "Burger Storm Description",
+          "price": "10.00€",
+          "image": "burger.jpg"
+        },
+        {
+          "name": "Chicken Nuggets (12pcs)",
+          "description": "Chicken Nuggets Description",
+          "price": "12.00€",
+          "image": "chicken-nuggets.jpg"
+        },
+        {
+          "name": "Soutzoukakia Giaourtlou (6pcs)",
+          "description": "Soutzoukakia Description",
+          "price": "10.00€",
+          "image": "soutzoukakia.jpg"
+        },
+        {
+          "name": "Cheeses Variety",
+          "description": "A mix of local and European produce",
+          "price": "12.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Cold Cuts & Cheeses",
+          "description": "A mix of local and European produce",
+          "price": "12.00€"
+        },
+        {
+          "name": "Club Sandwich",
+          "description": "Club Sandwich Description",
+          "price": "8.00€"
+        },
+        {
+          "name": "Chicken Club Sandwich",
+          "description": "Chicken Club Sandwich Description",
+          "price": "10.00€"
+        },
+        {
+          "name": "Hot Dog",
+          "description": "Hot Dog Description",
+          "price": "8.00€"
+        },
+        {
+          "name": "Pizza Margherita",
+          "description": "Tomato, Mozzarella & Basil",
+          "price": "8.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Greek",
+          "description": "Pizza Greek Description",
+          "price": "10.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Ham & Bacon",
+          "description": "Pizza Ham & Bacon Description",
+          "price": "10.00€"
+        },
+        {
+          "name": "Pizza Chicken",
+          "description": "Pizza Chicken Description",
+          "price": "12.00€"
+        },
+        {
+          "name": "Pizza Special",
+          "description": "Pizza Special Description",
+          "price": "11.00€"
+        },
+        {
+          "name": "Sandwich",
+          "description": "Sandwich Description",
+          "price": "5.00€",
+          "image": "sandwich.jpg"
+        },
+        {
+          "name": "Chicken Sandwich",
+          "description": "Chicken Sandwich Description",
+          "price": "7.00€",
+          "image": "chicken-sandwich.jpg"
+        },
+        {
           "name": "Breakfast",
           "description": "Breakfast Description",
           "price": "8.00€"
@@ -50,43 +133,14 @@
           "price": "3.00€"
         },
         {
-          "name": "Turkey Toast",
-          "description": "Turkey, Edam",
-          "price": "3.50€"
-        },
-        {
-          "name": "Sandwich",
-          "description": "Sandwich Description",
-          "price": "5.00€",
-          "image": "sandwich.jpg"
-        },
-        {
-          "name": "Chicken Sandwich",
-          "description": "Chicken Sandwich Description",
-          "price": "7.00€",
-          "image": "chicken-sandwich.jpg"
-        },
-        {
-          "name": "Club Sandwich",
-          "description": "Club Sandwich Description",
-          "price": "8.00€"
-        },
-        {
-          "name": "Chicken Club Sandwich",
-          "description": "Chicken Club Sandwich Description",
-          "price": "10.00€"
-        },
-        {
-          "name": "Cheeses Variety",
-          "description": "A mix of local and European produce",
-          "price": "12.00€",
-          "label": "Vegetarian"
-        },
-        {
-          "name": "Cold Cuts & Cheeses",
-          "description": "A mix of local and European produce",
-          "price": "12.00€"
-        },
+          "description": "Notice"
+        }
+      ]
+    },
+    {
+      "name": "VEGETERIAN FOOD XPERIENCE",
+      "description": "Local ingredients full of freshness",
+      "items": [
         {
           "name": "Pizza Margherita",
           "description": "Tomato, Mozzarella & Basil",
@@ -100,47 +154,11 @@
           "label": "Vegetarian"
         },
         {
-          "name": "Pizza Ham & Bacon",
-          "description": "Pizza Ham & Bacon Description",
-          "price": "10.00€"
-        },
-        {
-          "name": "Pizza Chicken",
-          "description": "Pizza Chicken Description",
-          "price": "12.00€"
-        },
-        {
-          "name": "Pizza Special",
-          "description": "Pizza Special Description",
-          "price": "11.00€"
-        },
-        {
-          "name": "Burger Storm 240gr 100% beef",
-          "description": "Burger Storm Description",
-          "price": "10.00€",
-          "image": "burger.jpg"
-        },
-        {
-          "name": "Chicken Nuggets (12pcs)",
-          "description": "Chicken Nuggets Description",
+          "name": "Cheeses Variety",
+          "description": "A mix of local and European produce",
           "price": "12.00€",
-          "image": "chicken-nuggets.jpg"
+          "label": "Vegetarian"
         },
-        {
-          "name": "Soutzoukakia Giaourtlou (6pcs)",
-          "description": "Soutzoukakia Description",
-          "price": "10.00€",
-          "image": "soutzoukakia.jpg"
-        },
-        {
-          "description": "Notice"
-        }
-      ]
-    },
-    {
-      "name": "VEGETERIAN FOOD XPERIENCE",
-      "description": "Local ingredients full of freshness",
-      "items": [
         {
           "name": "Salad",
           "description": "Salad Description",
@@ -165,24 +183,6 @@
           "description": "Air Fried Country Potatoes",
           "price": "5.00€",
           "label": "Vegan"
-        },
-        {
-          "name": "Pizza Margherita",
-          "description": "Tomato, Mozzarella & Basil",
-          "price": "8.00€",
-          "label": "Vegetarian"
-        },
-        {
-          "name": "Pizza Greek",
-          "description": "Pizza Greek Description",
-          "price": "10.00€",
-          "label": "Vegetarian"
-        },
-        {
-          "name": "Cheeses Variety",
-          "description": "A mix of local and European produce",
-          "price": "12.00€",
-          "label": "Vegetarian"
         },
         {
           "description": "Notice"
@@ -810,6 +810,68 @@
       ]
     },
     {
+      "name": "RTD",
+      "items": [
+        {
+          "name": "Gordons Space",
+          "price": "6.00€"
+        },
+        {
+          "name": "Red Bull",
+          "price": "5.00€"
+        },
+        {
+          "name": "Bacardi Breezer (Watermelon)",
+          "price": "6.00€"
+        },
+        {
+          "name": "Cider (Μιλήτης)",
+          "price": "6.00€"
+        },
+        {
+          "name": "Pink Grapefruit Soda",
+          "price": "6.00€"
+        },
+        {
+          "name": "Mastiqua",
+          "price": "6.00€"
+        }
+      ]
+    },
+    {
+      "name": "TSIPOURO",
+      "items": [
+        {
+          "name": "Thessaliko 50ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Tokali 50ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Boutla 50ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Apostolaki 50ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Idoniko 50ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Dekaraki 60ml",
+          "price": "6.00€"
+        },
+        {
+          "name": "Manifesto",
+          "price": "8.00€"
+        }
+      ]
+    },
+    {
       "name": "WHISKEYS, BOURBON AND MALT",
       "description": "Blended to premiums and everything in between",
       "items": [
@@ -1026,36 +1088,11 @@
       ]
     },
     {
-      "name": "COGNAC",
-      "items": [
-        {
-          "name": "Metaxa 3* 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Metaxa 5* 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Metaxa 7* 60ml",
-          "price": "8.00€"
-        },
-        {
-          "name": "Metaxa 12* 60ml",
-          "price": "10.00€"
-        }
-      ]
-    },
-    {
       "name": "VODKA",
       "items": [
         {
           "name": "Absolut 40% 60ml",
           "price": "7.00€"
-        },
-        {
-          "name": "Beluga 40% 60ml",
-          "price": "12.00€"
         },
         {
           "name": "Belvedere 40% 60ml",
@@ -1066,10 +1103,6 @@
           "price": "10.00€"
         },
         {
-          "name": "Finlandia 40% 60ml",
-          "price": "7.00€"
-        },
-        {
           "name": "Grey Goose 40% 60ml",
           "price": "10.00€"
         },
@@ -1078,16 +1111,12 @@
           "price": "8.00€"
         },
         {
-          "name": "Serkova 37,5% 60ml",
+          "name": "Serkova 37.5% 60ml",
           "price": "7.00€"
         },
         {
-          "name": "Smirnoff North 20% / Red 37,5% 60ml",
+          "name": "Smirnoff North 20% / Red 37.5% 60ml",
           "price": "7.00€"
-        },
-        {
-          "name": "Snow Leopard 40% 60ml",
-          "price": "10.00€"
         },
         {
           "name": "Stolichnaya 38% 60ml",
@@ -1108,38 +1137,103 @@
       ]
     },
     {
+      "name": "RUM",
+      "items": [
+        {
+          "name": "Bacardi carta Blanca 37.5% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Cachaca 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Captain Morgan Black 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Captain Morgan White 37.5% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Diplomatico Anejo 40% 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Diplomatico Exclusiva 40% 60ml",
+          "price": "12.00€"
+        },
+        {
+          "name": "Diplomatico Reserva 8yrs excl. 40% 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Malibu 21% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Sailor Jerry Spiced 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Havana Club Anejo 7yrs 40% 60ml",
+          "price": "8.00€"
+        },
+        {
+          "name": "Havana Club Anejo Especial 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Havana Reserva 5yrs 40% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Havana 3yrs 40% 60ml",
+          "price": "7.00€"
+        }
+      ]
+    },
+    {
       "name": "GIN",
       "items": [
         {
-          "name": "Gordons 37,5% 60ml",
+          "name": "Beefeater 40% 60ml",
           "price": "7.00€"
-        },
-        {
-          "name": "Tanqueray 43,1% 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Tanqueray 10 47,3% 60ml",
-          "price": "9.00€"
         },
         {
           "name": "Bombay 40% 60ml",
           "price": "7.00€"
         },
         {
-          "name": "Beefeater 40% 60ml",
+          "name": "Gordon's 37.5% 60ml",
           "price": "7.00€"
         },
         {
-          "name": "Bulldog London 40% 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Hendricks 41% 60ml",
+          "name": "Hendrick's 41.4% 60ml",
           "price": "9.00€"
         },
         {
-          "name": "Mataroa Mediterranean 41,5% 60ml",
+          "name": "Hendrick's Neptunia 43.4% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Hendrick's Oasium 43.4% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Hendrick's Grand Cabaret 43.4% 60ml",
+          "price": "10.00€"
+        },
+        {
+          "name": "Tanqueray 43.1% 60ml",
+          "price": "7.00€"
+        },
+        {
+          "name": "Tanqueray No 10 47.3% 60ml",
+          "price": "9.00€"
+        },
+        {
+          "name": "Mataroa Mediterranean 41.5% 60ml",
           "price": "9.00€"
         },
         {
@@ -1148,6 +1242,7 @@
         }
       ]
     },
+
     {
       "name": "TEQUILA",
       "items": [
@@ -1173,72 +1268,41 @@
         },
         {
           "name": "Don Julio Reposado 38% 60ml",
-          "price": "9.00€"
+          "price": "10.00€"
         },
         {
           "name": "Don Julio Blanco 38% 60ml",
-          "price": "9.00€"
+          "price": "10.00€"
         }
       ]
     },
     {
-      "name": "RUM",
+      "name": "COGNAC",
       "items": [
         {
-          "name": "Havana 3yrs 60ml",
+          "name": "Metaxa 3* 60ml",
           "price": "7.00€"
         },
         {
-          "name": "Bacardi 60ml",
+          "name": "Metaxa 5* 60ml",
           "price": "7.00€"
         },
         {
-          "name": "Pampero Blanco 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Sailor Jerry 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Bacardi 4anos 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Havana 8yrs 60ml",
+          "name": "Metaxa 7* 60ml",
           "price": "8.00€"
         },
         {
-          "name": "Havana maestros 60ml",
-          "price": "12.00€"
-        },
-        {
-          "name": "Pampero Anejo 60ml",
-          "price": "8.00€"
-        },
-        {
-          "name": "Diplomatico Exclusiva 60ml",
-          "price": "15.00€"
-        },
-        {
-          "name": "Bacardi 8anos 60ml",
-          "price": "9.00€"
-        },
-        {
-          "name": "Ron Zacapa 23 60ml",
-          "price": "15.00€"
+          "name": "Metaxa 12* 60ml",
+          "price": "10.00€"
         }
       ]
     },
+
     {
       "name": "VERMOUTH, SHERRY & PORT",
       "items": [
         {
-          "name": "Otto's Athens 17% 60ml",
-          "price": "7.00€"
-        },
-        {
-          "name": "Martini Bianco 14,4% 60ml",
+          "name": "Martini Bianco 14.4% 60ml",
           "price": "7.00€"
         },
         {
@@ -1252,14 +1316,6 @@
         {
           "name": "Martini Rosso 16% 60ml",
           "price": "7.00€"
-        },
-        {
-          "name": "Porto",
-          "price": "5.00€"
-        },
-        {
-          "name": "Grappa",
-          "price": "5.00€"
         }
       ]
     },
@@ -1287,10 +1343,6 @@
           "price": "7.00€"
         },
         {
-          "name": "Underberg",
-          "price": "3.00€"
-        },
-        {
           "name": "Sambuca",
           "price": "7.00€"
         },
@@ -1316,74 +1368,28 @@
       "name": "APERITIFS AND BITTERS",
       "items": [
         {
+          "name": "Aperol 11%",
+          "price": "7.00€"
+        },
+        {
+          "name": "Campari Bitter 25%",
+          "price": "7.00€"
+        },
+        {
+          "name": "Ouzo",
+          "price": "6.00€"
+        },
+        {
+          "name": "Pimm's No 1 25%",
+          "price": "7.00€"
+        },
+        {
           "name": "Mastiha Skinos",
           "price": "7.00€"
         },
         {
           "name": "Jagermeister",
           "price": "7.00€"
-        },
-        {
-          "name": "Malibu Coconut Rum",
-          "price": "7.00€"
-        },
-        {
-          "name": "Aperol",
-          "price": "7.00€"
-        },
-        {
-          "name": "Campari",
-          "price": "7.00€"
-        },
-        {
-          "name": "Pimm's No 1",
-          "price": "7.00€"
-        }
-      ]
-    },
-    {
-      "name": "RTD",
-      "items": [
-        {
-          "name": "Gordons Space",
-          "price": "6.00€"
-        },
-        {
-          "name": "Red Bull",
-          "price": "5.00€"
-        },
-        {
-          "name": "Bacardi Breezer (Watermelon)",
-          "price": "6.00€"
-        },
-        {
-          "name": "Cider (Μιλήτης)",
-          "price": "6.00€"
-        },
-        {
-          "name": "Pink Grapefruit Soda",
-          "price": "6.00€"
-        }
-      ]
-    },
-    {
-      "name": "TSIPOURO",
-      "items": [
-        {
-          "name": "Thessaliko 50ml",
-          "price": "5.00€"
-        },
-        {
-          "name": "Idoniko 50ml",
-          "price": "5.00€"
-        },
-        {
-          "name": "Dekaraki 60ml",
-          "price": "5.00€"
-        },
-        {
-          "name": "Manifesto",
-          "price": "8.00€"
         }
       ]
     }
