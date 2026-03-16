@@ -66,9 +66,9 @@
   "Pizza Chicken": "Pizza Chicken",
   "Pizza Special": "Pizza Special",
   "Pizza Chicken Description": "Tomato, Mozzarella, Chicken fillets, Ham, Bacon",
-  "Burger Storm 240gr 100% beef": "Burger Storm 240gr 100% beef",
+  "Burger Storm 240gr 100% beef (3pcs)": "Burger Storm 240gr 100% beef (3pcs)",
   "Burger Storm Description": "Tomato, Lettuce, Mustard, Local farm beef patty",
-  "Chicken Nuggets (12pcs)": "Chicken Nuggets (12pcs)",
+  "Chicken Nuggets (10pcs)": "Chicken Nuggets (10pcs)",
   "Chicken Nuggets Description": "Tender pieces of chicken fillet with a crispy crust. Served with country-style potatoes, yoghurt dip, pita bread and lime slices",
   "Country Potatoes": "Country Potatoes",
   "Air Fried Country Potatoes": "Air Fried Country Potatoes",
@@ -239,5 +239,6 @@
   "Moschato Red Semisweet (150ml)": "Moschato Red Semisweet (150ml)",
   "Syrah Red (150ml)": "Syrah Red (150ml)",
   "Sangria Description": "Red wine and natural fruit extracts",
-  "Hot Dog Description": "Homemade brioche bun, Sausage, Cabbage, Onion, Mustard, Tomato"
+  "Hot Dog (2pcs)": "Hot Dog (2pcs)",
+  "Hot Dog Description": "Homemade brioche bun, Sausage, Coleslaw, Caramelized Onions, Mustard"
 }

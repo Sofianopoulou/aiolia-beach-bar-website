@@ -66,9 +66,9 @@
   "Pizza Chicken": "Πίτσα Κοτόπουλο",
   "Pizza Special": "Πίτσα Σπέσιαλ",
   "Pizza Chicken Description": "Τομάτα, Μοτσαρέλα, Φιλετάκια Κοτόπουλο, Ζαμπόν, Μπέικον",
-  "Burger Storm 240gr 100% beef": "Burger Storm 240γρ 100% μοσχάρι",
+  "Burger Storm 240gr 100% beef (3pcs)": "Burger Storm 240γρ 100% μοσχάρι (3τμχ)",
   "Burger Storm Description": "Τομάτα, Μαρούλι, Μουστάρδα, Μοσχαρίσιο Μπιφτέκι τοπικής παραγωγής",
-  "Chicken Nuggets (12pcs)": "Κοτομπουκιές (12τμχ)",
+  "Chicken Nuggets (10pcs)": "Κοτομπουκιές (10τμχ)",
   "Chicken Nuggets Description": "Τρυφερά κομμάτια από κοτόπουλο φιλέτο, με τραγανή κρούστα. Σερβίρονται με πατάτες country, σως γιαουρτιού, ψωμί πίτας και φέτες λάιμ",
   "Country Potatoes": "Πατάτες Country",
   "Air Fried Country Potatoes": "Πατάτα Τηγανιτή σε φριτέζα αέρος",
@@ -239,5 +239,6 @@
   "Moschato Red Semisweet (150ml)": "Μοσχάτο Ερυθρό (150ml)",
   "Syrah Red (150ml)": "Syrah Ερυθρό (150ml)",
   "Sangria Description": "Κόκκινο κρασί και φυσικά εκχυλίσματα φρούτων",
-  "Hot Dog Description": "Σπιτικό brioche, Λουκάνικο, Λάχανο, Κρεμμύδι, Μουστάρδα, Τομάτα"
+  "Hot Dog (2pcs)": "Hot Dog (2τμχ)",
+  "Hot Dog Description": "Σπιτικό brioche, Λουκάνικο, Σαλάτα Λάχανο, Καραμελωμένα Κρεμμύδια, Μουστάρδα"
 }
