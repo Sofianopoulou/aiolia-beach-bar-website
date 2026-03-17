@@ -47,7 +47,7 @@
         {
           "name": "Hot Dog (2pcs)",
           "description": "Hot Dog Description",
-          "price": "8.00€"
+          "price": "7.00€"
         },
         {
           "name": "Pizza Margherita",
@@ -239,7 +239,7 @@
         {
           "name": "CALIMTE",
           "description": "Tequila, Litsi Liqueur, Coconut Syrup, Lime Juice, Black Salt",
-          "price": "10.00€",
+          "price": "11.00€",
           "image": "calimte.jpg"
         },
         {
@@ -253,6 +253,12 @@
           "description": "5yrs old Tsipouro, Lime & Thyme Cordial",
           "price": "10.00€",
           "image": "manifesto.jpg"
+        },
+        {
+          "name": "NEPTUNIA",
+          "description": "Infused  Neptunia Hendrick's Gin with Blue Chinese Tea, Blueberry Syrup & Tonic",
+          "label": "NEW",
+          "price": "14.00€"
         },
         {
           "name": "SUNSHINE",
@@ -882,47 +888,12 @@
       "description": "Blended to premiums and everything in between",
       "items": [
         {
-          "name": "Bushmills Black Bush 40% 60ml",
-          "description": "Irish",
+          "name": "Four Roses 40% 60ml",
+          "description": "Bourbon",
           "price": "8.00€"
         },
         {
-          "name": "Bushmills Original 40% 60ml",
-          "description": "Irish",
-          "price": "7.00€"
-        },
-        {
-          "name": "Jameson 40% 60ml",
-          "description": "Irish",
-          "price": "7.00€"
-        },
-        {
-          "name": "Jameson Black Barel 40% 60ml",
-          "description": "Irish",
-          "price": "9.00€"
-        },
-        {
-          "name": "Tullamore Dew 12 Year Old 40% 60ml",
-          "description": "Irish",
-          "price": "9.00€"
-        },
-        {
-          "name": "Tullamore Dew",
-          "description": "Irish",
-          "price": "7.00€"
-        },
-        {
-          "name": "Wild Geese 40% 60ml",
-          "description": "Blended Irish Whiskey",
-          "price": "7.00€"
-        },
-        {
-          "name": "Four Roses 40% 60ml",
-          "description": "Bourbon",
-          "price": "7.00€"
-        },
-        {
-          "name": "Jack Daniels 40% 60ml",
+          "name": "Jack Daniel's 40% 60ml",
           "description": "Bourbon",
           "price": "8.00€"
         },
@@ -956,111 +927,43 @@
           "description": "Bourbon",
           "price": "15.00€"
         },
+
         {
-          "name": "Alberfeldy 12yrs Old 40% 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "10.00€"
-        },
-        {
-          "name": "Aberlour 10yrs Old 40% 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "11.00€"
-        },
-        {
-          "name": "Cardhu 12yrs Old 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
+          "name": "Bushmills Black Bush 40% 60ml",
+          "description": "Irish",
           "price": "8.00€"
         },
         {
-          "name": "Cardhu 15yrs Old 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "10.00€"
+          "name": "Bushmills Original 40% 60ml",
+          "description": "Irish",
+          "price": "7.00€"
         },
         {
-          "name": "Cardhu 18yrs 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "15.00€"
+          "name": "Jameson 40% 60ml",
+          "description": "Irish",
+          "price": "7.00€"
         },
         {
-          "name": "Cardhu Amper Rock 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
+          "name": "Jameson Black Barel 40% 60ml",
+          "description": "Irish",
           "price": "9.00€"
         },
         {
-          "name": "Dalwhinnie 15yrs Old 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "8.00€"
-        },
-        {
-          "name": "Glenfiddich 12yrs 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
+          "name": "Tullamore Dew 12 Year Old 40% 60ml",
+          "description": "Irish",
           "price": "9.00€"
         },
         {
-          "name": "Glenfiddich 15yrs 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "10.00€"
+          "name": "Tullamore Dew 40% 60ml",
+          "description": "Irish",
+          "price": "7.00€"
         },
         {
-          "name": "Glenfiddich 18yrs 40% Speyside 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "15.00€"
+          "name": "Wild Geese Classic Blend 40% 60ml",
+          "description": "Blended Irish Whiskey",
+          "price": "7.00€"
         },
-        {
-          "name": "Glenkinchie 12yrs Old 43%",
-          "description": "Single Malt Whiskey",
-          "price": "10.00€"
-        },
-        {
-          "name": "Glenmorangie 10yrs Old 40%",
-          "description": "Single Malt Whiskey",
-          "price": "9.00€"
-        },
-        {
-          "name": "Lagavulin 16yrs 40% Islay 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "15.00€"
-        },
-        {
-          "name": "Macallan Amber 40% 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "12.00€"
-        },
-        {
-          "name": "Oban 14yrs Old 40% 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "12.00€"
-        },
-        {
-          "name": "Talisker 10yrs Old 45.8% 60ml",
-          "description": "Single Malt Scotch Whiskey",
-          "price": "10.00€"
-        },
-        {
-          "name": "Talisker Skye 45.8% 60ml",
-          "description": "Single Malt Scotch Whiskey",
-          "price": "9.00€"
-        },
-        {
-          "name": "Talisker Storm 45.8% 60ml",
-          "description": "Single Malt Scotch Whiskey",
-          "price": "9.00€"
-        },
-        {
-          "name": "The Balvenie 12yrs Old 40% 60ml",
-          "description": "Single Malt Scotch Whiskey",
-          "price": "9.00€"
-        },
-        {
-          "name": "The Singleton 12yrs Spey Cascade 40% 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "9.00€"
-        },
-        {
-          "name": "The Singleton Sunray 40% 60ml",
-          "description": "Single Malt Whiskey",
-          "price": "10.00€"
-        },
+
         {
           "name": "Ballantines 40% 60ml",
           "description": "Blended Whiskey",
@@ -1072,7 +975,7 @@
           "price": "8.00€"
         },
         {
-          "name": "Bells 40% 60ml",
+          "name": "Bell's 40% 60ml",
           "description": "Blended Whiskey",
           "price": "7.00€"
         },
@@ -1176,10 +1079,111 @@
           "description": "Rye",
           "price": "8.00€"
         },
+
         {
-          "name": "Johnnie Walker Red Rye 40% 60ml",
-          "description": "Rye",
-          "price": "7.00€"
+          "name": "Alberfeldy 12yrs Old 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Aberlour 10yrs Old 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "11.00€"
+        },
+        {
+          "name": "Cardhu 12yrs Old 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "8.00€"
+        },
+        {
+          "name": "Cardhu 15yrs Old 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Cardhu 18yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Cardhu Amper Rock 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "Dalwhinnie 15yrs Old 43% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Glenfiddich 12yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "Glenfiddich 15yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Glenfiddich 18yrs 40% Speyside 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Glenkinchie 12yrs Old 43%",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Glenmorangie 10yrs Old 40%",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "Lagavulin 16yrs 40% Islay 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "15.00€"
+        },
+        {
+          "name": "Macallan Amber 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "12.00€"
+        },
+        {
+          "name": "Oban 14yrs Old 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "12.00€"
+        },
+        {
+          "name": "Talisker 10yrs Old 45.8% 60ml",
+          "description": "Single Malt Scotch Whiskey",
+          "price": "10.00€"
+        },
+        {
+          "name": "Talisker Skye 45.8% 60ml",
+          "description": "Single Malt Scotch Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "Talisker Storm 45.8% 60ml",
+          "description": "Single Malt Scotch Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "The Balvenie 12yrs Old 40% 60ml",
+          "description": "Single Malt Scotch Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "The Singleton 12yrs Spey Cascade 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "9.00€"
+        },
+        {
+          "name": "The Singleton Sunray 40% 60ml",
+          "description": "Single Malt Whiskey",
+          "price": "10.00€"
         }
       ]
     },
