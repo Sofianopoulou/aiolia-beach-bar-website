@@ -50,6 +50,13 @@ export default function AppHeader() {
                 <Text className="text-[--accent]  font-bold">{t("Menu")}</Text>
               </Link>
             </Button>
+            {/* <Button radius="full" size="3" variant="outline">
+              <Link to="/order">
+                <Text className="text-[--accent] font-bold">
+                  {t("Order Online")}
+                </Text>
+              </Link>
+            </Button> */}
             <Select.Root
               size="3"
               value={i18n.language}
@@ -105,6 +112,17 @@ export default function AppHeader() {
                       </Text>
                     </Link>
                   </Button>
+                  {/* <Button
+                    size="3"
+                    variant="outline"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Link to="/order" className="w-full text-center">
+                      <Text className="text-[--accent] font-bold">
+                        {t("Order Online")}
+                      </Text>
+                    </Link>
+                  </Button> */}
                   <Popover>
                     <PopoverTrigger>
                       <Button size="3" variant="outline">

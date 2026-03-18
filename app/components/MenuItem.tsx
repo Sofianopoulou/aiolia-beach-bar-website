@@ -5,9 +5,11 @@ import { useTranslation } from "react-i18next";
 
 interface MenuItemProps {
   item: MenuItemType;
+  addToCart?: (item: MenuItemType) => void;
+  isOrdering?: boolean;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ item, addToCart, isOrdering }) => {
   const { t } = useTranslation();
 
   return (
@@ -41,14 +43,22 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
               </Badge>
             )}
           </Flex>
-          <Text
-            size="3"
-            weight="bold"
-            style={{ color: "var(--accent-9)" }}
-            className="ml-auto"
-          >
-            {item.price}
-          </Text>
+
+          {/* PRICE + BUTTON */}
+          <Flex align="center" gap="2" className="ml-auto">
+            <Text size="3" weight="bold" style={{ color: "var(--accent-9)" }}>
+              {item.price}
+            </Text>
+
+            {isOrdering && addToCart && (
+              <button
+                onClick={() => addToCart(item)}
+                className="px-2 py-1 bg-[var(--accent-9)] text-white rounded-md text-sm"
+              >
+                +
+              </button>
+            )}
+          </Flex>
         </Flex>
         <Text size="2" color="gray">
           {t(item.description)}

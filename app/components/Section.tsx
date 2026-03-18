@@ -8,9 +8,15 @@ import { Text } from "./ui/Text";
 
 interface SectionProps {
   section: SectionType;
+  addToCart?: (item: any) => void;
+  isOrdering?: boolean;
 }
 
-const Section: React.FC<SectionProps> = ({ section }) => {
+const Section: React.FC<SectionProps> = ({
+  section,
+  addToCart,
+  isOrdering,
+}) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,7 +64,12 @@ const Section: React.FC<SectionProps> = ({ section }) => {
       {isOpen && (
         <Box px="4" py="3">
           {section.items.map((item, index) => (
-            <MenuItem key={index} item={item} />
+            <MenuItem
+              key={index}
+              item={item}
+              addToCart={addToCart}
+              isOrdering={isOrdering}
+            />
           ))}
         </Box>
       )}
