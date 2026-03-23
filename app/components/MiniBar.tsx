@@ -16,6 +16,7 @@ export function MiniBar({ totalItems, total, onOpen }: MiniBarProps) {
         right: 0,
         zIndex: 50,
         padding: "12px 16px",
+        paddingBottom: "calc(12px + env(safe-area-inset-bottom))",
         background: "var(--color-panel-solid)",
         borderTop: "1px solid var(--gray-4)",
         boxShadow: "0 -2px 12px rgba(0,0,0,0.08)",
@@ -25,15 +26,15 @@ export function MiniBar({ totalItems, total, onOpen }: MiniBarProps) {
         gap: 12,
       }}
     >
-      <Flex align="center" gap="2">
-        <Text size="2" weight="medium">
+      <Flex align="center" gap="2" style={{ flex: 1, minWidth: 0 }}>
+        <Text size="2" weight="medium" style={{ flexShrink: 1 }}>
           {totalItems === 0
-            ? "Your order is empty. View menu and tap '+' to add items."
+            ? "Your order is empty. Tap '+' to add items."
             : `${totalItems} ${totalItems === 1 ? "item" : "items"}`}
         </Text>
       </Flex>
 
-      <Flex align="center" gap="3">
+      <Flex align="center" gap="3" style={{ flexShrink: 0 }}>
         {total > 0 && (
           <Text size="3" weight="bold" style={{ color: "var(--accent-9)" }}>
             {total}€

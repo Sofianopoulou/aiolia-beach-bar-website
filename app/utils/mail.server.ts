@@ -130,6 +130,7 @@ export type OrderItem = {
   name: string;
   quantity: number;
   price: string;
+  comment?: string;
 };
 
 export type OrderEmailParams =
@@ -162,8 +163,15 @@ export async function sendOrderEmail(params: OrderEmailParams) {
       (item) => `
         <tr>
           <td style="padding: 8px 12px; border-bottom: 1px solid #f0ece4;">
-            ${escapeHtml(item.name)}
-          </td>
+  ${escapeHtml(item.name)}
+  ${
+    item.comment
+      ? `<br/><span style="font-size: 12px; color: #a89070; font-style: italic;">📝 ${escapeHtml(
+          item.comment,
+        )}</span>`
+      : ""
+  }
+</td>
           <td style="padding: 8px 12px; border-bottom: 1px solid #f0ece4; text-align: center;">
             ${item.quantity}
           </td>

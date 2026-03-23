@@ -4,6 +4,7 @@ export type CartItem = {
   name: string;
   price: string;
   quantity: number;
+  comment?: string;
 };
 
 export function useCart() {
@@ -43,6 +44,12 @@ export function useCart() {
     setCart((prev) => prev.filter((_, i) => i !== index));
   };
 
+  const updateComment = (index: number, comment: string) => {
+    setCart((prev) =>
+      prev.map((item, i) => (i === index ? { ...item, comment } : item)),
+    );
+  };
+
   const clearCart = () => setCart([]);
 
   const total = cart.reduce(
@@ -60,6 +67,7 @@ export function useCart() {
     increaseQuantity,
     decreaseQuantity,
     removeItem,
+    updateComment,
     clearCart,
   };
 }

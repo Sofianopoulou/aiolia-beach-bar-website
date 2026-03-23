@@ -7,7 +7,7 @@ import {
   Badge,
   Separator,
 } from "@radix-ui/themes";
-import { CartItem } from "~/hooks/useCart";
+import { CartItem } from "../hooks/useCart";
 
 type CartDrawerProps = {
   isOpen: boolean;
@@ -20,6 +20,7 @@ type CartDrawerProps = {
   onIncrease: (index: number) => void;
   onDecrease: (index: number) => void;
   onRemove: (index: number) => void;
+  onUpdateComment: (index: number, comment: string) => void;
   onSubmit: (params: {
     orderType: "dinein" | "pickup";
     tableNumber: string;
@@ -39,12 +40,16 @@ export function CartDrawer({
   onIncrease,
   onDecrease,
   onRemove,
+  onUpdateComment,
   onSubmit,
 }: CartDrawerProps) {
   const [orderType, setOrderType] = useState<"dinein" | "pickup">("dinein");
   const [tableNumber, setTableNumber] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [phone, setPhone] = useState("");
+
+  // Tracks which cart item index has its comment field open
+  const [openCommentIndex, setOpenCommentIndex] = useState<number | null>(null);
 
   const handleSubmit = () => {
     if (orderType === "dinein" && !tableNumber) {
@@ -59,6 +64,11 @@ export function CartDrawer({
     setTableNumber("");
     setCustomerName("");
     setPhone("");
+    setOpenCommentIndex(null);
+  };
+
+  const toggleComment = (index: number) => {
+    setOpenCommentIndex((prev) => (prev === index ? null : index));
   };
 
   const inputStyle = {
@@ -102,6 +112,7 @@ export function CartDrawer({
           background: "var(--color-panel-solid)",
           boxShadow: "0 -4px 30px rgba(0,0,0,0.15)",
           padding: "20px 16px 32px",
+          paddingBottom: "calc(32px + env(safe-area-inset-bottom))",
         }}
       >
         {/* Drag handle */}
@@ -180,42 +191,106 @@ export function CartDrawer({
               {/* Cart items */}
               <Flex direction="column" gap="2">
                 {cart.map((item, i) => (
-                  <Flex key={i} justify="between" align="center">
-                    <Flex direction="column" gap="1">
-                      <Text size="2">{item.name}</Text>
-                      <Flex align="center" gap="2">
-                        <Button
-                          size="1"
-                          variant="soft"
-                          onClick={() => onDecrease(i)}
-                        >
-                          −
-                        </Button>
-                        <Text size="2">{item.quantity}</Text>
-                        <Button
-                          size="1"
-                          variant="soft"
-                          onClick={() => onIncrease(i)}
-                        >
-                          +
-                        </Button>
-                        <Button
-                          size="1"
-                          variant="ghost"
-                          color="red"
-                          onClick={() => onRemove(i)}
-                        >
-                          ✕
-                        </Button>
+                  <Flex key={i} direction="column" gap="1">
+                    {/* Item row */}
+                    <Flex justify="between" align="center">
+                      <Flex direction="column" gap="1">
+                        <Text size="2" weight="medium">
+                          {item.name}
+                        </Text>
+                        <Flex align="center" gap="2">
+                          <Button
+                            size="1"
+                            variant="soft"
+                            onClick={() => onDecrease(i)}
+                          >
+                            −
+                          </Button>
+                          <Text size="2">{item.quantity}</Text>
+                          <Button
+                            size="1"
+                            variant="soft"
+                            onClick={() => onIncrease(i)}
+                          >
+                            +
+                          </Button>
+                          <Button
+                            size="1"
+                            variant="ghost"
+                            color="red"
+                            onClick={() => onRemove(i)}
+                          >
+                            ✕
+                          </Button>
+
+                          {/* Note toggle button */}
+                          <Button
+                            size="1"
+                            variant={
+                              openCommentIndex === i || item.comment
+                                ? "soft"
+                                : "ghost"
+                            }
+                            color={item.comment ? "orange" : "gray"}
+                            onClick={() => toggleComment(i)}
+                            style={{ fontSize: 12 }}
+                          >
+                            {item.comment ? "📝 Note" : "＋ Note"}
+                          </Button>
+                        </Flex>
                       </Flex>
+
+                      <Text
+                        size="3"
+                        weight="bold"
+                        style={{ color: "var(--accent-9)" }}
+                      >
+                        {Number(item.price.replace("€", "")) * item.quantity}€
+                      </Text>
                     </Flex>
-                    <Text
-                      size="3"
-                      weight="bold"
-                      style={{ color: "var(--accent-9)" }}
-                    >
-                      {Number(item.price.replace("€", "")) * item.quantity}€
-                    </Text>
+
+                    {/* Inline comment field — expands when open */}
+                    {openCommentIndex === i && (
+                      <textarea
+                        autoFocus
+                        // placeholder="e.g. no lettuce, with tonic, extra sauce..."
+                        value={item.comment ?? ""}
+                        onChange={(e) => onUpdateComment(i, e.target.value)}
+                        onBlur={() => {
+                          // Collapse if left empty
+                          if (!item.comment) setOpenCommentIndex(null);
+                        }}
+                        rows={2}
+                        style={{
+                          width: "100%",
+                          padding: "8px 10px",
+                          borderRadius: 8,
+                          border: "1px solid var(--orange-6)",
+                          background: "var(--orange-2)",
+                          color: "inherit",
+                          fontSize: 13,
+                          resize: "none",
+                          outline: "none",
+                          lineHeight: 1.5,
+                        }}
+                      />
+                    )}
+
+                    {/* Show saved note preview when collapsed */}
+                    {openCommentIndex !== i && item.comment && (
+                      <Text
+                        size="1"
+                        style={{
+                          color: "var(--orange-11)",
+                          paddingLeft: 2,
+                          fontStyle: "italic",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => toggleComment(i)}
+                      >
+                        📝 {item.comment}
+                      </Text>
+                    )}
                   </Flex>
                 ))}
               </Flex>

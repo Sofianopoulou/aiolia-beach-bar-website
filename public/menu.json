@@ -239,7 +239,7 @@
         {
           "name": "CALIMTE",
           "description": "Tequila, Litsi Liqueur, Coconut Syrup, Lime Juice, Black Salt",
-          "price": "11.00€",
+          "price": "10.00€",
           "image": "calimte.jpg"
         },
         {
@@ -256,9 +256,9 @@
         },
         {
           "name": "NEPTUNIA",
-          "description": "Infused  Neptunia Hendrick's Gin with Blue Chinese Tea, Blueberry Syrup & Tonic",
+          "description": "Infused  Gin with Blue Chinese Tea & Mediterranean tonic with aromatic botanicals",
           "label": "NEW",
-          "price": "14.00€"
+          "price": "10.00€"
         },
         {
           "name": "SUNSHINE",
