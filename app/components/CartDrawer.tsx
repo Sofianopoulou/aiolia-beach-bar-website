@@ -48,8 +48,28 @@ export function CartDrawer({
   const [customerName, setCustomerName] = useState("");
   const [phone, setPhone] = useState("");
 
-  // Tracks which cart item index has its comment field open
-  const [openCommentIndex, setOpenCommentIndex] = useState<number | null>(null);
+  // Each item can have its note field open independently
+  const [openComments, setOpenComments] = useState<Set<number>>(new Set());
+
+  const toggleComment = (index: number) => {
+    setOpenComments((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  };
+
+  const closeComment = (index: number) => {
+    setOpenComments((prev) => {
+      const next = new Set(prev);
+      next.delete(index);
+      return next;
+    });
+  };
 
   const handleSubmit = () => {
     if (orderType === "dinein" && !tableNumber) {
@@ -64,11 +84,7 @@ export function CartDrawer({
     setTableNumber("");
     setCustomerName("");
     setPhone("");
-    setOpenCommentIndex(null);
-  };
-
-  const toggleComment = (index: number) => {
-    setOpenCommentIndex((prev) => (prev === index ? null : index));
+    setOpenComments(new Set());
   };
 
   const inputStyle = {
@@ -227,7 +243,7 @@ export function CartDrawer({
                           <Button
                             size="1"
                             variant={
-                              openCommentIndex === i || item.comment
+                              openComments.has(i) || item.comment
                                 ? "soft"
                                 : "ghost"
                             }
@@ -249,16 +265,16 @@ export function CartDrawer({
                       </Text>
                     </Flex>
 
-                    {/* Inline comment field — expands when open */}
-                    {openCommentIndex === i && (
+                    {/* Inline comment field — each item independent */}
+                    {openComments.has(i) && (
                       <textarea
+                        key={`comment-${i}`}
                         autoFocus
-                        // placeholder="e.g. no lettuce, with tonic, extra sauce..."
-                        value={item.comment ?? ""}
-                        onChange={(e) => onUpdateComment(i, e.target.value)}
-                        onBlur={() => {
-                          // Collapse if left empty
-                          if (!item.comment) setOpenCommentIndex(null);
+                        placeholder="e.g. no lettuce, with tonic, extra sauce..."
+                        defaultValue={item.comment ?? ""}
+                        onBlur={(e) => {
+                          onUpdateComment(i, e.target.value);
+                          if (!e.target.value) closeComment(i);
                         }}
                         rows={2}
                         style={{
@@ -277,7 +293,7 @@ export function CartDrawer({
                     )}
 
                     {/* Show saved note preview when collapsed */}
-                    {openCommentIndex !== i && item.comment && (
+                    {!openComments.has(i) && item.comment && (
                       <Text
                         size="1"
                         style={{
