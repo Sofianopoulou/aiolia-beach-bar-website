@@ -388,43 +388,82 @@
     },
     {
       "name": "COCKTAILS - ALCOHOL FREE",
+      "description": "For those who crave flavor without alcohol — refined creations full of aroma, freshness, and balance.",
       "items": [
         {
           "name": "MOJITO VIRGIN",
+          "description": "MOJITO VIRGIN DESCRIPTION",
           "price": "7.00€"
         },
         {
           "name": "PALOMA VIRGIN",
+          "description": "PALOMA VIRGIN DESCRIPTION",
           "price": "7.00€"
         },
         {
-          "name": "PINA COLADA VIRGIN",
+          "name": "GARDEN SPRITZ",
+          "description": "GARDEN SPRITZ DESCRIPTION",
+          "label": "NEW",
           "price": "7.00€"
         },
         {
           "name": "TROPICAL PASSION",
-          "price": "7.00€"
-        },
-        {
-          "name": "GINGERADE",
+          "description": "TROPICAL PASSION DESCRIPTION",
           "price": "7.00€"
         },
         {
           "name": "MANGO",
+          "description": "MANGO DESCRIPTION",
+          "price": "7.00€"
+        },
+        {
+          "name": "COCO ELIXIR",
+          "description": "COCO ELIXIR DESCRIPTION",
+          "label": "NEW",
           "price": "7.00€"
         },
         {
           "name": "GREEN APPLE",
+          "description": "GREEN APPLE DESCRIPTION",
           "price": "7.00€"
         },
         {
           "name": "STRAWBERRY",
+          "description": "STRAWBERRY DESCRIPTION",
           "price": "7.00€"
         },
         {
-          "name": "Tanqueray 0.0% & Tonic",
-          "price": "7.00€",
-          "description": "The great taste of Tanqueray, without alcohol."
+          "name": "PEPPERMINT HERO",
+          "label": "NEW",
+          "description": "PEPPERMINT HERO DESCRIPTION",
+          "price": "7.00€"
+        },
+        {
+          "name": "GINGER FIZZ",
+          "description": "GINGER FIZZ DESCRIPTION",
+          "price": "7.00€"
+        }
+      ]
+    },
+    {
+      "name": "SPIRITS - ALCOHOL FREE",
+      "description": "Premium alcohol-free spirits designed for refined serves with character and balance.",
+      "items": [
+        {
+          "name": "Tanqueray 0.0%",
+          "price": "7.00€"
+        },
+        {
+          "name": "Captain Morgan Spiced Gold 0.0%",
+          "price": "7.00€"
+        },
+        {
+          "name": "Martini Floreale 0.0%",
+          "price": "7.00€"
+        },
+        {
+          "name": "Martini Vibrante 0.0%",
+          "price": "7.00€"
         }
       ]
     },
@@ -661,12 +700,12 @@
         {
           "name": "Vivlia Hora White Glass (150ml)",
           "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
-          "price": "6.00€"
+          "price": "6.50€"
         },
         {
           "name": "Vivlia Hora White Bottle (750ml)",
           "description": "Ασύρτικο, Asirtiko, 40%, Sauvignon Blanc 60%",
-          "price": "28.00€"
+          "price": "30.00€"
         },
         {
           "name": "Pavlidis Thema White Glass (150ml)",
@@ -701,12 +740,12 @@
         {
           "name": "Vivlia Hora Rose Glass (150ml)",
           "description": "Syrah 100%",
-          "price": "6.00€"
+          "price": "6.50€"
         },
         {
           "name": "Vivlia Hora Rose Bottle (750ml)",
           "description": "Syrah 100%",
-          "price": "28.00€"
+          "price": "30.00€"
         },
         {
           "name": "Pavlidis Thema Rose Glass (150ml)",
@@ -731,12 +770,12 @@
         {
           "name": "Vivlia Hora Red Glass (150ml)",
           "description": "Cabernet Sauvignon 50%, Merlot 50%",
-          "price": "6.50€"
+          "price": "7.00€"
         },
         {
           "name": "Vivlia Hora Red Bottle (750ml)",
           "description": "Cabernet Sauvignon 50%, Merlot 50%",
-          "price": "30.00€"
+          "price": "32.00€"
         },
         {
           "name": "Pavlidis Thema Red Glass (150ml)",
