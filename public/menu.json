@@ -276,11 +276,6 @@
           "description": "An exquisite cocktail, that is different on every sip, tequila, orange liquier, chilli, pineapple.",
           "price": "10.00€",
           "image": "hot-n-juicy.jpg"
-        },
-        {
-          "name": "DON JULIO PALOMA",
-          "description": "A refreshing combination of Don Julio tequila and fresh pink grapefruit served with a splash of soda.",
-          "price": "14.00€"
         }
       ]
     },
@@ -412,7 +407,7 @@
           "price": "7.00€"
         },
         {
-          "name": "MANGO",
+          "name": "MANGO TWIST",
           "description": "MANGO DESCRIPTION",
           "price": "7.00€"
         },
@@ -423,12 +418,12 @@
           "price": "7.00€"
         },
         {
-          "name": "GREEN APPLE",
+          "name": "GREEN SUNSET",
           "description": "GREEN APPLE DESCRIPTION",
           "price": "7.00€"
         },
         {
-          "name": "STRAWBERRY",
+          "name": "STRAWBERRY AURA",
           "description": "STRAWBERRY DESCRIPTION",
           "price": "7.00€"
         },
