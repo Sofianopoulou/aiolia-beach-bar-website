@@ -12,13 +12,20 @@ export default function Index() {
 
   return (
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
-      <Box className="snap-start h-screen relative">
+      <Box className="snap-start h-screen relative overflow-hidden">
+        <img
+          src={img}
+          alt="Aiolia Beach Bar Background"
+          fetchPriority="high"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${img})` }}
+          className="absolute inset-0 w-full h-full"
         >
           <Flex
             className="h-full"

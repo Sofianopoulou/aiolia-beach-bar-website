@@ -39,6 +39,7 @@ export let handle = {
   i18n: "common",
 };
 import { SpeedInsights } from "@vercel/speed-insights/remix";
+import { Analytics } from "@vercel/analytics/remix";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   let data = useLoaderData<typeof loader>();
@@ -74,14 +75,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17830813564');
+                  gtag('js', new Date());
+                  gtag('config', 'AW-17830813564');
             `,
           }}
         />
       </head>
 
       <body>
+        <Analytics />
         <SpeedInsights />
         <Theme accentColor="orange" panelBackground="translucent">
           {/* <ThemePanel /> */}
