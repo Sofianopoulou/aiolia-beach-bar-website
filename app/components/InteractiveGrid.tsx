@@ -1,19 +1,25 @@
 import { Box, Flex } from "@radix-ui/themes";
 
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/effect-fade";
+// import "swiper/css";
+// import "swiper/css/autoplay";
+// import "swiper/css/effect-fade";
 
 const images = [
-  { src: "carousel-images/aiolia-outdoors.jpg", text: "Find your inner peace" },
-  { src: "carousel-images/by-night.jpg", text: "Eternal memories" },
-  { src: "carousel-images/calimte.jpg", text: "Unforgettable cocktails" },
-  { src: "carousel-images/cocktail-party.jpg", text: "Shared between friends" },
-  { src: "carousel-images/melon-drink.jpg", text: "Worth the journey" },
-  { src: "carousel-images/element.jpg", text: "Element of Style" },
-  { src: "carousel-images/mojito.jpg", text: "Feeling thirsty?" },
-  { src: "carousel-images/sunset.jpg", text: "Sunset Bliss" },
-  { src: "carousel-images/floral.jpg", text: "Floral Paradise" },
+  {
+    src: "carousel-images/aiolia-outdoors.webp",
+    text: "Find your inner peace",
+  },
+  { src: "carousel-images/by-night.webp", text: "Eternal memories" },
+  { src: "carousel-images/calimte.webp", text: "Unforgettable cocktails" },
+  {
+    src: "carousel-images/cocktail-party.webp",
+    text: "Shared between friends",
+  },
+  { src: "carousel-images/melon-drink.webp", text: "Worth the journey" },
+  { src: "carousel-images/element.webp", text: "Element of Style" },
+  { src: "carousel-images/mojito.webp", text: "Feeling thirsty?" },
+  { src: "carousel-images/sunset.webp", text: "Sunset Bliss" },
+  { src: "carousel-images/floral.webp", text: "Floral Paradise" },
 ];
 
 const InteractiveGrid = () => {

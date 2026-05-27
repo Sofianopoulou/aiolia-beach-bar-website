@@ -21,7 +21,6 @@ import { Select } from "./ui/Select";
 
 export default function AppHeader() {
   const { t, i18n } = useTranslation();
-
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const changeLanguage = async (lang: string) => {
@@ -37,6 +36,7 @@ export default function AppHeader() {
           <img src={logo} alt="Aiolia Beach Bar Logo" className="h-12" />
         </Link>
         <Flex gap="2" align="center" className="ml-auto">
+          {/* DESKTOP NAVIGATION */}
           <Flex gap="2" display={{ initial: "none", md: "flex" }}>
             <Button radius="full" size="3" variant="outline">
               <Link to="/reservations">
@@ -50,19 +50,12 @@ export default function AppHeader() {
                 <Text className="text-[--accent]  font-bold">{t("Menu")}</Text>
               </Link>
             </Button>
-            {/* <Button radius="full" size="3" variant="outline">
-              <Link to="/order">
-                <Text className="text-[--accent] font-bold">
-                  {t("Order Online")}
-                </Text>
-              </Link>
-            </Button> */}
             <Select.Root
               size="3"
               value={i18n.language}
               onValueChange={(lng) => changeLanguage(lng)}
             >
-              <Select.Trigger radius="full">
+              <Select.Trigger radius="full" aria-label="Select Language">
                 <Flex as="span" align="center" gap="2">
                   <GlobeAltIcon className="h-5 w-5 text-[--accent] " />
                   <Text className="text-[--accent]  font-bold">
@@ -76,11 +69,13 @@ export default function AppHeader() {
               </Select.Content>
             </Select.Root>
           </Flex>
+
+          {/* MOBILE NAVIGATION */}
           <Flex gap="2" display={{ initial: "flex", md: "none" }}>
             <Popover open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <PopoverTrigger>
+              <PopoverTrigger aria-label="Open navigation menu">
                 <Bars3Icon
-                  className="h-7 w-7 text-[var(--accent)]"
+                  className="h-7 w-7 text-[var(--accent)] cursor-pointer"
                   onClick={() => setMobileMenuOpen(true)}
                 />
               </PopoverTrigger>
@@ -112,25 +107,14 @@ export default function AppHeader() {
                       </Text>
                     </Link>
                   </Button>
-                  {/* <Button
-                    size="3"
-                    variant="outline"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <Link to="/order" className="w-full text-center">
-                      <Text className="text-[--accent] font-bold">
-                        {t("Order Online")}
-                      </Text>
-                    </Link>
-                  </Button> */}
                   <Popover>
-                    <PopoverTrigger>
+                    <PopoverTrigger aria-label="Change Language">
                       <Button size="3" variant="outline">
                         <GlobeAltIcon className="h-5 w-5 text-[var(--accent)]" />
-                        <Text className="text-[--accent]  font-bold">
+                        <Text className="text-[--accent]  font-bold ml-1">
                           {i18n.language === "el" ? t("Greek") : t("English")}
                         </Text>
-                        <ChevronDownIcon className="h-4 w-4 text-[var(--accent)]" />
+                        <ChevronDownIcon className="h-4 w-4 text-[var(--accent)] ml-1" />
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="p-4 shadow-md rounded-md z-50 bg-[var(--color-background)] text-[var(--color-text)]">

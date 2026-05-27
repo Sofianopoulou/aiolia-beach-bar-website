@@ -65,7 +65,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Optimized Loading */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17830813564"
@@ -73,11 +73,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'AW-17830813564');
-            `,
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Delay tracking execution until after the page fully finishes painting
+      if (typeof window !== 'undefined') {
+        window.addEventListener('load', function() {
+          gtag('js', new Date());
+          gtag('config', 'AW-17830813564');
+        });
+      }
+    `,
           }}
         />
       </head>
@@ -105,7 +111,16 @@ export default function App() {
 }
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
+  {
+    rel: "preload",
+    href: stylesheet,
+    as: "style",
+  },
+
+  {
+    rel: "stylesheet",
+    href: stylesheet,
+  },
 ];
 
 export const meta: MetaFunction = () => [

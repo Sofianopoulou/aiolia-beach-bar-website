@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Flex, Box } from "@radix-ui/themes";
-import img from "../assets/beach-bar.jpg";
+import img from "../assets/beach-bar.webp";
 import { Text } from "../components/ui/Text";
 import InteractiveGrid from "../components/InteractiveGrid";
 import { Button } from "~/components/ui/Button";
@@ -28,27 +28,25 @@ export default function Index() {
           className="absolute inset-0 w-full h-full"
         >
           <Flex
-            className="h-full"
+            className="h-full bg-black bg-opacity-30"
             align="center"
             justify="center"
             direction="column"
             p="5"
           >
-            <Text
-              className="text-white text-4xl font-bold text-center"
-              translate="no"
-            >
+            <Text className="text-white text-4xl font-bold text-center">
               Welcome to Aiolia Beach Bar
             </Text>
-            <Text
-              className="text-white text-lg my-4 text-center"
-              translate="no"
-            >
+            <Text className="text-white text-lg my-4 text-center">
               Your ultimate seaside experience in Nea Anchialos
             </Text>
             <Button radius="full" size="3" variant="solid">
-              <Link to="/menu" className="w-full text-center">
-                <Text className="font-bold text-white">{t("View Menu")}</Text>{" "}
+              <Link
+                to="/menu"
+                className="inline-block"
+                aria-label="Go to menu page"
+              >
+                <Text className="font-bold text-white">{t("View Menu")}</Text>
               </Link>
             </Button>
           </Flex>
@@ -59,13 +57,19 @@ export default function Index() {
         <InteractiveGrid />
       </Box>
 
-      <Box className="snap-start h-screen relative">
+      <Box className="snap-start h-screen relative overflow-hidden">
+        <img
+          src="/sea-gazing.webp"
+          alt="Sea Gazing View"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/sea-gazing.jpg')` }}
+          className="absolute inset-0 w-full h-full"
         >
           <Flex
             className="h-full bg-black bg-opacity-50"
@@ -74,34 +78,19 @@ export default function Index() {
             direction="column"
             p="5"
           >
-            <Text
-              className="text-white text-xl leading-7 text-center mb-4"
-              translate="no"
-            >
+            <Text className="text-white text-xl leading-7 text-center mb-4">
               ⏰ {t("From 19:00 till late at night October - April")}
             </Text>
-            <Text
-              className="text-white text-xl leading-7 text-center mb-4"
-              translate="no"
-            >
+            <Text className="text-white text-xl leading-7 text-center mb-4">
               ⏰ {t("From 10:00 till late at night May - September")}
             </Text>
-            <Text
-              className="text-white text-xl leading-7 text-center mb-4"
-              translate="no"
-            >
+            <Text className="text-white text-xl leading-7 text-center mb-4">
               🍸 {t("Coffee, Drinks, Cocktails")}
             </Text>
-            <Text
-              className="text-white text-xl leading-7 text-center mb-4"
-              translate="no"
-            >
+            <Text className="text-white text-xl leading-7 text-center mb-4">
               🥪 {t("Pizza, Salads, Desserts")}
             </Text>
-            <Text
-              className="text-white text-xl leading-7 text-center "
-              translate="no"
-            >
+            <Text className="text-white text-xl leading-7 text-center ">
               📌 {t("Nea Anchialos | Volos")}
             </Text>
           </Flex>
