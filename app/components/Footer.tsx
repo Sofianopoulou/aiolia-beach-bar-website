@@ -6,6 +6,7 @@ import fblogo from "../assets/facebook.png";
 import iglogo from "../assets/instagram.png";
 import ytlogo from "../assets/youtube.png";
 import inlogo from "../assets/linkedin.png";
+import spotifylogo from "../assets/spotify.png";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -117,6 +118,14 @@ export default function Footer() {
               >
                 <img src={inlogo} alt="LinkedIn" className="w-8 h-8" />
               </a>
+              <a
+                href="https://open.spotify.com/artist/4Ei8T9JKi6vN7uQYMFhS8D/discography"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={spotifylogo} alt="Spotify" className="w-8 h-8" />
+              </a>
             </div>
           </div>
 
@@ -151,7 +160,7 @@ export default function Footer() {
         </div>
 
         <div className="w-full text-center text-sm mt-6">
-          &copy; 2026 Aiolia Beach Bar
+          © 2026 Aiolia Beach Bar
         </div>
       </div>
     </footer>

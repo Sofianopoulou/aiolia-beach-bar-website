@@ -50,6 +50,11 @@ export default function AppHeader() {
                 <Text className="text-[--accent]  font-bold">{t("Menu")}</Text>
               </Link>
             </Button>
+            <Button radius="full" size="3" variant="outline">
+              <Link to="/blog">
+                <Text className="text-[--accent] font-bold">{t("Blog")}</Text>
+              </Link>
+            </Button>
             <Select.Root
               size="3"
               value={i18n.language}
@@ -104,6 +109,19 @@ export default function AppHeader() {
                     <Link to="/menu" className="w-full text-center">
                       <Text className="text-[--accent]  font-bold">
                         {t("Menu")}
+                      </Text>
+                    </Link>
+                  </Button>
+                  <Button
+                    size="3"
+                    variant="outline"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <Link to="/blog" className="w-full text-center">
+                      <Text className="text-[--accent] font-bold">
+                        {t("Blog")}
                       </Text>
                     </Link>
                   </Button>

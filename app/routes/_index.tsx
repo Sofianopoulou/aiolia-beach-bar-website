@@ -96,6 +96,43 @@ export default function Index() {
           </Flex>
         </motion.div>
       </Box>
+
+      {/* SPOTIFY SECTION */}
+      <Box className="snap-start h-screen bg-[#121212] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10" />
+
+        <Flex
+          className="h-full w-full relative z-20 max-w-4xl mx-auto"
+          align="center"
+          justify="center"
+          direction="column"
+          p="5"
+          gap="4"
+        >
+          <div className="text-center mb-2">
+            <h2 className="text-white text-3xl font-bold tracking-tight">
+              {t("The Sounds of Aiolia")}
+            </h2>
+            <Text className="text-gray-400 text-sm block mt-1">
+              {t(
+                "Listen to our official tracks, curated for your perfect beach experience.",
+              )}
+            </Text>
+          </div>
+
+          {/* Spotify Responsive Embed Wrapper */}
+          <div className="w-full h-[450px] max-h-[60vh] rounded-xl overflow-hidden shadow-2xl bg-black/20">
+            <iframe
+              title="Spotify Embed - Aiolia Music Selection"
+              src="https://open.spotify.com/embed/artist/4Ei8T9JKi6vN7uQYMFhS8D?utm_source=generator&theme=0"
+              width="100%"
+              height="100%"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            />
+          </div>
+        </Flex>
+      </Box>
     </div>
   );
 }
