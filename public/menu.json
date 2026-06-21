@@ -252,6 +252,7 @@
           "name": "NEPTUNIA",
           "description": "Infused  Gin with Blue Chinese Tea & Mediterranean tonic with aromatic botanicals",
           "label": "NEW",
+          "image": "neptunia.jpg",
           "price": "10.00€"
         },
         {
@@ -485,6 +486,12 @@
           "name": "Orange Pie with Ice Cream",
           "description": "Zesty orange pie paired with creamy ice cream",
           "price": "8.50€"
+        },
+        {
+          "name": "Cheesecake",
+          "label": "NEW",
+          "description": "Our fresh, velvety cream cheesecake served with your choice of topping: strawberry or citrus",
+          "price": "6.00€"
         },
         {
           "name": "Fruit Salad",
