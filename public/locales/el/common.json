@@ -29,7 +29,6 @@
   "e.g. Sea view, birthday celebration...": "π.χ. Θέα στη θάλασσα, γιορτή γενεθλίων...",
   "Table is kept for 15 minutes after reservation time. We appreciate you being on time.": "Το τραπέζι διατηρείται για 15 λεπτά μετά την ώρα κράτησης. Εκτιμούμε την ώρα σας.",
   "Make Reservation": "Κάντε Κράτηση",
-  "Local ingredients full of freshness": "Τοπικά υλικά γεμάτα φρεσκάδα",
   "Breakfast": "Πρωινό",
   "Breakfast Description": "Δύο Αυγά Ποσέ, Φρυγανισμένο Ψωμί Τοστ, Μπέικον, Τομάτα",
   "Salad": "Σαλάτα",
@@ -253,5 +252,10 @@
   "GARDEN SPRITZ DESCRIPTION": "Αρωματικό μανταρίνι με lime και δροσιστική grapefruit soda. Ένα ανάλαφρο, κομψό spritz.",
   "Our Blog — The Stories of Endless Summer in Nea Anchialos": "Το Blog μας — Οι Ιστορίες του Ατελείωτου Καλοκαιριού στη Νέα Αγχίαλο",
   "Listen to our official tracks, curated for your perfect beach experience.": "Ακούστε τα επίσημα κομμάτια μας, επιλεγμένα για την τέλεια εμπειρία δίπλα στην θάλασσα.",
-  "Our fresh, velvety cream cheesecake served with your choice of topping: strawberry or citrus": "Το φρέσκο, βελούδινο cheesecake μας σερβιρισμένο με την επικάλυψη της επιλογής σας: φράουλα ή εσπεριδοειδή"
+  "Our fresh, velvety cream cheesecake served with your choice of topping: strawberry or citrus": "Το φρέσκο, βελούδινο cheesecake μας σερβιρισμένο με την επικάλυψη της επιλογής σας: φράουλα ή εσπεριδοειδή",
+  "Pizza A la Creme Description": "Κρέμα γάλακτος, Μοτσαρέλα, Κοτόπουλο, Μπέικον, Μανιτάρια",
+  "Pizza Pesto Description": "Πέστο, Μοτσαρέλα, Μανιτάρια, Τοματίνια Σαντορίνης",
+  "Food xperience description": "Δημιουργιες από φρέσκα τοπικά υλικά με πλούσιες μεσογειακές γεύσεις",
+  "Vegetarian Food xperience description": "Μια απολαυστική ποικιλία από φρέσκα λαχανικά, τοπικά τυριά και θρεπτικά συστατικά φυτικής προέλευσης.",
+  "Pizzas Description": "Χειροποίητες πίτσες με τη δική μας ζύμη αργής ωρίμανσης."
 }

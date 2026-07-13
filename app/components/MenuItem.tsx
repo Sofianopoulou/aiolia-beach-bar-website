@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MenuItem as MenuItemType } from "../types/types";
 import { Flex, Box, Badge, Text } from "@radix-ui/themes";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,7 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ item, addToCart, isOrdering }) => {
   const { t } = useTranslation();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <Flex
@@ -19,11 +20,23 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, addToCart, isOrdering }) => {
       className="py-2 border-b border-gray-300 relative overflow-hidden"
     >
       {item.image && (
-        <Box className="w-[70px] h-[70px] mr-4 rounded-lg overflow-hidden flex-shrink-0">
+        <Box className="w-[70px] h-[70px] mr-4 rounded-lg overflow-hidden flex-shrink-0 relative">
+          {!imageLoaded && (
+            <Flex
+              align="center"
+              justify="center"
+              className="absolute inset-0 bg-gray-100"
+            >
+              <div className="w-5 h-5 border-2 border-gray-300 border-t-[var(--accent-9)] rounded-full animate-spin" />
+            </Flex>
+          )}
           <img
             src={item.image}
             alt={item.name}
-            className="w-full h-full object-cover rounded-lg"
+            onLoad={() => setImageLoaded(true)}
+            className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
+              imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
           />
         </Box>
       )}

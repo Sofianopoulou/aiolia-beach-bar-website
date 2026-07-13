@@ -2,8 +2,8 @@
   "sections": [
     {
       "name": "FOOD XPERIENCE",
-      "description": "Local ingredients full of freshness",
-      "labelImage": "margherita-pizza-cropped.jpg",
+      "description": "Food xperience description",
+      "labelImage": "horiatiki-salad.jpeg",
       "items": [
         {
           "name": "Burger Storm 240gr 100% beef (3pcs)",
@@ -48,33 +48,6 @@
           "name": "Hot Dog (2pcs)",
           "description": "Hot Dog Description",
           "price": "7.00€"
-        },
-        {
-          "name": "Pizza Margherita",
-          "description": "Tomato, Mozzarella & Basil",
-          "price": "8.00€",
-          "label": "Vegetarian"
-        },
-        {
-          "name": "Pizza Greek",
-          "description": "Pizza Greek Description",
-          "price": "10.00€",
-          "label": "Vegetarian"
-        },
-        {
-          "name": "Pizza Ham & Bacon",
-          "description": "Pizza Ham & Bacon Description",
-          "price": "10.00€"
-        },
-        {
-          "name": "Pizza Chicken",
-          "description": "Pizza Chicken Description",
-          "price": "12.00€"
-        },
-        {
-          "name": "Pizza Special",
-          "description": "Pizza Special Description",
-          "price": "11.00€"
         },
         {
           "name": "Sandwich",
@@ -144,8 +117,9 @@
       ]
     },
     {
-      "name": "VEGETERIAN FOOD XPERIENCE",
-      "description": "Local ingredients full of freshness",
+      "name": "PIZZAS",
+      "description": "Pizzas Description",
+      "labelImage": "margherita-pizza-cropped.jpg",
       "items": [
         {
           "name": "Pizza Margherita",
@@ -157,6 +131,60 @@
           "name": "Pizza Greek",
           "description": "Pizza Greek Description",
           "price": "10.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Ham & Bacon",
+          "description": "Pizza Ham & Bacon Description",
+          "price": "10.00€"
+        },
+        {
+          "name": "Pizza Chicken",
+          "description": "Pizza Chicken Description",
+          "price": "12.00€"
+        },
+        {
+          "name": "Pizza A la Creme",
+          "description": "Pizza A la Creme Description",
+          "label": "NEW",
+          "price": "15.00€"
+        },
+        {
+          "name": "Pizza Pesto",
+          "description": "Pizza Pesto Description",
+          "label": "Vegetarian",
+          "price": "12.00€"
+        },
+        {
+          "name": "Pizza Special",
+          "description": "Pizza Special Description",
+          "price": "11.00€"
+        },
+        {
+          "description": "Notice"
+        }
+      ]
+    },
+    {
+      "name": "VEGETERIAN FOOD XPERIENCE",
+      "description": "Vegetarian Food xperience description",
+      "items": [
+        {
+          "name": "Pizza Margherita",
+          "description": "Tomato, Mozzarella & Basil",
+          "price": "8.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Greek",
+          "description": "Pizza Greek Description",
+          "price": "10.00€",
+          "label": "Vegetarian"
+        },
+        {
+          "name": "Pizza Pesto",
+          "description": "Pizza Pesto Description",
+          "price": "12.00€",
           "label": "Vegetarian"
         },
         {
