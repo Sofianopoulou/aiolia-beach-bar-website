@@ -3,7 +3,6 @@
     {
       "name": "FOOD XPERIENCE",
       "description": "Food xperience description",
-      "labelImage": "horiatiki-salad.jpeg",
       "items": [
         {
           "name": "Burger Storm 240gr 100% beef (3pcs)",
@@ -73,6 +72,26 @@
           "price": "8.00€"
         },
         {
+          "name": "Tortillas",
+          "description": "Tortillas Description",
+          "price": "6.00€"
+        },
+        {
+          "name": "Toast",
+          "description": "Toast Description",
+          "price": "3.00€"
+        },
+        {
+          "description": "Notice"
+        }
+      ]
+    },
+    {
+      "name": "SALADS",
+      "description": "Salads Description",
+      "labelImage": "horiatiki-salad.jpeg",
+      "items": [
+        {
           "name": "Salad",
           "description": "Salad Description",
           "price": "6.00€",
@@ -100,19 +119,6 @@
           "price": "6.00€",
           "label": "Vegetarian",
           "image": "ntakos.jpg"
-        },
-        {
-          "name": "Tortillas",
-          "description": "Tortillas Description",
-          "price": "6.00€"
-        },
-        {
-          "name": "Toast",
-          "description": "Toast Description",
-          "price": "3.00€"
-        },
-        {
-          "description": "Notice"
         }
       ]
     },
