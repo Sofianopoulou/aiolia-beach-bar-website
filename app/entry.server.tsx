@@ -2,7 +2,7 @@ import { PassThrough } from "stream";
 import { createReadableStreamFromReadable } from "@react-router/node";
 import { type EntryContext, type RouterContextProvider } from "react-router";
 import { ServerRouter } from "react-router";
-import { isbot } from "isbot";
+import { isBot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
 import { I18nextProvider } from "react-i18next";
@@ -17,9 +17,8 @@ export default function handleRequest(
   reactRouterContext: EntryContext,
   routerContext: RouterContextProvider,
 ) {
-  let callbackName = isbot(request.headers.get("user-agent"))
-    ? "onAllReady"
-    : "onShellReady";
+  const userAgent = request.headers.get("user-agent");
+  const callbackName = isBot(userAgent) ? "onAllReady" : "onShellReady";
 
   return new Promise((resolve, reject) => {
     let didError = false;
