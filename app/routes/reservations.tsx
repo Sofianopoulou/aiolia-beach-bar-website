@@ -1,12 +1,13 @@
-import { json, redirect } from "@remix-run/node";
-import { useActionData } from "@remix-run/react";
+import { data, redirect } from "react-router";
+import { useActionData } from "react-router";
 import { useTranslation } from "react-i18next";
 import { sendReservationEmail } from "~/utils/mail.server";
 import { Box, Flex, Card, Heading, Text, Button } from "@radix-ui/themes";
+import type { Route } from "./+types/reservations";
 
 type ActionData = { error?: string };
 
-export const action = async ({ request }: any) => {
+export const action = async ({ request }: Route.ActionArgs) => {
   const formData = await request.formData();
 
   const name = String(formData.get("name") ?? "").trim();
@@ -17,7 +18,7 @@ export const action = async ({ request }: any) => {
   const comments = String(formData.get("comments") ?? "").trim();
 
   if (!name || !date || !time || !people) {
-    return json<ActionData>(
+    return data<ActionData>(
       { error: "Missing required fields." },
       { status: 400 }
     );
@@ -36,7 +37,7 @@ export const action = async ({ request }: any) => {
     return redirect("/reservation-success");
   } catch (error) {
     console.error("Email sending failed:", error);
-    return json<ActionData>(
+    return data<ActionData>(
       { error: "Failed to send reservation email." },
       { status: 500 }
     );

@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { Box, Flex, Heading, Text, Button } from "@radix-ui/themes";
 import { useTranslation } from "react-i18next";
 

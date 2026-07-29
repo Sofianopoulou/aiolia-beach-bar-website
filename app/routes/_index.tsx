@@ -5,7 +5,7 @@ import { Text } from "../components/ui/Text";
 import InteractiveGrid from "../components/InteractiveGrid";
 import { Button } from "~/components/ui/Button";
 import { useTranslation } from "react-i18next";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 
 export default function Index() {
   const { t, i18n } = useTranslation();

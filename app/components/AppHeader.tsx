@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { Flex, Box } from "@radix-ui/themes";
 import logo from "../assets/logo-transparent.png";
 import { ProgressBar } from "./ProgressBar";

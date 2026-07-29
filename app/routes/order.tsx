@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { json } from "@remix-run/node";
-import { useFetcher, useNavigate } from "@remix-run/react";
+import { data as json } from "react-router";
+import { useFetcher, useNavigate } from "react-router";
 
 import Section from "~/components/Section";
 import { MenuData } from "../types/types";

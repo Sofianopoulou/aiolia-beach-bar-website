@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { Box, Flex, Heading, Text, Button } from "@radix-ui/themes";
 import { useTranslation } from "react-i18next";
 
@@ -40,7 +40,7 @@ export default function ReservationSuccess() {
             style={{ color: "rgba(255,255,255,0.9)", maxWidth: 520 }}
           >
             {t(
-              "We’ve received your reservation and can’t wait to welcome you at"
+              "We’ve received your reservation and can’t wait to welcome you at",
             )}{" "}
             <strong>Aiolia Beach Bar</strong>.
           </Text>
@@ -53,7 +53,7 @@ export default function ReservationSuccess() {
           >
             🌊{" "}
             {t(
-              "Sunset views, handcrafted cocktails, and relaxed seaside vibes await you in Nea Anchialos."
+              "Sunset views, handcrafted cocktails, and relaxed seaside vibes await you in Nea Anchialos.",
             )}
           </Text>
 
@@ -69,7 +69,7 @@ export default function ReservationSuccess() {
           >
             ⏰{" "}
             {t(
-              "Your table will be held for 15 minutes after your reservation time. If you’re running late, feel free to call us on"
+              "Your table will be held for 15 minutes after your reservation time. If you’re running late, feel free to call us on",
             )}{" "}
             <a href="tel:+302428077424" style={{ color: "inherit" }}>
               <strong>{t("24280 77424")}</strong>

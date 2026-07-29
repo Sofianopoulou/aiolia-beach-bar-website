@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { Button } from "~/components/ui/Button";
 import { Text } from "~/components/ui/Text";
 import { Flex, Box } from "@radix-ui/themes";
