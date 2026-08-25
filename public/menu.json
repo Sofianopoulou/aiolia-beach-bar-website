@@ -82,6 +82,7 @@
           "price": "3.00€"
         },
         {
+          "name": "",
           "description": "Notice"
         }
       ]
@@ -167,6 +168,7 @@
           "price": "11.00€"
         },
         {
+          "name": "",
           "description": "Notice"
         }
       ]
@@ -225,6 +227,7 @@
           "label": "Vegan"
         },
         {
+          "name": "",
           "description": "Notice"
         }
       ]

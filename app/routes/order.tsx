@@ -8,6 +8,7 @@ import { sendOrderEmail } from "~/utils/mail.server";
 import { useCart } from "~/hooks/useCart";
 import { CartDrawer } from "~/components/CartDrawer";
 import { MiniBar } from "~/components/MiniBar";
+import { MenuSearch, type SearchProduct } from "~/components/MenuSearch";
 
 // ─── ACTION ────────────────────────────────────────────────────────────────
 
@@ -52,6 +53,12 @@ export default function MenuPage() {
   const [error, setError] = useState<string | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [openSection, setOpenSection] = useState<string | null>(null);
+  const [selectedProductName, setSelectedProductName] = useState<string | null>(
+    null,
+  );
+
   const {
     cart,
     total,
@@ -89,9 +96,16 @@ export default function MenuPage() {
   // Redirect on success
   useEffect(() => {
     if (fetcher.data?.success) {
+      clearCart();
       navigate("/order-confirmed");
     }
-  }, [fetcher.data]);
+  }, [fetcher.data, clearCart, navigate]);
+
+  const handleSearchSelect = (product: SearchProduct) => {
+    setSearchQuery("");
+    setOpenSection(product.sectionName);
+    setSelectedProductName(product.name);
+  };
 
   const handleSubmitOrder = ({
     orderType,
@@ -113,7 +127,6 @@ export default function MenuPage() {
     formData.append("phone", phone);
 
     fetcher.submit(formData, { method: "post" });
-    clearCart();
     setIsDrawerOpen(false);
   };
 
@@ -121,17 +134,93 @@ export default function MenuPage() {
   if (error) return <p>{error}</p>;
   if (!data) return <p>No data available</p>;
 
+  const searchableProducts = data.sections.flatMap((section) =>
+    section.items
+      .filter((item) => item.name)
+      .map((item) => ({
+        name: item.name,
+        sectionName: section.name,
+        price: item.price,
+        image: item.image,
+      })),
+  );
+
+  const normalizedSearch = searchQuery.trim().toLowerCase();
+
+  const filteredSections = normalizedSearch
+    ? data.sections
+        .map((section) => ({
+          ...section,
+          items: section.items.filter((item) =>
+            (item.name ?? "").toLowerCase().includes(normalizedSearch),
+          ),
+        }))
+        .filter((section) => section.items.length > 0)
+    : data.sections;
+
+  const handleSearchQueryChange = (query: string) => {
+    setSearchQuery(query);
+
+    // User is starting/changing a search,
+    // so the previously selected product is no longer relevant.
+    setSelectedProductName(null);
+  };
+
   return (
     <>
       <div className="p-5 pb-28">
-        {data.sections.map((section, index) => (
-          <Section
-            key={index}
-            section={section}
-            addToCart={addToCart}
-            isOrdering={true}
+        {/* Search */}
+        <div className="sticky top-0 z-40 -mx-5 mb-6 bg-white/95 px-5 py-3 backdrop-blur-md">
+          <MenuSearch
+            query={searchQuery}
+            onQueryChange={handleSearchQueryChange}
+            products={searchableProducts}
+            onSelect={handleSearchSelect}
           />
-        ))}
+        </div>
+
+        {/* Filtered menu */}
+        {filteredSections.length > 0 ? (
+          filteredSections.map((section) => (
+            <Section
+              key={section.name}
+              section={section}
+              addToCart={addToCart}
+              isOrdering={true}
+              isOpen={openSection === section.name}
+              selectedItemName={
+                openSection === section.name ? selectedProductName : null
+              }
+              onToggle={() => {
+                setSelectedProductName(null);
+
+                setOpenSection((current) =>
+                  current === section.name ? null : section.name,
+                );
+              }}
+            />
+          ))
+        ) : (
+          <div className="flex flex-col items-center justify-center py-20 text-center">
+            <div className="mb-3 text-4xl">🔍</div>
+
+            <p className="text-lg font-semibold text-gray-700">
+              No products found
+            </p>
+
+            <p className="mt-1 text-sm text-gray-400">
+              Try searching for something else.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setSearchQuery("")}
+              className="mt-5 rounded-full bg-[#FA994F] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+            >
+              Clear search
+            </button>
+          </div>
+        )}
       </div>
 
       <CartDrawer
