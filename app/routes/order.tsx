@@ -1,57 +1,21 @@
 import { useEffect, useState } from "react";
-import { data as json } from "react-router";
-import { useFetcher, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 import Section from "~/components/Section";
 import { MenuData } from "../types/types";
-import { sendOrderEmail } from "~/utils/mail.server";
 import { useCart } from "~/hooks/useCart";
 import { CartDrawer } from "~/components/CartDrawer";
 import { MiniBar } from "~/components/MiniBar";
 import { MenuSearch, type SearchProduct } from "~/components/MenuSearch";
 
-// ─── ACTION ────────────────────────────────────────────────────────────────
-
-export const action = async ({ request }: any) => {
-  const formData = await request.formData();
-
-  const items = JSON.parse(String(formData.get("items") ?? "[]"));
-  const total = Number(formData.get("total") ?? 0);
-  const type = String(formData.get("orderType")) as "dinein" | "pickup";
-
-  if (!items.length) return json({ error: "Empty order" }, { status: 400 });
-
-  try {
-    await sendOrderEmail(
-      type === "dinein"
-        ? {
-            type: "dinein",
-            tableNumber: String(formData.get("table")),
-            items,
-            total,
-          }
-        : {
-            type: "pickup",
-            customerName: String(formData.get("customerName")),
-            phone: String(formData.get("phone")),
-            items,
-            total,
-          },
-    );
-    return json({ success: true });
-  } catch (error) {
-    console.error(error);
-    return json({ error: "Failed to send order" }, { status: 500 });
-  }
-};
-
-// ─── PAGE ──────────────────────────────────────────────────────────────────
-
 export default function MenuPage() {
   const [data, setData] = useState<MenuData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -67,39 +31,34 @@ export default function MenuPage() {
     increaseQuantity,
     decreaseQuantity,
     removeItem,
+    updateComment,
     clearCart,
   } = useCart();
 
-  const fetcher = useFetcher();
   const navigate = useNavigate();
-
-  const isSubmitting = fetcher.state === "submitting";
-  const isSuccess = !!fetcher.data?.success;
 
   // Fetch menu data
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("/menu.json");
-        if (!response.ok) throw new Error("Network response was not ok");
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
         const result: MenuData = await response.json();
         setData(result);
-      } catch {
+      } catch (error) {
+        console.error("Failed to fetch menu:", error);
         setError("Failed to fetch data");
       } finally {
         setLoading(false);
       }
     };
+
     fetchData();
   }, []);
-
-  // Redirect on success
-  useEffect(() => {
-    if (fetcher.data?.success) {
-      clearCart();
-      navigate("/order-confirmed");
-    }
-  }, [fetcher.data, clearCart, navigate]);
 
   const handleSearchSelect = (product: SearchProduct) => {
     setSearchQuery("");
@@ -107,7 +66,15 @@ export default function MenuPage() {
     setSelectedProductName(product.name);
   };
 
-  const handleSubmitOrder = ({
+  const handleSearchQueryChange = (query: string) => {
+    setSearchQuery(query);
+
+    // User is starting/changing a search,
+    // so the previously selected product is no longer relevant.
+    setSelectedProductName(null);
+  };
+
+  const handleSubmitOrder = async ({
     orderType,
     tableNumber,
     customerName,
@@ -117,22 +84,81 @@ export default function MenuPage() {
     tableNumber: string;
     customerName: string;
     phone: string;
-  }) => {
-    const formData = new FormData();
-    formData.append("items", JSON.stringify(cart));
-    formData.append("total", String(total));
-    formData.append("orderType", orderType);
-    formData.append("table", tableNumber);
-    formData.append("customerName", customerName);
-    formData.append("phone", phone);
+  }): Promise<boolean> => {
+    if (cart.length === 0) {
+      setSubmitError("Your cart is empty.");
+      return false;
+    }
 
-    fetcher.submit(formData, { method: "post" });
-    setIsDrawerOpen(false);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          orderType: orderType === "dinein" ? "TABLE" : "TAKEAWAY",
+
+          tableNumber: orderType === "dinein" ? Number(tableNumber) : undefined,
+
+          customerName: orderType === "pickup" ? customerName : undefined,
+
+          phone: orderType === "pickup" ? phone : undefined,
+
+          items: cart.map((item) => ({
+            productId: item.productId,
+            quantity: item.quantity,
+            notes: item.comment || undefined,
+          })),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to place order");
+      }
+
+      clearCart();
+      setIsDrawerOpen(false);
+
+      navigate("/order-confirmed", {
+        state: {
+          orderNumber: result.orderNumber,
+          total: result.total,
+        },
+      });
+
+      return true;
+    } catch (error) {
+      console.error("Order submission failed:", error);
+
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong while placing your order.",
+      );
+
+      return false;
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  if (loading) return <p>Shaking up your drinks...</p>;
-  if (error) return <p>{error}</p>;
-  if (!data) return <p>No data available</p>;
+  if (loading) {
+    return <p>Shaking up your drinks...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  if (!data) {
+    return <p>No data available</p>;
+  }
 
   const searchableProducts = data.sections.flatMap((section) =>
     section.items
@@ -157,14 +183,6 @@ export default function MenuPage() {
         }))
         .filter((section) => section.items.length > 0)
     : data.sections;
-
-  const handleSearchQueryChange = (query: string) => {
-    setSearchQuery(query);
-
-    // User is starting/changing a search,
-    // so the previously selected product is no longer relevant.
-    setSelectedProductName(null);
-  };
 
   return (
     <>
@@ -230,10 +248,12 @@ export default function MenuPage() {
         total={total}
         totalItems={totalItems}
         isSubmitting={isSubmitting}
-        isSuccess={isSuccess}
+        isSuccess={false}
+        submitError={submitError}
         onIncrease={increaseQuantity}
         onDecrease={decreaseQuantity}
         onRemove={removeItem}
+        onUpdateComment={updateComment}
         onSubmit={handleSubmitOrder}
       />
 

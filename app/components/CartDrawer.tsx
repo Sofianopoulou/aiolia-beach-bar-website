@@ -17,16 +17,19 @@ type CartDrawerProps = {
   totalItems: number;
   isSubmitting: boolean;
   isSuccess: boolean;
+  submitError?: string | null;
+
   onIncrease: (index: number) => void;
   onDecrease: (index: number) => void;
   onRemove: (index: number) => void;
   onUpdateComment: (index: number, comment: string) => void;
+
   onSubmit: (params: {
     orderType: "dinein" | "pickup";
     tableNumber: string;
     customerName: string;
     phone: string;
-  }) => void;
+  }) => Promise<boolean>;
 };
 
 export function CartDrawer({
@@ -37,6 +40,7 @@ export function CartDrawer({
   totalItems,
   isSubmitting,
   isSuccess,
+  submitError,
   onIncrease,
   onDecrease,
   onRemove,
@@ -44,21 +48,24 @@ export function CartDrawer({
   onSubmit,
 }: CartDrawerProps) {
   const [orderType, setOrderType] = useState<"dinein" | "pickup">("dinein");
+
   const [tableNumber, setTableNumber] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [phone, setPhone] = useState("");
 
-  // Each item can have its note field open independently
+  // Each item can have its note field open independently.
   const [openComments, setOpenComments] = useState<Set<number>>(new Set());
 
   const toggleComment = (index: number) => {
     setOpenComments((prev) => {
       const next = new Set(prev);
+
       if (next.has(index)) {
         next.delete(index);
       } else {
         next.add(index);
       }
+
       return next;
     });
   };
@@ -71,20 +78,37 @@ export function CartDrawer({
     });
   };
 
-  const handleSubmit = () => {
-    if (orderType === "dinein" && !tableNumber) {
+  const handleSubmit = async () => {
+    if (isSubmitting) return;
+
+    if (cart.length === 0) {
+      return;
+    }
+
+    if (orderType === "dinein" && !tableNumber.trim()) {
       alert("Please enter table number");
       return;
     }
-    if (orderType === "pickup" && (!customerName || !phone)) {
+
+    if (orderType === "pickup" && (!customerName.trim() || !phone.trim())) {
       alert("Please enter name and phone");
       return;
     }
-    onSubmit({ orderType, tableNumber, customerName, phone });
-    setTableNumber("");
-    setCustomerName("");
-    setPhone("");
-    setOpenComments(new Set());
+
+    const success = await onSubmit({
+      orderType,
+      tableNumber: tableNumber.trim(),
+      customerName: customerName.trim(),
+      phone: phone.trim(),
+    });
+
+    // Only clear the form if the backend successfully created the order.
+    if (success) {
+      setTableNumber("");
+      setCustomerName("");
+      setPhone("");
+      setOpenComments(new Set());
+    }
   };
 
   const inputStyle = {
@@ -146,6 +170,7 @@ export function CartDrawer({
           {/* Header */}
           <Flex justify="between" align="center">
             <Heading size="4">Your Order</Heading>
+
             <Badge color="blue" variant="soft">
               {totalItems} {totalItems === 1 ? "item" : "items"}
             </Badge>
@@ -153,17 +178,22 @@ export function CartDrawer({
 
           <Separator size="4" />
 
-          {/* Order type toggle */}
+          {/* Order type */}
           <Flex gap="2">
             <Button
+              type="button"
               variant={orderType === "dinein" ? "solid" : "soft"}
               onClick={() => setOrderType("dinein")}
+              disabled={isSubmitting}
             >
               Dine-in
             </Button>
+
             <Button
+              type="button"
               variant={orderType === "pickup" ? "solid" : "soft"}
               onClick={() => setOrderType("pickup")}
+              disabled={isSubmitting}
             >
               Pickup
             </Button>
@@ -173,9 +203,11 @@ export function CartDrawer({
           {orderType === "dinein" ? (
             <input
               type="text"
+              inputMode="numeric"
               placeholder="Table Number"
               value={tableNumber}
               onChange={(e) => setTableNumber(e.target.value)}
+              disabled={isSubmitting}
               style={inputStyle}
             />
           ) : (
@@ -185,19 +217,22 @@ export function CartDrawer({
                 placeholder="Your Name"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
+                disabled={isSubmitting}
                 style={inputStyle}
               />
+
               <input
                 type="tel"
                 placeholder="Phone Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                disabled={isSubmitting}
                 style={inputStyle}
               />
             </Flex>
           )}
 
-          {/* Empty state */}
+          {/* Empty cart */}
           {cart.length === 0 ? (
             <Text size="2" color="gray">
               No items yet. Close this and tap "+" on any item.
@@ -207,40 +242,51 @@ export function CartDrawer({
               {/* Cart items */}
               <Flex direction="column" gap="2">
                 {cart.map((item, i) => (
-                  <Flex key={i} direction="column" gap="1">
+                  <Flex key={item.productId} direction="column" gap="1">
                     {/* Item row */}
                     <Flex justify="between" align="center">
                       <Flex direction="column" gap="1">
                         <Text size="2" weight="medium">
                           {item.name}
                         </Text>
+
                         <Flex align="center" gap="2">
                           <Button
+                            type="button"
                             size="1"
                             variant="soft"
                             onClick={() => onDecrease(i)}
+                            disabled={isSubmitting}
                           >
                             −
                           </Button>
+
                           <Text size="2">{item.quantity}</Text>
+
                           <Button
+                            type="button"
                             size="1"
                             variant="soft"
                             onClick={() => onIncrease(i)}
+                            disabled={isSubmitting}
                           >
                             +
                           </Button>
+
                           <Button
+                            type="button"
                             size="1"
                             variant="ghost"
                             color="red"
                             onClick={() => onRemove(i)}
+                            disabled={isSubmitting}
                           >
                             ✕
                           </Button>
 
-                          {/* Note toggle button */}
+                          {/* Note toggle */}
                           <Button
+                            type="button"
                             size="1"
                             variant={
                               openComments.has(i) || item.comment
@@ -249,6 +295,7 @@ export function CartDrawer({
                             }
                             color={item.comment ? "orange" : "gray"}
                             onClick={() => toggleComment(i)}
+                            disabled={isSubmitting}
                             style={{ fontSize: 12 }}
                           >
                             {item.comment ? "📝 Note" : "＋ Note"}
@@ -261,20 +308,29 @@ export function CartDrawer({
                         weight="bold"
                         style={{ color: "var(--accent-9)" }}
                       >
-                        {Number(item.price.replace("€", "")) * item.quantity}€
+                        {(
+                          Number(item.price.replace("€", "")) * item.quantity
+                        ).toFixed(2)}
+                        €
                       </Text>
                     </Flex>
 
-                    {/* Inline comment field — each item independent */}
+                    {/* Comment field */}
                     {openComments.has(i) && (
                       <textarea
-                        key={`comment-${i}`}
+                        key={`comment-${item.productId}`}
                         autoFocus
                         placeholder="e.g. no lettuce, with tonic, extra sauce..."
                         defaultValue={item.comment ?? ""}
+                        disabled={isSubmitting}
                         onBlur={(e) => {
-                          onUpdateComment(i, e.target.value);
-                          if (!e.target.value) closeComment(i);
+                          const value = e.target.value.trim();
+
+                          onUpdateComment(i, value);
+
+                          if (!value) {
+                            closeComment(i);
+                          }
                         }}
                         rows={2}
                         style={{
@@ -292,7 +348,7 @@ export function CartDrawer({
                       />
                     )}
 
-                    {/* Show saved note preview when collapsed */}
+                    {/* Saved note preview */}
                     {!openComments.has(i) && item.comment && (
                       <Text
                         size="1"
@@ -316,23 +372,32 @@ export function CartDrawer({
               {/* Total */}
               <Flex justify="between" align="center">
                 <Text weight="bold">Total</Text>
-                <Text weight="bold">{total}€</Text>
+                <Text weight="bold">{total.toFixed(2)}€</Text>
               </Flex>
 
+              {/* Success */}
               {isSuccess && (
                 <Text size="2" color="green">
-                  Order sent successfully!
+                  Order placed successfully!
+                </Text>
+              )}
+
+              {/* Backend error */}
+              {submitError && (
+                <Text size="2" color="red">
+                  {submitError}
                 </Text>
               )}
 
               {/* Submit */}
               <Button
+                type="button"
                 size="3"
                 radius="full"
                 onClick={handleSubmit}
-                disabled={isSubmitting}
+                disabled={isSubmitting || cart.length === 0}
               >
-                {isSubmitting ? "Sending..." : "Send Order"}
+                {isSubmitting ? "Placing order..." : "Place Order"}
               </Button>
             </>
           )}

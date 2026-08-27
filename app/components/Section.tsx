@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Section as SectionType } from "../types/types";
+import { Section as SectionType, type OrderableMenuItem } from "../types/types";
 import { Flex, Box } from "@radix-ui/themes";
 import MenuItem from "./MenuItem";
 import { useTranslation } from "react-i18next";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Text } from "./ui/Text";
+import { createProductId, createSlug } from "~/utils/productId";
 
 interface SectionProps {
   section: SectionType;
-  addToCart?: (item: any) => void;
+  addToCart?: (item: OrderableMenuItem) => void;
   isOrdering?: boolean;
 
   // Optional controlled state.
@@ -19,14 +20,6 @@ interface SectionProps {
   // Used when navigating here through search.
   selectedItemName?: string | null;
 }
-
-const createSlug = (value: string) =>
-  value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
 
 const Section: React.FC<SectionProps> = ({
   section,
@@ -89,9 +82,11 @@ const Section: React.FC<SectionProps> = ({
             {t(section.name)}
           </Text>
 
-          <Text size="2" weight="bold" className="text-white">
-            {t(section.description)}
-          </Text>
+          {section.description && (
+            <Text size="2" weight="bold" className="text-white">
+              {t(section.description)}
+            </Text>
+          )}
         </Flex>
 
         <Flex justify="end" className="ml-auto">
@@ -121,6 +116,8 @@ const Section: React.FC<SectionProps> = ({
               section.name,
             )}-${createSlug(itemName)}`;
 
+            const productId = createProductId(section.name, itemName);
+
             const isSelected = selectedItemName === itemName;
 
             return (
@@ -135,6 +132,7 @@ const Section: React.FC<SectionProps> = ({
               >
                 <MenuItem
                   item={item}
+                  productId={productId}
                   addToCart={addToCart}
                   isOrdering={isOrdering}
                 />

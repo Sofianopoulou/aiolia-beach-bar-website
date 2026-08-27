@@ -1,8 +1,7 @@
 import { useState } from "react";
+import type { OrderableMenuItem } from "../types/types";
 
-export type CartItem = {
-  name: string;
-  price: string;
+export type CartItem = OrderableMenuItem & {
   quantity: number;
   comment?: string;
 };
@@ -10,15 +9,25 @@ export type CartItem = {
 export function useCart() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (item: CartItem) => {
+  const addToCart = (item: OrderableMenuItem) => {
     setCart((prev) => {
-      const exists = prev.find((p) => p.name === item.name);
+      const exists = prev.find((p) => p.productId === item.productId);
+
       if (exists) {
         return prev.map((p) =>
-          p.name === item.name ? { ...p, quantity: p.quantity + 1 } : p,
+          p.productId === item.productId
+            ? { ...p, quantity: p.quantity + 1 }
+            : p,
         );
       }
-      return [...prev, { ...item, quantity: 1 }];
+
+      return [
+        ...prev,
+        {
+          ...item,
+          quantity: 1,
+        },
+      ];
     });
   };
 

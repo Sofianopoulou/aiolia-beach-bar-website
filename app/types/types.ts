@@ -1,6 +1,6 @@
 export interface MenuItem {
   name: string;
-  description: string;
+  description?: string;
   price: string;
   image?: string;
   label?: string;
@@ -8,11 +8,17 @@ export interface MenuItem {
 
 export interface Section {
   name: string;
-  description: string;
+  description?: string;
   labelImage?: string;
   items: MenuItem[];
 }
 
 export interface MenuData {
   sections: Section[];
+}
+
+export interface OrderableMenuItem {
+  productId: string;
+  name: string;
+  price: string;
 }
