@@ -10,6 +10,7 @@ export interface Section {
   name: string;
   description?: string;
   labelImage?: string;
+  station?: "BAR" | "KITCHEN";
   items: MenuItem[];
 }
 

@@ -27,10 +27,15 @@ const products = new Map<
   {
     name: string;
     price: number;
+    station: "BAR" | "KITCHEN";
   }
 >();
 
 for (const section of menu.sections) {
+  if (!section.station) {
+    continue;
+  }
+
   for (const item of section.items) {
     if (!item.name || !item.price) {
       continue;
@@ -47,6 +52,7 @@ for (const section of menu.sections) {
     products.set(productId, {
       name: item.name,
       price,
+      station: section.station,
     });
   }
 }
@@ -115,6 +121,7 @@ export async function action({ request }: { request: Request }) {
         quantity: item.quantity,
         unit_price: product.price,
         notes: item.notes?.trim() || null,
+        station: product.station,
       };
     });
 

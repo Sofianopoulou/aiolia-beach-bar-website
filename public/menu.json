@@ -3,6 +3,7 @@
     {
       "name": "FOOD XPERIENCE",
       "description": "Food xperience description",
+      "station": "KITCHEN",
       "items": [
         {
           "name": "Burger Storm 240gr 100% beef (3pcs)",
@@ -90,6 +91,7 @@
     {
       "name": "SALADS",
       "description": "Salads Description",
+      "station": "KITCHEN",
       "labelImage": "horiatiki-salad.jpeg",
       "items": [
         {
@@ -126,6 +128,7 @@
     {
       "name": "PIZZAS",
       "description": "Pizzas Description",
+      "station": "KITCHEN",
       "labelImage": "margherita-pizza-cropped.jpg",
       "items": [
         {
@@ -176,6 +179,7 @@
     {
       "name": "VEGETARIAN FOOD XPERIENCE",
       "description": "Vegetarian Food xperience description",
+      "station": "KITCHEN",
       "items": [
         {
           "name": "Pizza Margherita",
@@ -235,6 +239,7 @@
     {
       "name": "COCKTAILS - OUR SIGNATURES",
       "description": "Seasonal ingredients combined for palate satisfaction",
+      "station": "BAR",
       "labelImage": "signature-cocktails-cropped.jpg",
       "items": [
         {
@@ -313,8 +318,9 @@
     },
     {
       "name": "COCKTAILS - CLASSICS",
-      "labelImage": "cocktails-classics.jpg",
       "description": "All time classics with a touch of finess",
+      "station": "BAR",
+      "labelImage": "cocktails-classics.jpg",
       "items": [
         {
           "name": "APEROL SPRITZ",
@@ -416,6 +422,7 @@
     {
       "name": "COCKTAILS - ALCOHOL FREE",
       "description": "For those who crave flavor without alcohol — refined creations full of aroma, freshness, and balance.",
+      "station": "BAR",
       "items": [
         {
           "name": "MOJITO VIRGIN",
@@ -475,6 +482,7 @@
     {
       "name": "SPIRITS - ALCOHOL FREE",
       "description": "Premium alcohol-free spirits designed for refined serves with character and balance.",
+      "station": "BAR",
       "items": [
         {
           "name": "Tanqueray 0.0%",
@@ -498,6 +506,7 @@
       "name": "DESSERTS",
       "labelImage": "desserts.jpg",
       "description": "Sweet delicacies, crafted to delight your senses and satisfy your cravings.",
+      "station": "KITCHEN",
       "items": [
         {
           "name": "Ice Cream",
@@ -540,6 +549,7 @@
     {
       "name": "COFFEE & BEVERAGES",
       "labelImage": "coffee.jpg",
+      "station": "BAR",
       "items": [
         {
           "name": "Greek Coffee",
@@ -663,6 +673,7 @@
     {
       "name": "BEER",
       "labelImage": "beer.jpg",
+      "station": "BAR",
       "items": [
         {
           "name": "Amstel (330ml)",
@@ -729,6 +740,7 @@
     {
       "name": "WINES",
       "labelImage": "wines.jpg",
+      "station": "BAR",
       "items": [
         {
           "name": "Vivlia Hora White Glass (150ml)",
@@ -895,6 +907,7 @@
     },
     {
       "name": "RTD",
+      "station": "BAR",
       "items": [
         {
           "name": "Gordons Space",
@@ -924,6 +937,7 @@
     },
     {
       "name": "TSIPOURO",
+      "station": "BAR",
       "items": [
         {
           "name": "Thessaliko 50ml",
@@ -958,6 +972,7 @@
     {
       "name": "WHISKEYS, BOURBON AND MALT",
       "description": "Blended to premiums and everything in between",
+      "station": "BAR",
       "items": [
         {
           "name": "Four Roses 40% 60ml",
@@ -1251,6 +1266,7 @@
     },
     {
       "name": "VODKA",
+      "station": "BAR",
       "items": [
         {
           "name": "Absolut 40% 60ml",
@@ -1300,6 +1316,7 @@
     },
     {
       "name": "RUM",
+      "station": "BAR",
       "items": [
         {
           "name": "Bacardi carta Blanca 37.5% 60ml",
@@ -1361,6 +1378,7 @@
     },
     {
       "name": "GIN",
+      "station": "BAR",
       "items": [
         {
           "name": "Beefeater 40% 60ml",
@@ -1411,6 +1429,7 @@
 
     {
       "name": "TEQUILA",
+      "station": "BAR",
       "items": [
         {
           "name": "Jose Cuervo Silver 38% 60ml",
@@ -1444,6 +1463,7 @@
     },
     {
       "name": "COGNAC",
+      "station": "BAR",
       "items": [
         {
           "name": "Metaxa 3* 60ml",
@@ -1466,6 +1486,7 @@
 
     {
       "name": "VERMOUTH, SHERRY & PORT",
+      "station": "BAR",
       "items": [
         {
           "name": "Martini Bianco 14.4% 60ml",
@@ -1495,6 +1516,7 @@
     },
     {
       "name": "LIQUEURS",
+      "station": "BAR",
       "items": [
         {
           "name": "Drambuie",
@@ -1540,6 +1562,7 @@
     },
     {
       "name": "APERITIFS AND BITTERS",
+      "station": "BAR",
       "items": [
         {
           "name": "Aperol 11%",
