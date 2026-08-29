@@ -34,6 +34,23 @@ type GroupedOrder = {
   items: ProductionOrderItem[];
 };
 
+type StaffShift = {
+  id: string;
+  user_id: string;
+  station: "BAR" | "KITCHEN";
+  status: "ASSIGNED" | "ACTIVE" | "CLOSED" | "CANCELLED";
+  scheduled_start: string;
+  scheduled_end: string;
+  started_at: string | null;
+  ended_at: string | null;
+};
+
+type StaffProfile = {
+  id: string;
+  name: string;
+  role: "BAR" | "KITCHEN" | "ADMIN";
+};
+
 async function getAuthHeaders() {
   const {
     data: { session },
@@ -53,6 +70,11 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [updatingOrderId, setUpdatingOrderId] = useState<string | null>(null);
+
+  const [shift, setShift] = useState<StaffShift | null>(null);
+  const [isUpdatingShift, setIsUpdatingShift] = useState(false);
+
+  const [staffProfile, setStaffProfile] = useState<StaffProfile | null>(null);
 
   // Used so elapsed-time labels refresh automatically.
   const [now, setNow] = useState(Date.now());
@@ -82,6 +104,8 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
   // Initial fetch + Supabase Realtime.
   useEffect(() => {
     loadItems();
+    loadMyShift();
+    loadStaffProfile();
 
     const channel = supabaseClient
       .channel(`${station.toLowerCase()}-order-items`)
@@ -116,6 +140,87 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
       window.clearInterval(timer);
     };
   }, []);
+
+  async function loadMyShift() {
+    try {
+      const headers = await getAuthHeaders();
+
+      const response = await fetch("/api/staff/my-shift", {
+        headers,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Could not load your shift");
+      }
+
+      setShift(result.shift ?? null);
+    } catch (error) {
+      console.error("Load shift error:", error);
+      setShift(null);
+    }
+  }
+
+  async function loadStaffProfile() {
+    try {
+      const {
+        data: { user },
+      } = await supabaseClient.auth.getUser();
+
+      if (!user) {
+        setStaffProfile(null);
+        return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from("staff_profiles")
+        .select("id, name, role")
+        .eq("id", user.id)
+        .single();
+
+      if (error) {
+        console.error("Could not load staff profile:", error);
+        setStaffProfile(null);
+        return;
+      }
+
+      setStaffProfile(data as StaffProfile);
+    } catch (error) {
+      console.error("Could not load staff profile:", error);
+      setStaffProfile(null);
+    }
+  }
+
+  async function updateMyShift(action: "START" | "END") {
+    try {
+      setIsUpdatingShift(true);
+
+      const headers = await getAuthHeaders();
+
+      const response = await fetch("/api/staff/my-shift", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...headers,
+        },
+        body: JSON.stringify({ action }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Could not update shift");
+      }
+
+      await loadMyShift();
+    } catch (error) {
+      console.error("Shift update error:", error);
+      alert(error instanceof Error ? error.message : "Could not update shift");
+    } finally {
+      setIsUpdatingShift(false);
+    }
+  }
 
   const groupedOrders = useMemo<GroupedOrder[]>(() => {
     const groups = new Map<string, GroupedOrder>();
@@ -640,6 +745,18 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
           >
             {station === "BAR" ? "Bar Production" : "Kitchen Production"}
           </h1>
+          {staffProfile && (
+            <div
+              style={{
+                marginTop: 5,
+                color: "#FA994F",
+                fontSize: 16,
+                fontWeight: 700,
+              }}
+            >
+              Logged in as {staffProfile.name}
+            </div>
+          )}
         </div>
 
         <div
@@ -651,43 +768,151 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
         >
           <div
             style={{
-              textAlign: "right",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              flexWrap: "wrap",
+              justifyContent: "flex-end",
             }}
           >
-            <div
-              style={{
-                fontSize: 24,
-                fontWeight: 900,
-              }}
-            >
-              {groupedOrders.length}
-            </div>
+            {(!shift ||
+              shift.status === "CLOSED" ||
+              shift.status === "CANCELLED") && (
+              <div
+                style={{
+                  padding: "8px 12px",
+                  borderRadius: 8,
+                  background: "#f3f4f6",
+                  color: "#6b7280",
+                  fontWeight: 700,
+                }}
+              >
+                No active or assigned shift
+              </div>
+            )}
+
+            {shift?.status === "ASSIGNED" && (
+              <>
+                <div>
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: "#6b7280",
+                      fontWeight: 700,
+                    }}
+                  >
+                    TODAY'S SHIFT
+                  </div>
+
+                  <div
+                    style={{
+                      fontWeight: 800,
+                    }}
+                  >
+                    {new Date(shift.scheduled_start).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                    {" → "}
+                    {new Date(shift.scheduled_end).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  disabled={isUpdatingShift}
+                  onClick={() => updateMyShift("START")}
+                  style={{
+                    minHeight: 40,
+                    padding: "0 14px",
+                    border: "none",
+                    borderRadius: 8,
+                    background: "#FA994F",
+                    color: "#fff",
+                    fontWeight: 900,
+                    cursor: isUpdatingShift ? "not-allowed" : "pointer",
+                  }}
+                >
+                  START SHIFT
+                </button>
+              </>
+            )}
+
+            {shift?.status === "ACTIVE" && (
+              <>
+                <div
+                  style={{
+                    padding: "8px 12px",
+                    borderRadius: 8,
+                    background: "#dcfce7",
+                    color: "#166534",
+                    fontWeight: 900,
+                  }}
+                >
+                  ● ON SHIFT
+                  {shift.started_at && (
+                    <span
+                      style={{
+                        marginLeft: 8,
+                        fontWeight: 600,
+                      }}
+                    >
+                      since{" "}
+                      {new Date(shift.started_at).toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </span>
+                  )}
+                </div>
+
+                <button
+                  type="button"
+                  disabled={isUpdatingShift}
+                  onClick={() => updateMyShift("END")}
+                  style={{
+                    minHeight: 40,
+                    padding: "0 14px",
+                    border: "1px solid #d1d5db",
+                    borderRadius: 8,
+                    background: "#ffffff",
+                    fontWeight: 800,
+                    cursor: isUpdatingShift ? "not-allowed" : "pointer",
+                  }}
+                >
+                  END SHIFT
+                </button>
+              </>
+            )}
 
             <div
               style={{
                 color: "#6b7280",
-                fontSize: 13,
+                fontWeight: 700,
               }}
             >
-              Active orders
+              {groupedOrders.length} active orders
             </div>
-          </div>
 
-          <button
-            type="button"
-            onClick={loadItems}
-            style={{
-              minHeight: 44,
-              padding: "0 16px",
-              border: "1px solid #d1d5db",
-              background: "#ffffff",
-              borderRadius: 9,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
-            Refresh
-          </button>
+            <button
+              type="button"
+              onClick={loadItems}
+              style={{
+                minHeight: 40,
+                padding: "0 14px",
+                borderRadius: 8,
+                border: "1px solid #d1d5db",
+                background: "#ffffff",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Refresh
+            </button>
+          </div>
         </div>
       </header>
 

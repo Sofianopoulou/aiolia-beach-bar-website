@@ -67,7 +67,7 @@ export default function StaffLoginPage() {
       }
 
       if (profile.role === "ADMIN") {
-        navigate("/admin/orders");
+        navigate("/admin");
         return;
       }
 

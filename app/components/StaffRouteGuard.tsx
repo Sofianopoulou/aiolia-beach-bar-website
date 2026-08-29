@@ -5,7 +5,7 @@ import { supabaseClient } from "../services/supabase.client";
 type StaffRole = "BAR" | "KITCHEN" | "ADMIN";
 
 type StaffRouteGuardProps = {
-  allowedRole: "BAR" | "KITCHEN";
+  allowedRole: "BAR" | "KITCHEN" | "ADMIN";
   children: ReactNode;
 };
 
@@ -49,17 +49,11 @@ export default function StaffRouteGuard({
 
       const role = profile.role as StaffRole;
 
-      if (role === "ADMIN") {
-        setIsChecking(false);
-        return;
-      }
-
       if (role !== allowedRole) {
         if (role === "BAR") {
           navigate("/staff/bar", {
             replace: true,
           });
-
           return;
         }
 
@@ -67,7 +61,13 @@ export default function StaffRouteGuard({
           navigate("/staff/kitchen", {
             replace: true,
           });
+          return;
+        }
 
+        if (role === "ADMIN") {
+          navigate("/admin", {
+            replace: true,
+          });
           return;
         }
 
