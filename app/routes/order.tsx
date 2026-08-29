@@ -188,7 +188,7 @@ export default function MenuPage() {
     <>
       <div className="p-5 pb-28">
         {/* Search */}
-        <div className="sticky top-0 z-40 -mx-5 mb-6 bg-white/95 px-5 py-3 backdrop-blur-md">
+        <div className="sticky top-16 z-40 -mx-5 mb-6 bg-white/95 px-5 py-3 backdrop-blur-md">
           <MenuSearch
             query={searchQuery}
             onQueryChange={handleSearchQueryChange}
