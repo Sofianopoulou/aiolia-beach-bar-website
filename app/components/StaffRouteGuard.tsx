@@ -2,10 +2,10 @@ import { type ReactNode, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { supabaseClient } from "../services/supabase.client";
 
-type StaffRole = "BAR" | "KITCHEN" | "ADMIN";
+type StaffRole = "BAR" | "KITCHEN" | "WAITER" | "ADMIN";
 
 type StaffRouteGuardProps = {
-  allowedRole: "BAR" | "KITCHEN" | "ADMIN";
+  allowedRole: "BAR" | "KITCHEN" | "WAITER" | "ADMIN";
   children: ReactNode;
 };
 
@@ -61,6 +61,11 @@ export default function StaffRouteGuard({
           navigate("/staff/kitchen", {
             replace: true,
           });
+          return;
+        }
+
+        if (profile.role === "WAITER") {
+          navigate("/waiter", { replace: true });
           return;
         }
 

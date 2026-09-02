@@ -550,6 +550,78 @@
       "name": "COFFEE & BEVERAGES",
       "labelImage": "coffee.jpg",
       "station": "BAR",
+      "modifierGroups": [
+        {
+          "id": "sugar",
+          "name": "Sugar",
+          "multiple": false,
+          "options": [
+            {
+              "id": "plain",
+              "name": "No sugar"
+            },
+            {
+              "id": "medium",
+              "name": "Medium"
+            },
+            {
+              "id": "sweet",
+              "name": "Sweet"
+            }
+          ]
+        },
+        {
+          "id": "sweetener",
+          "name": "Sweetener",
+          "multiple": false,
+          "options": [
+            {
+              "id": "white-sugar",
+              "name": "White sugar"
+            },
+            {
+              "id": "brown-sugar",
+              "name": "Brown sugar"
+            },
+            {
+              "id": "stevia",
+              "name": "Stevia"
+            },
+            {
+              "id": "saccharin",
+              "name": "Saccharin"
+            }
+          ]
+        },
+        {
+          "id": "extras",
+          "name": "Extras",
+          "multiple": true,
+          "options": [
+            {
+              "id": "milk",
+              "name": "Milk"
+            },
+            {
+              "id": "little-milk",
+              "name": "Little milk"
+            },
+            {
+              "id": "decaf",
+              "name": "Decaf"
+            },
+            {
+              "id": "cinnamon",
+              "name": "Cinnamon"
+            },
+            {
+              "id": "baileys",
+              "name": "Baileys",
+              "price": 1.5
+            }
+          ]
+        }
+      ],
       "items": [
         {
           "name": "Greek Coffee",

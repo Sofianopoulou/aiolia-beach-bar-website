@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
 import { supabaseClient } from "../services/supabase.client";
 
-type StaffRole = "BAR" | "KITCHEN" | "ADMIN";
+type StaffRole = "BAR" | "KITCHEN" | "WAITER" | "ADMIN";
 
 type StaffProfile = {
   id: string;
@@ -63,6 +63,11 @@ export default function StaffLoginPage() {
 
       if (profile.role === "KITCHEN") {
         navigate("/staff/kitchen");
+        return;
+      }
+
+      if (profile.role === "WAITER") {
+        navigate("/waiter");
         return;
       }
 

@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
+  useLocation,
 } from "react-router";
 
 import type { LinksFunction, MetaFunction } from "react-router";
@@ -136,6 +137,13 @@ export default function App({ loaderData }: Route.ComponentProps) {
     useSuspense: false,
   });
 
+  const location = useLocation();
+
+  const isStaffRoute =
+    location.pathname.startsWith("/staff") ||
+    location.pathname.startsWith("/admin") ||
+    location.pathname.startsWith("/waiter");
+
   useEffect(() => {
     async function synchronizeLanguage() {
       if (i18n.resolvedLanguage !== locale && i18n.language !== locale) {
@@ -151,13 +159,13 @@ export default function App({ loaderData }: Route.ComponentProps) {
 
   return (
     <>
-      <AppHeader />
+      {!isStaffRoute && <AppHeader />}
 
       <main className="pt-20">
         <Outlet />
       </main>
 
-      <Footer />
+      {!isStaffRoute && <Footer />}
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { supabase } from "./supabase.server";
 
-export type StaffRole = "BAR" | "KITCHEN" | "ADMIN";
+export type StaffRole = "BAR" | "KITCHEN" | "WAITER" | "ADMIN";
 
 export async function requireStaff(
   request: Request,
