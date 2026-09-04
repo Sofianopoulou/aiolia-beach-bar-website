@@ -541,25 +541,65 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
           }}
         >
           {status === "ARRIVED" && (
-            <button
-              type="button"
-              disabled={isUpdating}
-              onClick={() => updateWholeOrder(groupedOrder, "PREPARING")}
+            <div
               style={{
-                width: "100%",
-                minHeight: 52,
-                border: "none",
-                borderRadius: 10,
-                background: "#FA994F",
-                color: "#ffffff",
-                fontSize: 16,
-                fontWeight: 900,
-                cursor: isUpdating ? "not-allowed" : "pointer",
-                opacity: isUpdating ? 0.6 : 1,
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
               }}
             >
-              {isUpdating ? "UPDATING..." : "START PREPARING"}
-            </button>
+              <button
+                type="button"
+                disabled={isUpdating}
+                onClick={() => updateWholeOrder(groupedOrder, "PREPARING")}
+                style={{
+                  flex: 1,
+                  minHeight: 52,
+
+                  border: "none",
+                  borderRadius: 10,
+
+                  background: "#FA994F",
+                  color: "#ffffff",
+
+                  fontSize: 16,
+                  fontWeight: 900,
+
+                  cursor: isUpdating ? "not-allowed" : "pointer",
+                  opacity: isUpdating ? 0.6 : 1,
+                }}
+              >
+                {isUpdating ? "UPDATING..." : "START PREPARING"}
+              </button>
+
+              <button
+                type="button"
+                disabled={isUpdating}
+                onClick={() => updateWholeOrder(groupedOrder, "COMPLETED")}
+                title="Complete immediately"
+                aria-label="Complete order immediately"
+                style={{
+                  width: 52,
+                  height: 52,
+
+                  flex: "0 0 52px",
+
+                  border: "1px solid #d1d5db",
+                  borderRadius: 10,
+
+                  background: "#ffffff",
+                  color: "#16a34a",
+
+                  fontSize: 23,
+                  fontWeight: 900,
+
+                  cursor: isUpdating ? "not-allowed" : "pointer",
+                  opacity: isUpdating ? 0.6 : 1,
+                }}
+              >
+                ✓
+              </button>
+            </div>
           )}
 
           {status === "PREPARING" && (

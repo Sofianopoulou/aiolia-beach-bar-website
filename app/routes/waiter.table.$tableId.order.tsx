@@ -75,6 +75,10 @@ export default function WaiterOrderPage() {
   const [isSubmittingOrder, setIsSubmittingOrder] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  const [editingNoteLineId, setEditingNoteLineId] = useState<string | null>(
+    null,
+  );
+
   // MODIFIER MODAL
 
   const [modifierSection, setModifierSection] = useState<Section | null>(null);
@@ -404,7 +408,7 @@ export default function WaiterOrderPage() {
       setCart([]);
       setIsCartOpen(false);
 
-      navigate(`/waiter/table/${tableId}`);
+      navigate(`/waiter`);
     } catch (error) {
       setSubmitError(
         error instanceof Error ? error.message : "Could not send order",
@@ -552,9 +556,9 @@ export default function WaiterOrderPage() {
         type="button"
         onClick={() => openProduct(section, item)}
         style={{
-          minHeight: 115,
+          minHeight: 82,
 
-          padding: 14,
+          padding: 10,
 
           display: "flex",
           flexDirection: "column",
@@ -566,7 +570,7 @@ export default function WaiterOrderPage() {
 
           border: "1px solid #d1d5db",
 
-          borderRadius: 12,
+          borderRadius: 10,
 
           cursor: "pointer",
         }}
@@ -574,8 +578,9 @@ export default function WaiterOrderPage() {
         <div>
           <div
             style={{
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: 800,
+              lineHeight: 1.15,
             }}
           >
             {item.name}
@@ -584,9 +589,9 @@ export default function WaiterOrderPage() {
           {searchQuery && (
             <div
               style={{
-                marginTop: 4,
+                marginTop: 2,
                 color: "#9ca3af",
-                fontSize: 11,
+                fontSize: 10,
                 fontWeight: 700,
               }}
             >
@@ -600,12 +605,13 @@ export default function WaiterOrderPage() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "end",
-            gap: 8,
+            gap: 6,
+            marginTop: 8,
           }}
         >
           <strong
             style={{
-              fontSize: 16,
+              fontSize: 14,
             }}
           >
             {formatMoney(getPrice(item))}
@@ -615,7 +621,7 @@ export default function WaiterOrderPage() {
             <span
               style={{
                 color: "#FA994F",
-                fontSize: 11,
+                fontSize: 9,
                 fontWeight: 900,
               }}
             >
@@ -767,9 +773,16 @@ export default function WaiterOrderPage() {
                 gap: 8,
 
                 overflowX: "auto",
+                overflowY: "hidden",
+
+                whiteSpace: "nowrap",
 
                 padding: "0 20px 12px",
+
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
               }}
+              className="[&::-webkit-scrollbar]:hidden"
             >
               {menu.sections.map((section) => {
                 const selected = section.name === selectedSectionName;
@@ -782,9 +795,9 @@ export default function WaiterOrderPage() {
                     style={{
                       flex: "0 0 auto",
 
-                      minHeight: 42,
+                      minHeight: 36,
 
-                      padding: "0 15px",
+                      padding: "0 12px",
 
                       border: selected
                         ? "2px solid #FA994F"
@@ -796,6 +809,7 @@ export default function WaiterOrderPage() {
 
                       color: selected ? "#c96318" : "#374151",
 
+                      fontSize: 12,
                       fontWeight: 800,
 
                       cursor: "pointer",
@@ -813,7 +827,7 @@ export default function WaiterOrderPage() {
 
         <section
           style={{
-            padding: 20,
+            padding: "12px 14px 20px",
           }}
         >
           {searchQuery.trim() ? (
@@ -859,9 +873,8 @@ export default function WaiterOrderPage() {
                     display: "grid",
 
                     gridTemplateColumns:
-                      "repeat(auto-fill, minmax(150px, 1fr))",
-
-                    gap: 10,
+                      "repeat(auto-fill, minmax(130px, 1fr))",
+                    gap: 8,
                   }}
                 >
                   {searchResults.map(({ section, item }) =>
@@ -871,30 +884,19 @@ export default function WaiterOrderPage() {
               )}
             </>
           ) : selectedSection ? (
-            <>
-              <h2
-                style={{
-                  margin: "0 0 14px",
-                  fontSize: 21,
-                }}
-              >
-                {selectedSection.name}
-              </h2>
+            <div
+              style={{
+                display: "grid",
 
-              <div
-                style={{
-                  display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
 
-                  gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-
-                  gap: 10,
-                }}
-              >
-                {selectedSection.items
-                  .filter(isOrderableMenuItem)
-                  .map((item) => renderProductTile(selectedSection, item))}
-              </div>
-            </>
+                gap: 10,
+              }}
+            >
+              {selectedSection.items
+                .filter(isOrderableMenuItem)
+                .map((item) => renderProductTile(selectedSection, item))}
+            </div>
           ) : null}
         </section>
 
@@ -1006,11 +1008,16 @@ export default function WaiterOrderPage() {
             style={{
               width: "100%",
               maxWidth: 720,
-              maxHeight: "90vh",
-              overflowY: "auto",
+              height: "94vh",
+              maxHeight: "94vh",
+
+              display: "flex",
+              flexDirection: "column",
+
+              overflow: "hidden",
+
               background: "#ffffff",
               borderRadius: "20px 20px 0 0",
-              padding: 20,
             }}
             onMouseDown={(event) => event.stopPropagation()}
           >
@@ -1019,22 +1026,21 @@ export default function WaiterOrderPage() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                marginBottom: 18,
+
+                padding: "10px 14px 8px",
+
+                borderBottom: "1px solid #e5e7eb",
+                flexShrink: 0,
               }}
             >
-              <div>
-                <div
-                  style={{
-                    color: "#6b7280",
-                    fontSize: 12,
-                    fontWeight: 900,
-                  }}
-                >
-                  TABLE ORDER
-                </div>
-
-                <h2 style={{ margin: "3px 0 0" }}>Review order</h2>
-              </div>
+              <h2
+                style={{
+                  margin: 0,
+                  fontSize: 18,
+                }}
+              >
+                Review order
+              </h2>
 
               <button
                 type="button"
@@ -1052,174 +1058,273 @@ export default function WaiterOrderPage() {
                 ×
               </button>
             </div>
+            <div
+              style={{
+                flex: 1,
+                overflowY: "auto",
+                minHeight: 0,
 
-            {cart.map((item) => (
-              <div
-                key={item.lineId}
-                style={{
-                  padding: "14px 0",
-                  borderBottom: "1px solid #e5e7eb",
-                }}
-              >
+                padding: "0 14px",
+              }}
+            >
+              {cart.map((item) => (
                 <div
+                  key={item.lineId}
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    gap: 16,
-                  }}
-                >
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 900 }}>{item.name}</div>
-
-                    {item.modifiers.length > 0 && (
-                      <div
-                        style={{
-                          marginTop: 5,
-                          color: "#6b7280",
-                          fontSize: 14,
-                        }}
-                      >
-                        {item.modifiers
-                          .map((modifier) => modifier.optionName)
-                          .join(" · ")}
-                      </div>
-                    )}
-
-                    {item.note && (
-                      <div
-                        style={{
-                          marginTop: 4,
-                          color: "#6b7280",
-                          fontSize: 14,
-                        }}
-                      >
-                        ↳ {item.note}
-                      </div>
-                    )}
-                  </div>
-
-                  <strong>{formatMoney(item.unitPrice * item.quantity)}</strong>
-                </div>
-
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    marginTop: 12,
+                    padding: "9px 0",
+                    borderBottom: "1px solid #e5e7eb",
                   }}
                 >
                   <div
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      gap: 10,
+                      justifyContent: "space-between",
+                      gap: 8,
                     }}
                   >
-                    <button
-                      type="button"
-                      onClick={() => decreaseCartItem(item.lineId)}
-                    >
-                      −
-                    </button>
+                    <div style={{ flex: 1 }}>
+                      <div
+                        style={{
+                          fontWeight: 900,
+                          fontSize: 14,
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        {item.name}
+                      </div>
 
-                    <strong>{item.quantity}</strong>
+                      {item.modifiers.length > 0 && (
+                        <div
+                          style={{
+                            marginTop: 3,
+                            color: "#6b7280",
+                            fontSize: 11,
+                          }}
+                        >
+                          {item.modifiers
+                            .map((modifier) => modifier.optionName)
+                            .join(" · ")}
+                        </div>
+                      )}
 
-                    <button
-                      type="button"
-                      onClick={() => increaseCartItem(item.lineId)}
-                    >
-                      +
-                    </button>
+                      {editingNoteLineId === item.lineId ? (
+                        <input
+                          autoFocus
+                          type="text"
+                          value={item.note}
+                          onChange={(event) => {
+                            const value = event.target.value;
+
+                            setCart((current) =>
+                              current.map((cartItem) =>
+                                cartItem.lineId === item.lineId
+                                  ? {
+                                      ...cartItem,
+                                      note: value,
+                                    }
+                                  : cartItem,
+                              ),
+                            );
+                          }}
+                          onBlur={() => setEditingNoteLineId(null)}
+                          placeholder="Add note..."
+                          style={{
+                            width: "100%",
+                            boxSizing: "border-box",
+                            marginTop: 6,
+                            minHeight: 34,
+                            padding: "0 9px",
+                            border: "1px solid #d1d5db",
+                            borderRadius: 7,
+                            background: "#f9fafb",
+                            fontSize: 12,
+                            outline: "none",
+                          }}
+                        />
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setEditingNoteLineId(item.lineId)}
+                          style={{
+                            marginTop: 5,
+                            padding: 0,
+                            border: "none",
+                            background: "transparent",
+                            color: item.note ? "#6b7280" : "#269fa2",
+                            fontSize: 11,
+                            fontWeight: 700,
+                            cursor: "pointer",
+                            textAlign: "left",
+                          }}
+                        >
+                          {item.note ? `↳ ${item.note}` : "+ Add note"}
+                        </button>
+                      )}
+                    </div>
+
+                    <strong>
+                      {formatMoney(item.unitPrice * item.quantity)}
+                    </strong>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => removeCartItem(item.lineId)}
+                  <div
                     style={{
-                      border: "none",
-                      background: "transparent",
-                      color: "#dc2626",
-                      fontWeight: 800,
-                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      marginTop: 12,
                     }}
                   >
-                    Remove
-                  </button>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 6,
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => decreaseCartItem(item.lineId)}
+                        style={{
+                          width: 30,
+                          height: 30,
+                          border: "1px solid #d1d5db",
+                          borderRadius: 7,
+                          background: "#ffffff",
+                          fontSize: 16,
+                          cursor: "pointer",
+                        }}
+                      >
+                        −
+                      </button>
+
+                      <strong>{item.quantity}</strong>
+
+                      <button
+                        type="button"
+                        onClick={() => increaseCartItem(item.lineId)}
+                        style={{
+                          width: 30,
+                          height: 30,
+                          border: "1px solid #d1d5db",
+                          borderRadius: 7,
+                          background: "#ffffff",
+                          fontSize: 16,
+                          cursor: "pointer",
+                        }}
+                      >
+                        +
+                      </button>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => removeCartItem(item.lineId)}
+                      style={{
+                        border: "none",
+                        background: "transparent",
+                        color: "#dc2626",
+                        fontWeight: 800,
+                        cursor: "pointer",
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
 
             <div
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "baseline",
-                marginTop: 20,
+                flexShrink: 0,
+
+                padding: "10px 14px calc(10px + env(safe-area-inset-bottom))",
+
+                background: "#ffffff",
+                borderTop: "1px solid #e5e7eb",
+
+                boxShadow: "0 -4px 12px rgba(0,0,0,0.08)",
               }}
             >
-              <span
-                style={{
-                  fontSize: 18,
-                  fontWeight: 900,
-                }}
-              >
-                Total
-              </span>
+              {submitError && (
+                <div
+                  style={{
+                    marginBottom: 10,
+                    padding: 10,
+                    borderRadius: 8,
+                    background: "#fee2e2",
+                    color: "#991b1b",
+                    fontWeight: 700,
+                    fontSize: 12,
+                  }}
+                >
+                  {submitError}
+                </div>
+              )}
 
-              <span
-                style={{
-                  fontSize: 28,
-                  fontWeight: 900,
-                }}
-              >
-                {formatMoney(total)}
-              </span>
-            </div>
-
-            {submitError && (
               <div
                 style={{
-                  marginTop: 16,
-                  padding: 12,
-                  borderRadius: 9,
-                  background: "#fee2e2",
-                  color: "#991b1b",
-                  fontWeight: 700,
-                  fontSize: 14,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
                 }}
               >
-                {submitError}
+                <div
+                  style={{
+                    minWidth: 85,
+                  }}
+                >
+                  <div
+                    style={{
+                      color: "#6b7280",
+                      fontSize: 10,
+                      fontWeight: 800,
+                    }}
+                  >
+                    TOTAL
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: 2,
+                      fontSize: 18,
+                      fontWeight: 900,
+                    }}
+                  >
+                    {formatMoney(total)}
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  disabled={isSubmittingOrder || cart.length === 0}
+                  onClick={submitWaiterOrder}
+                  style={{
+                    flex: 1,
+                    minHeight: 44,
+
+                    border: "none",
+                    borderRadius: 9,
+
+                    background: "#5AD7D9",
+                    color: "#ffffff",
+
+                    fontSize: 13,
+                    fontWeight: 900,
+
+                    cursor:
+                      isSubmittingOrder || cart.length === 0
+                        ? "not-allowed"
+                        : "pointer",
+
+                    opacity: isSubmittingOrder || cart.length === 0 ? 0.6 : 1,
+                  }}
+                >
+                  {isSubmittingOrder ? "SENDING..." : "SEND ORDER"}
+                </button>
               </div>
-            )}
-
-            <button
-              type="button"
-              disabled={isSubmittingOrder || cart.length === 0}
-              onClick={submitWaiterOrder}
-              style={{
-                width: "100%",
-                minHeight: 54,
-                marginTop: 20,
-                border: "none",
-                borderRadius: 10,
-                background: "#5AD7D9",
-                color: "#ffffff",
-                fontSize: 16,
-                fontWeight: 900,
-
-                cursor:
-                  isSubmittingOrder || cart.length === 0
-                    ? "not-allowed"
-                    : "pointer",
-
-                opacity: isSubmittingOrder || cart.length === 0 ? 0.6 : 1,
-              }}
-            >
-              {isSubmittingOrder
-                ? "SENDING..."
-                : `SEND ORDER · ${formatMoney(total)}`}
-            </button>
+            </div>
           </div>
         </div>
       )}

@@ -161,7 +161,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
     <>
       {!isStaffRoute && <AppHeader />}
 
-      <main className="pt-20">
+      <main className={isStaffRoute ? "" : "pt-20"}>
         <Outlet />
       </main>
 
