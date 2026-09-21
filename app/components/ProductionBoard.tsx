@@ -7,7 +7,7 @@ type ProductionBoardProps = {
   station: Station;
 };
 
-type ItemStatus = "ARRIVED" | "PREPARING" | "READY" | "COMPLETED";
+type ItemStatus = "ARRIVED" | "PREPARING" | "READY" | "COMPLETED" | "CANCELLED";
 
 type ActiveStatus = "ARRIVED" | "PREPARING" | "READY";
 
@@ -226,6 +226,10 @@ export default function ProductionBoard({ station }: ProductionBoardProps) {
     const groups = new Map<string, GroupedOrder>();
 
     for (const item of items) {
+      if (item.status === "CANCELLED") {
+        continue;
+      }
+
       const existing = groups.get(item.order.id);
 
       if (existing) {

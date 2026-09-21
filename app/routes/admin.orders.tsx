@@ -4,7 +4,7 @@ import { supabaseClient } from "../services/supabase.client";
 
 type Station = "BAR" | "KITCHEN";
 
-type ItemStatus = "ARRIVED" | "PREPARING" | "READY" | "COMPLETED";
+type ItemStatus = "ARRIVED" | "PREPARING" | "READY" | "COMPLETED" | "CANCELLED";
 
 type ActiveStatus = "ARRIVED" | "PREPARING" | "READY";
 
@@ -134,7 +134,15 @@ function AdminOrdersContent() {
         (item) => item.station === "KITCHEN" && item.status !== "COMPLETED",
       );
 
-      if (barItems.length > 0) {
+      const activeBarItems = barItems.filter(
+        (item) => item.status !== "CANCELLED",
+      );
+
+      const activeKitchenItems = kitchenItems.filter(
+        (item) => item.status !== "CANCELLED",
+      );
+
+      if (activeBarItems.length > 0) {
         result.push({
           id: `${order.id}-BAR`,
           station: "BAR",
@@ -143,7 +151,7 @@ function AdminOrdersContent() {
         });
       }
 
-      if (kitchenItems.length > 0) {
+      if (activeKitchenItems.length > 0) {
         result.push({
           id: `${order.id}-KITCHEN`,
           station: "KITCHEN",
@@ -161,12 +169,14 @@ function AdminOrdersContent() {
   }, [orders]);
 
   function getTicketStatus(items: AdminOrderItem[]): ActiveStatus {
-    if (items.every((item) => item.status === "READY")) {
+    const activeItems = items.filter((item) => item.status !== "CANCELLED");
+
+    if (activeItems.every((item) => item.status === "READY")) {
       return "READY";
     }
 
     if (
-      items.some(
+      activeItems.some(
         (item) => item.status === "PREPARING" || item.status === "READY",
       )
     ) {
@@ -225,7 +235,7 @@ function AdminOrdersContent() {
       setError(null);
 
       const itemsToUpdate = ticket.items.filter(
-        (item) => item.status !== status,
+        (item) => item.status !== "CANCELLED" && item.status !== status,
       );
 
       await Promise.all(
@@ -420,48 +430,77 @@ function AdminOrdersContent() {
             padding: "5px 18px",
           }}
         >
-          {ticket.items.map((item) => (
-            <div
-              key={item.id}
-              style={{
-                padding: "14px 0",
-                borderBottom: "1px solid #eeeeee",
-              }}
-            >
+          {ticket.items.map((item) => {
+            const isCancelled = item.status === "CANCELLED";
+
+            return (
               <div
+                key={item.id}
                 style={{
-                  display: "flex",
-                  gap: 10,
-                  fontSize: 18,
-                  fontWeight: 700,
+                  padding: "14px 0",
+                  borderBottom: "1px solid #eeeeee",
+                  opacity: isCancelled ? 0.5 : 1,
                 }}
               >
-                <span
-                  style={{
-                    minWidth: 32,
-                    fontWeight: 900,
-                  }}
-                >
-                  {item.quantity}×
-                </span>
-
-                <span>{item.product_name}</span>
-              </div>
-
-              {item.notes && (
                 <div
                   style={{
-                    marginTop: 6,
-                    color: "#6b7280",
-                    fontSize: 15,
-                    fontWeight: 600,
+                    display: "flex",
+                    gap: 10,
+                    fontSize: 18,
+                    fontWeight: 700,
                   }}
                 >
-                  ↳ {item.notes}
+                  <span
+                    style={{
+                      minWidth: 32,
+                      fontWeight: 900,
+                    }}
+                  >
+                    {item.quantity}×
+                  </span>
+
+                  <span
+                    style={{
+                      textDecoration: isCancelled ? "line-through" : "none",
+                    }}
+                  >
+                    {item.product_name}
+                  </span>
                 </div>
-              )}
-            </div>
-          ))}
+
+                {item.notes && (
+                  <div
+                    style={{
+                      marginTop: 6,
+                      color: "#6b7280",
+                      fontSize: 15,
+                      fontWeight: 600,
+                      whiteSpace: "pre-wrap",
+                    }}
+                  >
+                    ↳ {item.notes}
+                  </div>
+                )}
+
+                {isCancelled && (
+                  <div
+                    style={{
+                      display: "inline-block",
+                      marginTop: 7,
+                      padding: "3px 7px",
+                      borderRadius: 6,
+                      background: "#fee2e2",
+                      color: "#b91c1c",
+                      fontSize: 11,
+                      fontWeight: 900,
+                    }}
+                  >
+                    CANCELLED
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         <footer
