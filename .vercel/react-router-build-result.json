@@ -1,0 +1,861 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/api.waiter.release-empty-table": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.table.$tableId": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.staff.items.$itemId": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.cancel-item": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.close-table": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.payments": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/reservation-success": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.staff.my-shift": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.staff.kitchen": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.orders": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.tables": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.admin.orders": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.admin.shifts": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.admin.staff": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/order-confirmed": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.test-order": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.staff.bar": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/staff.kitchen": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/reservations": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/staff.login": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.orders": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/staff.bar": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/waiter.table.$tableId._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/waiter.table.$tableId.order": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/waiter._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/_index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.orders": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.shifts": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/order": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/blog": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/jobs": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/main": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/menu": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/$": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/api.waiter.release-empty-table": {
+        "id": "routes/api.waiter.release-empty-table",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.release-empty-table.ts",
+        "path": "api/waiter/release-empty-table",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.waiter.table.$tableId": {
+        "id": "routes/api.waiter.table.$tableId",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.table.$tableId.ts",
+        "path": "api/waiter/table/:tableId",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.staff.items.$itemId": {
+        "id": "routes/api.staff.items.$itemId",
+        "parentId": "root",
+        "file": "app/routes/api.staff.items.$itemId.ts",
+        "path": "api/staff/items/:itemId",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.waiter.cancel-item": {
+        "id": "routes/api.waiter.cancel-item",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.cancel-item.ts",
+        "path": "api/waiter/cancel-item",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.waiter.close-table": {
+        "id": "routes/api.waiter.close-table",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.close-table.ts",
+        "path": "api/waiter/close-table",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.waiter.payments": {
+        "id": "routes/api.waiter.payments",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.payments.ts",
+        "path": "api/waiter/payments",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/reservation-success": {
+        "id": "routes/reservation-success",
+        "parentId": "root",
+        "file": "app/routes/reservation-success.tsx",
+        "path": "reservation-success",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.staff.my-shift": {
+        "id": "routes/api.staff.my-shift",
+        "parentId": "root",
+        "file": "app/routes/api.staff.my-shift.ts",
+        "path": "api/staff/my-shift",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.staff.kitchen": {
+        "id": "routes/api.staff.kitchen",
+        "parentId": "root",
+        "file": "app/routes/api.staff.kitchen.ts",
+        "path": "api/staff/kitchen",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.waiter.orders": {
+        "id": "routes/api.waiter.orders",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.orders.ts",
+        "path": "api/waiter/orders",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.waiter.tables": {
+        "id": "routes/api.waiter.tables",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.tables.ts",
+        "path": "api/waiter/tables",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.admin.orders": {
+        "id": "routes/api.admin.orders",
+        "parentId": "root",
+        "file": "app/routes/api.admin.orders.ts",
+        "path": "api/admin/orders",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.admin.shifts": {
+        "id": "routes/api.admin.shifts",
+        "parentId": "root",
+        "file": "app/routes/api.admin.shifts.ts",
+        "path": "api/admin/shifts",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.admin.staff": {
+        "id": "routes/api.admin.staff",
+        "parentId": "root",
+        "file": "app/routes/api.admin.staff.ts",
+        "path": "api/admin/staff",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/order-confirmed": {
+        "id": "routes/order-confirmed",
+        "parentId": "root",
+        "file": "app/routes/order-confirmed.tsx",
+        "path": "order-confirmed",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.test-order": {
+        "id": "routes/api.test-order",
+        "parentId": "root",
+        "file": "app/routes/api.test-order.ts",
+        "path": "api/test-order",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.staff.bar": {
+        "id": "routes/api.staff.bar",
+        "parentId": "root",
+        "file": "app/routes/api.staff.bar.ts",
+        "path": "api/staff/bar",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/staff.kitchen": {
+        "id": "routes/staff.kitchen",
+        "parentId": "root",
+        "file": "app/routes/staff.kitchen.tsx",
+        "path": "staff/kitchen",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/reservations": {
+        "id": "routes/reservations",
+        "parentId": "root",
+        "file": "app/routes/reservations.tsx",
+        "path": "reservations",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/staff.login": {
+        "id": "routes/staff.login",
+        "parentId": "root",
+        "file": "app/routes/staff.login.tsx",
+        "path": "staff/login",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.orders": {
+        "id": "routes/api.orders",
+        "parentId": "root",
+        "file": "app/routes/api.orders.ts",
+        "path": "api/orders",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/staff.bar": {
+        "id": "routes/staff.bar",
+        "parentId": "root",
+        "file": "app/routes/staff.bar.tsx",
+        "path": "staff/bar",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/waiter": {
+        "id": "routes/waiter",
+        "parentId": "root",
+        "file": "app/routes/waiter.tsx",
+        "path": "waiter",
+        "config": {}
+      },
+      "routes/waiter.table.$tableId": {
+        "id": "routes/waiter.table.$tableId",
+        "parentId": "routes/waiter",
+        "file": "app/routes/waiter.table.$tableId.tsx",
+        "path": "table/:tableId",
+        "config": {}
+      },
+      "routes/waiter.table.$tableId._index": {
+        "id": "routes/waiter.table.$tableId._index",
+        "parentId": "routes/waiter.table.$tableId",
+        "file": "app/routes/waiter.table.$tableId._index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/waiter.table.$tableId.order": {
+        "id": "routes/waiter.table.$tableId.order",
+        "parentId": "routes/waiter.table.$tableId",
+        "file": "app/routes/waiter.table.$tableId.order.tsx",
+        "path": "order",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/waiter._index": {
+        "id": "routes/waiter._index",
+        "parentId": "routes/waiter",
+        "file": "app/routes/waiter._index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/_index": {
+        "id": "routes/_index",
+        "parentId": "root",
+        "file": "app/routes/_index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin": {
+        "id": "routes/admin",
+        "parentId": "root",
+        "file": "app/routes/admin.tsx",
+        "path": "admin",
+        "config": {}
+      },
+      "routes/admin.orders": {
+        "id": "routes/admin.orders",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.orders.tsx",
+        "path": "orders",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.shifts": {
+        "id": "routes/admin.shifts",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.shifts.tsx",
+        "path": "shifts",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin._index": {
+        "id": "routes/admin._index",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin._index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/order": {
+        "id": "routes/order",
+        "parentId": "root",
+        "file": "app/routes/order.tsx",
+        "path": "order",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/blog": {
+        "id": "routes/blog",
+        "parentId": "root",
+        "file": "app/routes/blog.tsx",
+        "path": "blog",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/jobs": {
+        "id": "routes/jobs",
+        "parentId": "root",
+        "file": "app/routes/jobs.tsx",
+        "path": "jobs",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/main": {
+        "id": "routes/main",
+        "parentId": "root",
+        "file": "app/routes/main.tsx",
+        "path": "main",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/menu": {
+        "id": "routes/menu",
+        "parentId": "root",
+        "file": "app/routes/menu.tsx",
+        "path": "menu",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/$": {
+        "id": "routes/$",
+        "parentId": "root",
+        "file": "app/routes/$.tsx",
+        "path": "*",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "C:/Users/Lia/Desktop/Aiolia Project/aiolia/app",
+    "basename": "/",
+    "buildDirectory": "C:/Users/Lia/Desktop/Aiolia Project/aiolia/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "v8_passThroughRequests": false,
+      "v8_trailingSlashAwareDataRequests": false,
+      "unstable_previewServerPrerendering": false,
+      "v8_middleware": true,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/api.waiter.release-empty-table": {
+        "id": "routes/api.waiter.release-empty-table",
+        "parentId": "root",
+        "file": "routes/api.waiter.release-empty-table.ts",
+        "path": "api/waiter/release-empty-table"
+      },
+      "routes/api.waiter.table.$tableId": {
+        "id": "routes/api.waiter.table.$tableId",
+        "parentId": "root",
+        "file": "routes/api.waiter.table.$tableId.ts",
+        "path": "api/waiter/table/:tableId"
+      },
+      "routes/api.staff.items.$itemId": {
+        "id": "routes/api.staff.items.$itemId",
+        "parentId": "root",
+        "file": "routes/api.staff.items.$itemId.ts",
+        "path": "api/staff/items/:itemId"
+      },
+      "routes/api.waiter.cancel-item": {
+        "id": "routes/api.waiter.cancel-item",
+        "parentId": "root",
+        "file": "routes/api.waiter.cancel-item.ts",
+        "path": "api/waiter/cancel-item"
+      },
+      "routes/api.waiter.close-table": {
+        "id": "routes/api.waiter.close-table",
+        "parentId": "root",
+        "file": "routes/api.waiter.close-table.ts",
+        "path": "api/waiter/close-table"
+      },
+      "routes/api.waiter.payments": {
+        "id": "routes/api.waiter.payments",
+        "parentId": "root",
+        "file": "routes/api.waiter.payments.ts",
+        "path": "api/waiter/payments"
+      },
+      "routes/reservation-success": {
+        "id": "routes/reservation-success",
+        "parentId": "root",
+        "file": "routes/reservation-success.tsx",
+        "path": "reservation-success"
+      },
+      "routes/api.staff.my-shift": {
+        "id": "routes/api.staff.my-shift",
+        "parentId": "root",
+        "file": "routes/api.staff.my-shift.ts",
+        "path": "api/staff/my-shift"
+      },
+      "routes/api.staff.kitchen": {
+        "id": "routes/api.staff.kitchen",
+        "parentId": "root",
+        "file": "routes/api.staff.kitchen.ts",
+        "path": "api/staff/kitchen"
+      },
+      "routes/api.waiter.orders": {
+        "id": "routes/api.waiter.orders",
+        "parentId": "root",
+        "file": "routes/api.waiter.orders.ts",
+        "path": "api/waiter/orders"
+      },
+      "routes/api.waiter.tables": {
+        "id": "routes/api.waiter.tables",
+        "parentId": "root",
+        "file": "routes/api.waiter.tables.ts",
+        "path": "api/waiter/tables"
+      },
+      "routes/api.admin.orders": {
+        "id": "routes/api.admin.orders",
+        "parentId": "root",
+        "file": "routes/api.admin.orders.ts",
+        "path": "api/admin/orders"
+      },
+      "routes/api.admin.shifts": {
+        "id": "routes/api.admin.shifts",
+        "parentId": "root",
+        "file": "routes/api.admin.shifts.ts",
+        "path": "api/admin/shifts"
+      },
+      "routes/api.admin.staff": {
+        "id": "routes/api.admin.staff",
+        "parentId": "root",
+        "file": "routes/api.admin.staff.ts",
+        "path": "api/admin/staff"
+      },
+      "routes/order-confirmed": {
+        "id": "routes/order-confirmed",
+        "parentId": "root",
+        "file": "routes/order-confirmed.tsx",
+        "path": "order-confirmed"
+      },
+      "routes/api.test-order": {
+        "id": "routes/api.test-order",
+        "parentId": "root",
+        "file": "routes/api.test-order.ts",
+        "path": "api/test-order"
+      },
+      "routes/api.staff.bar": {
+        "id": "routes/api.staff.bar",
+        "parentId": "root",
+        "file": "routes/api.staff.bar.ts",
+        "path": "api/staff/bar"
+      },
+      "routes/staff.kitchen": {
+        "id": "routes/staff.kitchen",
+        "parentId": "root",
+        "file": "routes/staff.kitchen.tsx",
+        "path": "staff/kitchen"
+      },
+      "routes/reservations": {
+        "id": "routes/reservations",
+        "parentId": "root",
+        "file": "routes/reservations.tsx",
+        "path": "reservations"
+      },
+      "routes/staff.login": {
+        "id": "routes/staff.login",
+        "parentId": "root",
+        "file": "routes/staff.login.tsx",
+        "path": "staff/login"
+      },
+      "routes/api.orders": {
+        "id": "routes/api.orders",
+        "parentId": "root",
+        "file": "routes/api.orders.ts",
+        "path": "api/orders"
+      },
+      "routes/staff.bar": {
+        "id": "routes/staff.bar",
+        "parentId": "root",
+        "file": "routes/staff.bar.tsx",
+        "path": "staff/bar"
+      },
+      "routes/waiter": {
+        "id": "routes/waiter",
+        "parentId": "root",
+        "file": "routes/waiter.tsx",
+        "path": "waiter"
+      },
+      "routes/waiter.table.$tableId": {
+        "id": "routes/waiter.table.$tableId",
+        "parentId": "routes/waiter",
+        "file": "routes/waiter.table.$tableId.tsx",
+        "path": "table/:tableId"
+      },
+      "routes/waiter.table.$tableId._index": {
+        "id": "routes/waiter.table.$tableId._index",
+        "parentId": "routes/waiter.table.$tableId",
+        "file": "routes/waiter.table.$tableId._index.tsx",
+        "index": true
+      },
+      "routes/waiter.table.$tableId.order": {
+        "id": "routes/waiter.table.$tableId.order",
+        "parentId": "routes/waiter.table.$tableId",
+        "file": "routes/waiter.table.$tableId.order.tsx",
+        "path": "order"
+      },
+      "routes/waiter._index": {
+        "id": "routes/waiter._index",
+        "parentId": "routes/waiter",
+        "file": "routes/waiter._index.tsx",
+        "index": true
+      },
+      "routes/_index": {
+        "id": "routes/_index",
+        "parentId": "root",
+        "file": "routes/_index.tsx",
+        "index": true
+      },
+      "routes/admin": {
+        "id": "routes/admin",
+        "parentId": "root",
+        "file": "routes/admin.tsx",
+        "path": "admin"
+      },
+      "routes/admin.orders": {
+        "id": "routes/admin.orders",
+        "parentId": "routes/admin",
+        "file": "routes/admin.orders.tsx",
+        "path": "orders"
+      },
+      "routes/admin.shifts": {
+        "id": "routes/admin.shifts",
+        "parentId": "routes/admin",
+        "file": "routes/admin.shifts.tsx",
+        "path": "shifts"
+      },
+      "routes/admin._index": {
+        "id": "routes/admin._index",
+        "parentId": "routes/admin",
+        "file": "routes/admin._index.tsx",
+        "index": true
+      },
+      "routes/order": {
+        "id": "routes/order",
+        "parentId": "root",
+        "file": "routes/order.tsx",
+        "path": "order"
+      },
+      "routes/blog": {
+        "id": "routes/blog",
+        "parentId": "root",
+        "file": "routes/blog.tsx",
+        "path": "blog"
+      },
+      "routes/jobs": {
+        "id": "routes/jobs",
+        "parentId": "root",
+        "file": "routes/jobs.tsx",
+        "path": "jobs"
+      },
+      "routes/main": {
+        "id": "routes/main",
+        "parentId": "root",
+        "file": "routes/main.tsx",
+        "path": "main"
+      },
+      "routes/menu": {
+        "id": "routes/menu",
+        "parentId": "root",
+        "file": "routes/menu.tsx",
+        "path": "menu"
+      },
+      "routes/$": {
+        "id": "routes/$",
+        "parentId": "root",
+        "file": "routes/$.tsx",
+        "path": "*"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "initial"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "subResourceIntegrity": false,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "id": "routes/api.waiter.release-empty-table",
+            "file": "routes/api.waiter.release-empty-table.ts",
+            "path": "api/waiter/release-empty-table"
+          },
+          {
+            "id": "routes/api.waiter.table.$tableId",
+            "file": "routes/api.waiter.table.$tableId.ts",
+            "path": "api/waiter/table/:tableId"
+          },
+          {
+            "id": "routes/api.staff.items.$itemId",
+            "file": "routes/api.staff.items.$itemId.ts",
+            "path": "api/staff/items/:itemId"
+          },
+          {
+            "id": "routes/api.waiter.cancel-item",
+            "file": "routes/api.waiter.cancel-item.ts",
+            "path": "api/waiter/cancel-item"
+          },
+          {
+            "id": "routes/api.waiter.close-table",
+            "file": "routes/api.waiter.close-table.ts",
+            "path": "api/waiter/close-table"
+          },
+          {
+            "id": "routes/api.waiter.payments",
+            "file": "routes/api.waiter.payments.ts",
+            "path": "api/waiter/payments"
+          },
+          {
+            "id": "routes/reservation-success",
+            "file": "routes/reservation-success.tsx",
+            "path": "reservation-success"
+          },
+          {
+            "id": "routes/api.staff.my-shift",
+            "file": "routes/api.staff.my-shift.ts",
+            "path": "api/staff/my-shift"
+          },
+          {
+            "id": "routes/api.staff.kitchen",
+            "file": "routes/api.staff.kitchen.ts",
+            "path": "api/staff/kitchen"
+          },
+          {
+            "id": "routes/api.waiter.orders",
+            "file": "routes/api.waiter.orders.ts",
+            "path": "api/waiter/orders"
+          },
+          {
+            "id": "routes/api.waiter.tables",
+            "file": "routes/api.waiter.tables.ts",
+            "path": "api/waiter/tables"
+          },
+          {
+            "id": "routes/api.admin.orders",
+            "file": "routes/api.admin.orders.ts",
+            "path": "api/admin/orders"
+          },
+          {
+            "id": "routes/api.admin.shifts",
+            "file": "routes/api.admin.shifts.ts",
+            "path": "api/admin/shifts"
+          },
+          {
+            "id": "routes/api.admin.staff",
+            "file": "routes/api.admin.staff.ts",
+            "path": "api/admin/staff"
+          },
+          {
+            "id": "routes/order-confirmed",
+            "file": "routes/order-confirmed.tsx",
+            "path": "order-confirmed"
+          },
+          {
+            "id": "routes/api.test-order",
+            "file": "routes/api.test-order.ts",
+            "path": "api/test-order"
+          },
+          {
+            "id": "routes/api.staff.bar",
+            "file": "routes/api.staff.bar.ts",
+            "path": "api/staff/bar"
+          },
+          {
+            "id": "routes/staff.kitchen",
+            "file": "routes/staff.kitchen.tsx",
+            "path": "staff/kitchen"
+          },
+          {
+            "id": "routes/reservations",
+            "file": "routes/reservations.tsx",
+            "path": "reservations"
+          },
+          {
+            "id": "routes/staff.login",
+            "file": "routes/staff.login.tsx",
+            "path": "staff/login"
+          },
+          {
+            "id": "routes/api.orders",
+            "file": "routes/api.orders.ts",
+            "path": "api/orders"
+          },
+          {
+            "id": "routes/staff.bar",
+            "file": "routes/staff.bar.tsx",
+            "path": "staff/bar"
+          },
+          {
+            "id": "routes/waiter",
+            "file": "routes/waiter.tsx",
+            "path": "waiter",
+            "children": [
+              {
+                "id": "routes/waiter.table.$tableId",
+                "file": "routes/waiter.table.$tableId.tsx",
+                "path": "table/:tableId",
+                "children": [
+                  {
+                    "id": "routes/waiter.table.$tableId._index",
+                    "file": "routes/waiter.table.$tableId._index.tsx",
+                    "index": true
+                  },
+                  {
+                    "id": "routes/waiter.table.$tableId.order",
+                    "file": "routes/waiter.table.$tableId.order.tsx",
+                    "path": "order"
+                  }
+                ]
+              },
+              {
+                "id": "routes/waiter._index",
+                "file": "routes/waiter._index.tsx",
+                "index": true
+              }
+            ]
+          },
+          {
+            "id": "routes/_index",
+            "file": "routes/_index.tsx",
+            "index": true
+          },
+          {
+            "id": "routes/admin",
+            "file": "routes/admin.tsx",
+            "path": "admin",
+            "children": [
+              {
+                "id": "routes/admin.orders",
+                "file": "routes/admin.orders.tsx",
+                "path": "orders"
+              },
+              {
+                "id": "routes/admin.shifts",
+                "file": "routes/admin.shifts.tsx",
+                "path": "shifts"
+              },
+              {
+                "id": "routes/admin._index",
+                "file": "routes/admin._index.tsx",
+                "index": true
+              }
+            ]
+          },
+          {
+            "id": "routes/order",
+            "file": "routes/order.tsx",
+            "path": "order"
+          },
+          {
+            "id": "routes/blog",
+            "file": "routes/blog.tsx",
+            "path": "blog"
+          },
+          {
+            "id": "routes/jobs",
+            "file": "routes/jobs.tsx",
+            "path": "jobs"
+          },
+          {
+            "id": "routes/main",
+            "file": "routes/main.tsx",
+            "path": "main"
+          },
+          {
+            "id": "routes/menu",
+            "file": "routes/menu.tsx",
+            "path": "menu"
+          },
+          {
+            "id": "routes/$",
+            "file": "routes/$.tsx",
+            "path": "*"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
