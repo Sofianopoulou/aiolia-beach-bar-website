@@ -15,7 +15,9 @@ import type {
   TableOrderItem,
   TablePayment,
   TableSession,
+  WaiterTableListItem,
 } from "../types/waiter";
+import TransferTableModal from "~/components/waiter/TranferTableModal";
 
 async function getAuthHeaders() {
   const {
@@ -310,6 +312,129 @@ export default function WaiterTablePage() {
   }
 
   // --------------------------------------------------
+  // TRANSFER TABLE
+  // --------------------------------------------------
+
+  const [isTransferOpen, setIsTransferOpen] = useState(false);
+
+  const [availableTables, setAvailableTables] = useState<WaiterTableListItem[]>(
+    [],
+  );
+
+  const [selectedTargetTableId, setSelectedTargetTableId] = useState<
+    string | null
+  >(null);
+
+  const [isLoadingTransferTables, setIsLoadingTransferTables] = useState(false);
+
+  const [isTransferringTable, setIsTransferringTable] = useState(false);
+
+  const [transferTableError, setTransferTableError] = useState<string | null>(
+    null,
+  );
+
+  async function openTransferModal() {
+    if (!table || !session) {
+      return;
+    }
+
+    try {
+      setIsTransferOpen(true);
+
+      setIsLoadingTransferTables(true);
+
+      setTransferTableError(null);
+
+      setSelectedTargetTableId(null);
+
+      const headers = await getAuthHeaders();
+
+      const response = await fetch("/api/waiter/tables", {
+        headers,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Could not load available tables");
+      }
+
+      const freeTables = (
+        Array.isArray(result.tables) ? result.tables : []
+      ).filter(
+        (candidate: WaiterTableListItem) =>
+          candidate.status === "FREE" && candidate.id !== table.id,
+      );
+
+      setAvailableTables(freeTables);
+    } catch (error) {
+      setTransferTableError(
+        error instanceof Error
+          ? error.message
+          : "Could not load available tables",
+      );
+    } finally {
+      setIsLoadingTransferTables(false);
+    }
+  }
+
+  async function transferTable() {
+    if (!session || !selectedTargetTableId) {
+      return;
+    }
+
+    try {
+      setIsTransferringTable(true);
+
+      setTransferTableError(null);
+
+      const headers = await getAuthHeaders();
+
+      const response = await fetch("/api/waiter/transfer-table", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+
+          ...headers,
+        },
+
+        body: JSON.stringify({
+          sessionId: session.id,
+
+          targetTableId: selectedTargetTableId,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Could not transfer table");
+      }
+
+      const newTableId = result.transfer.newTableId;
+
+      setIsTransferOpen(false);
+
+      setSelectedTargetTableId(null);
+
+      /*
+       * The session now belongs to another table,
+       * so navigate to that table's waiter page.
+       */
+      navigate(`/waiter/table/${newTableId}`, {
+        replace: true,
+      });
+    } catch (error) {
+      setTransferTableError(
+        error instanceof Error ? error.message : "Could not transfer table",
+      );
+    } finally {
+      setIsTransferringTable(false);
+    }
+  }
+
+  // --------------------------------------------------
   // BACK TO TABLES
   // --------------------------------------------------
 
@@ -444,6 +569,7 @@ export default function WaiterTablePage() {
         table={table}
         session={session}
         onBack={handleBackToTables}
+        onMoveTable={openTransferModal}
         formatTime={formatTime}
       />
 
@@ -622,6 +748,29 @@ export default function WaiterTablePage() {
           setCancelItemError(null);
         }}
         onConfirm={confirmCancelItem}
+      />
+
+      {/* TRANSFER TABLE MODAL */}
+
+      <TransferTableModal
+        isOpen={isTransferOpen}
+        currentTableNumber={table.number}
+        tables={availableTables}
+        selectedTableId={selectedTargetTableId}
+        isLoadingTables={isLoadingTransferTables}
+        isTransferring={isTransferringTable}
+        error={transferTableError}
+        onSelectTable={setSelectedTargetTableId}
+        onClose={() => {
+          if (isTransferringTable) {
+            return;
+          }
+
+          setIsTransferOpen(false);
+          setSelectedTargetTableId(null);
+          setTransferTableError(null);
+        }}
+        onConfirm={transferTable}
       />
     </main>
   );

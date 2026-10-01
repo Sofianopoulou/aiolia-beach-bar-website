@@ -44,3 +44,15 @@ export type TablePayment = {
   created_by: string;
   created_at: string;
 };
+
+export type WaiterTableListItem = {
+  id: string;
+  number: number;
+  name: string | null;
+  status: "FREE" | "OPEN";
+  session: {
+    id: string;
+    opened_at: string;
+    total: number;
+  } | null;
+};

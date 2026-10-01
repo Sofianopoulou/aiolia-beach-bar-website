@@ -5,6 +5,7 @@ type WaiterTableHeaderProps = {
   session: TableSession | null;
 
   onBack: () => void;
+  onMoveTable: () => void;
 
   formatTime: (date: string) => string;
 };
@@ -13,6 +14,7 @@ export default function WaiterTableHeader({
   table,
   session,
   onBack,
+  onMoveTable,
   formatTime,
 }: WaiterTableHeaderProps) {
   return (
@@ -88,29 +90,59 @@ export default function WaiterTableHeader({
       {session ? (
         <div
           style={{
-            textAlign: "right",
-            whiteSpace: "nowrap",
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
           }}
         >
-          <div
+          <button
+            type="button"
+            onClick={onMoveTable}
             style={{
-              color: "#059669",
+              minHeight: 34,
+              padding: "0 10px",
+
+              border: "1px solid #d1d5db",
+              borderRadius: 8,
+
+              background: "#ffffff",
+              color: "#374151",
+
               fontSize: 11,
               fontWeight: 900,
+
+              cursor: "pointer",
             }}
           >
-            ● OPEN
-          </div>
+            MOVE
+          </button>
 
           <div
             style={{
-              marginTop: 2,
-              color: "#9ca3af",
-              fontSize: 10,
-              fontWeight: 700,
+              textAlign: "right",
+              whiteSpace: "nowrap",
             }}
           >
-            {formatTime(session.opened_at)}
+            <div
+              style={{
+                color: "#059669",
+                fontSize: 11,
+                fontWeight: 900,
+              }}
+            >
+              ● OPEN
+            </div>
+
+            <div
+              style={{
+                marginTop: 2,
+                color: "#9ca3af",
+                fontSize: 10,
+                fontWeight: 700,
+              }}
+            >
+              {formatTime(session.opened_at)}
+            </div>
           </div>
         </div>
       ) : (
