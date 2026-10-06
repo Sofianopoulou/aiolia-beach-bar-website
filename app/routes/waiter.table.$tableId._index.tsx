@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 import CancelItemModal from "../components/waiter/CancelItemModal";
@@ -17,7 +17,12 @@ import type {
   TableSession,
   WaiterTableListItem,
 } from "../types/waiter";
-import TransferTableModal from "~/components/waiter/TranferTableModal";
+import TransferTableModal from "~/components/waiter/TransferTableModal";
+import {
+  getCachedTable,
+  setCachedTable,
+  type WaiterTableSnapshot,
+} from "~/utils/waiterDataCache";
 
 async function getAuthHeaders() {
   const {
@@ -37,20 +42,34 @@ export default function WaiterTablePage() {
   const { tableId } = useParams();
   const navigate = useNavigate();
 
-  const [table, setTable] = useState<RestaurantTable | null>(null);
-  const [session, setSession] = useState<TableSession | null>(null);
+  const initialSnapshot = tableId ? getCachedTable(tableId) : null;
 
-  const [orders, setOrders] = useState<TableOrder[]>([]);
+  const [table, setTable] = useState<RestaurantTable | null>(
+    initialSnapshot?.table ?? null,
+  );
+  const [session, setSession] = useState<TableSession | null>(
+    initialSnapshot?.session ?? null,
+  );
 
-  const [total, setTotal] = useState(0);
+  const [orders, setOrders] = useState<TableOrder[]>(
+    initialSnapshot?.orders ?? [],
+  );
 
-  const [, setPayments] = useState<TablePayment[]>([]);
-  const [, setPaid] = useState(0);
+  const [total, setTotal] = useState(initialSnapshot?.total ?? 0);
 
-  const [remaining, setRemaining] = useState(0);
+  const [, setPayments] = useState<TablePayment[]>(
+    initialSnapshot?.payments ?? [],
+  );
+  const [, setPaid] = useState(initialSnapshot?.paid ?? 0);
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [remaining, setRemaining] = useState(initialSnapshot?.remaining ?? 0);
+
+  const [isLoading, setIsLoading] = useState(initialSnapshot === null);
   const [error, setError] = useState<string | null>(null);
+
+  const realtimeRefreshTimer = useRef<number | null>(null);
+  const activeTableIdRef = useRef(tableId);
+  activeTableIdRef.current = tableId;
 
   // --------------------------------------------------
   // PAYMENT
@@ -110,24 +129,39 @@ export default function WaiterTablePage() {
         throw new Error(result.error || "Could not load table");
       }
 
-      setTable(result.table);
-      setSession(result.session);
+      const snapshot: WaiterTableSnapshot = {
+        table: result.table,
+        session: result.session,
+        orders: Array.isArray(result.orders) ? result.orders : [],
+        payments: Array.isArray(result.payments) ? result.payments : [],
+        subtotal: Number(result.subtotal ?? 0),
+        total: Number(result.total ?? 0),
+        paid: Number(result.paid ?? 0),
+        remaining: Number(result.remaining ?? 0),
+      };
 
-      setOrders(Array.isArray(result.orders) ? result.orders : []);
+      setCachedTable(tableId, snapshot);
 
-      setTotal(Number(result.total ?? 0));
-
-      setPayments(Array.isArray(result.payments) ? result.payments : []);
-
-      setPaid(Number(result.paid ?? 0));
-
-      setRemaining(Number(result.remaining ?? 0));
-
-      setError(null);
+      if (activeTableIdRef.current === tableId) {
+        setTable(snapshot.table);
+        setSession(snapshot.session);
+        setOrders(snapshot.orders);
+        setTotal(snapshot.total);
+        setPayments(snapshot.payments);
+        setPaid(snapshot.paid);
+        setRemaining(snapshot.remaining);
+        setError(null);
+      }
     } catch (error) {
-      setError(error instanceof Error ? error.message : "Could not load table");
+      if (activeTableIdRef.current === tableId) {
+        setError(
+          error instanceof Error ? error.message : "Could not load table",
+        );
+      }
     } finally {
-      setIsLoading(false);
+      if (activeTableIdRef.current === tableId) {
+        setIsLoading(false);
+      }
     }
   }
 
@@ -480,10 +514,56 @@ export default function WaiterTablePage() {
   // --------------------------------------------------
 
   useEffect(() => {
+    const cachedSnapshot = tableId ? getCachedTable(tableId) : null;
+
+    if (cachedSnapshot) {
+      setTable(cachedSnapshot.table);
+      setSession(cachedSnapshot.session);
+      setOrders(cachedSnapshot.orders);
+      setTotal(cachedSnapshot.total);
+      setPayments(cachedSnapshot.payments);
+      setPaid(cachedSnapshot.paid);
+      setRemaining(cachedSnapshot.remaining);
+      setIsLoading(false);
+      setError(null);
+    } else {
+      setTable(null);
+      setSession(null);
+      setOrders([]);
+      setTotal(0);
+      setPayments([]);
+      setPaid(0);
+      setRemaining(0);
+      setIsLoading(true);
+      setError(null);
+    }
+
     loadTable();
+
+    function refreshTableFromRealtime() {
+      if (realtimeRefreshTimer.current !== null) {
+        window.clearTimeout(realtimeRefreshTimer.current);
+      }
+
+      realtimeRefreshTimer.current = window.setTimeout(() => {
+        loadTable();
+
+        realtimeRefreshTimer.current = null;
+      }, 150);
+    }
 
     const channel = supabaseClient
       .channel(`waiter-table-${tableId}`)
+
+      // ------------------------------------------------
+      // ORDER ITEMS
+      //
+      // Covers:
+      // - production status changes
+      // - item cancellation
+      // - partial quantity cancellation
+      // ------------------------------------------------
+
       .on(
         "postgres_changes",
         {
@@ -491,13 +571,76 @@ export default function WaiterTablePage() {
           schema: "public",
           table: "order_items",
         },
-        () => {
-          loadTable();
-        },
+        refreshTableFromRealtime,
       )
+
+      // ------------------------------------------------
+      // ORDERS
+      //
+      // Covers:
+      // - new order
+      // - order total changes
+      // - table transfer updates
+      // ------------------------------------------------
+
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "orders",
+        },
+        refreshTableFromRealtime,
+      )
+
+      // ------------------------------------------------
+      // PAYMENTS
+      //
+      // Covers:
+      // - cash payment
+      // - card payment
+      // - remaining balance changes
+      // ------------------------------------------------
+
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "payments",
+        },
+        refreshTableFromRealtime,
+      )
+
+      // ------------------------------------------------
+      // TABLE SESSION
+      //
+      // Covers:
+      // - transfer
+      // - close
+      // - release
+      // - session changes
+      // ------------------------------------------------
+
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "table_sessions",
+        },
+        refreshTableFromRealtime,
+      )
+
       .subscribe();
 
     return () => {
+      if (realtimeRefreshTimer.current !== null) {
+        window.clearTimeout(realtimeRefreshTimer.current);
+
+        realtimeRefreshTimer.current = null;
+      }
+
       supabaseClient.removeChannel(channel);
     };
   }, [tableId]);

@@ -35,18 +35,37 @@ export async function loader({
       );
     }
 
-    const { data: table, error: tableError } = await supabase
-      .from("restaurant_tables")
-      .select(
-        `
+    const [tableResult, sessionResult] = await Promise.all([
+      supabase
+        .from("restaurant_tables")
+        .select(
+          `
           id,
           number,
           name,
           active
         `,
-      )
-      .eq("id", tableId)
-      .single();
+        )
+        .eq("id", tableId)
+        .single(),
+      supabase
+        .from("table_sessions")
+        .select(
+          `
+        id,
+        table_id,
+        status,
+        opened_at,
+        opened_by
+      `,
+        )
+        .eq("table_id", tableId)
+        .eq("status", "OPEN")
+        .maybeSingle(),
+    ]);
+
+    const { data: table, error: tableError } = tableResult;
+    const { data: session, error: sessionError } = sessionResult;
 
     if (tableError || !table) {
       return Response.json(
@@ -57,21 +76,6 @@ export async function loader({
         { status: 404 },
       );
     }
-
-    const { data: session, error: sessionError } = await supabase
-      .from("table_sessions")
-      .select(
-        `
-        id,
-        table_id,
-        status,
-        opened_at,
-        opened_by
-      `,
-      )
-      .eq("table_id", table.id)
-      .eq("status", "OPEN")
-      .maybeSingle();
 
     if (sessionError) {
       console.error("Table session fetch error:", sessionError);
@@ -99,10 +103,11 @@ export async function loader({
       });
     }
 
-    const { data: orders, error: ordersError } = await supabase
-      .from("orders")
-      .select(
-        `
+    const [ordersResult, paymentsResult] = await Promise.all([
+      supabase
+        .from("orders")
+        .select(
+          `
           id,
           order_number,
           subtotal,
@@ -121,11 +126,30 @@ export async function loader({
             created_at
           )
         `,
-      )
-      .eq("table_session_id", session.id)
-      .order("created_at", {
-        ascending: true,
-      });
+        )
+        .eq("table_session_id", session.id)
+        .order("created_at", {
+          ascending: true,
+        }),
+      supabase
+        .from("payments")
+        .select(
+          `
+          id,
+          amount,
+          method,
+          created_by,
+          created_at
+        `,
+        )
+        .eq("table_session_id", session.id)
+        .order("created_at", {
+          ascending: true,
+        }),
+    ]);
+
+    const { data: orders, error: ordersError } = ordersResult;
+    const { data: payments, error: paymentsError } = paymentsResult;
 
     if (ordersError) {
       console.error("Table orders fetch error:", ordersError);
@@ -138,22 +162,6 @@ export async function loader({
         { status: 500 },
       );
     }
-
-    const { data: payments, error: paymentsError } = await supabase
-      .from("payments")
-      .select(
-        `
-          id,
-          amount,
-          method,
-          created_by,
-          created_at
-        `,
-      )
-      .eq("table_session_id", session.id)
-      .order("created_at", {
-        ascending: true,
-      });
 
     if (paymentsError) {
       console.error("Table payments fetch error:", paymentsError);

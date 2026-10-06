@@ -1,19 +1,15 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
 import { useNavigate } from "react-router";
+
 import { supabaseClient } from "../services/supabase.client";
 
-type WaiterTable = {
-  id: string;
-  number: number;
-  name: string | null;
-  status: "FREE" | "OPEN";
+import type { WaiterTableListItem } from "../types/waiter";
+import { getCachedTables, setCachedTables } from "../utils/waiterDataCache";
 
-  session: {
-    id: string;
-    opened_at: string;
-    total: number;
-  } | null;
-};
+// --------------------------------------------------
+// AUTH
+// --------------------------------------------------
 
 async function getAuthHeaders() {
   const {
@@ -29,17 +25,28 @@ async function getAuthHeaders() {
   };
 }
 
+// --------------------------------------------------
+// PAGE
+// --------------------------------------------------
+
 export default function WaiterDashboardPage() {
   const navigate = useNavigate();
 
-  const [tables, setTables] = useState<WaiterTable[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [tables, setTables] = useState<WaiterTableListItem[]>(
+    () => getCachedTables() ?? [],
+  );
+
+  const [isLoading, setIsLoading] = useState(() => getCachedTables() === null);
 
   const [openingTableId, setOpeningTableId] = useState<string | null>(null);
 
   const [error, setError] = useState<string | null>(null);
 
-  async function loadTables() {
+  // --------------------------------------------------
+  // LOAD TABLES
+  // --------------------------------------------------
+
+  const loadTables = useCallback(async () => {
     try {
       const headers = await getAuthHeaders();
 
@@ -53,7 +60,9 @@ export default function WaiterDashboardPage() {
         throw new Error(result.error || "Could not load tables");
       }
 
-      setTables(Array.isArray(result.tables) ? result.tables : []);
+      const nextTables = Array.isArray(result.tables) ? result.tables : [];
+      setCachedTables(nextTables);
+      setTables(nextTables);
 
       setError(null);
     } catch (error) {
@@ -63,31 +72,122 @@ export default function WaiterDashboardPage() {
     } finally {
       setIsLoading(false);
     }
-  }
+  }, []);
+
+  // --------------------------------------------------
+  // INITIAL LOAD + REALTIME
+  // --------------------------------------------------
 
   useEffect(() => {
     loadTables();
-  }, []);
 
-  async function handleTableClick(table: WaiterTable) {
-    // Table already has an open bill.
+    const channel = supabaseClient
+      .channel("waiter-dashboard-realtime")
+
+      // ------------------------------------------------
+      // TABLE SESSIONS
+      //
+      // Covers:
+      // - table opened
+      // - table closed
+      // - table transferred
+      // - empty table released
+      // ------------------------------------------------
+
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "table_sessions",
+        },
+        (payload) => {
+          loadTables();
+        },
+      )
+
+      // ------------------------------------------------
+      // ORDERS
+      //
+      // Covers:
+      // - new order
+      // - order total changed after cancellation
+      // - table number updated after transfer
+      // ------------------------------------------------
+
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "orders",
+        },
+        () => {
+          loadTables();
+        },
+      )
+
+      // ------------------------------------------------
+      // RESTAURANT TABLES
+      //
+      // Covers future admin changes such as:
+      // - table activated/deactivated
+      // - name changed
+      // ------------------------------------------------
+
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "restaurant_tables",
+        },
+        () => {
+          loadTables();
+        },
+      )
+
+      .subscribe();
+
+    return () => {
+      supabaseClient.removeChannel(channel);
+    };
+  }, [loadTables]);
+
+  // --------------------------------------------------
+  // TABLE CLICK
+  // --------------------------------------------------
+
+  async function handleTableClick(table: WaiterTableListItem) {
+    /*
+     * If the table already has an open session,
+     * simply enter it.
+     */
     if (table.status === "OPEN" && table.session) {
       navigate(`/waiter/table/${table.id}`);
+
       return;
     }
 
+    /*
+     * Otherwise create/open the table session.
+     */
     try {
       setOpeningTableId(table.id);
+
       setError(null);
 
       const headers = await getAuthHeaders();
 
       const response = await fetch("/api/waiter/tables", {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
+
           ...headers,
         },
+
         body: JSON.stringify({
           action: "OPEN",
           tableId: table.id,
@@ -108,6 +208,10 @@ export default function WaiterDashboardPage() {
     }
   }
 
+  // --------------------------------------------------
+  // FORMATTERS
+  // --------------------------------------------------
+
   function formatMoney(value: number) {
     return new Intl.NumberFormat("el-GR", {
       style: "currency",
@@ -122,6 +226,10 @@ export default function WaiterDashboardPage() {
     });
   }
 
+  // --------------------------------------------------
+  // LOADING
+  // --------------------------------------------------
+
   if (isLoading) {
     return (
       <main
@@ -134,81 +242,37 @@ export default function WaiterDashboardPage() {
     );
   }
 
+  // --------------------------------------------------
+  // PAGE
+  // --------------------------------------------------
+
   return (
     <main
       style={{
         minHeight: "100vh",
+
         background: "#f3f4f6",
+
         padding: "10px 12px",
+
         color: "#111827",
       }}
     >
-      {/* HEADER */}
-
-      {/* <header
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 20,
-          marginBottom: 28,
-        }}
-      >
-        <div>
-          <div
-            style={{
-              color: "#6b7280",
-              fontSize: 13,
-              fontWeight: 800,
-              letterSpacing: 1.5,
-            }}
-          >
-            AIOLIA
-          </div>
-
-          <h1
-            style={{
-              margin: "3px 0",
-              fontSize: 32,
-            }}
-          >
-            Tables
-          </h1>
-
-          <div
-            style={{
-              color: "#6b7280",
-            }}
-          >
-            Select a table to view or create its order.
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={loadTables}
-          style={{
-            minHeight: 44,
-            padding: "0 16px",
-            border: "1px solid #d1d5db",
-            borderRadius: 9,
-            background: "#ffffff",
-            fontWeight: 800,
-            cursor: "pointer",
-          }}
-        >
-          Refresh
-        </button>
-      </header> */}
+      {/* ERROR */}
 
       {error && (
         <div
           style={{
             marginBottom: 20,
+
             padding: 14,
+
             borderRadius: 10,
+
             background: "#fee2e2",
+
             color: "#991b1b",
+
             fontWeight: 700,
           }}
         >
@@ -216,68 +280,23 @@ export default function WaiterDashboardPage() {
         </div>
       )}
 
-      {/* LEGEND */}
-
-      {/* <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 20,
-          marginBottom: 20,
-          color: "#6b7280",
-          fontSize: 14,
-          fontWeight: 700,
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 7,
-          }}
-        >
-          <div
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: 999,
-              background: "#ffffff",
-              border: "1px solid #d1d5db",
-            }}
-          />
-          Free
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 7,
-          }}
-        >
-          <div
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: 999,
-              background: "#5AD7D9",
-            }}
-          />
-          Open
-        </div>
-      </div> */}
-
-      {/* TABLE GRID */}
+      {/* TABLES */}
 
       {tables.length === 0 ? (
         <div
           style={{
             padding: 50,
+
             background: "#ffffff",
+
             borderRadius: 16,
+
             border: "2px dashed #e5e7eb",
+
             textAlign: "center",
+
             color: "#9ca3af",
+
             fontWeight: 700,
           }}
         >
@@ -287,8 +306,10 @@ export default function WaiterDashboardPage() {
         <div
           style={{
             display: "grid",
+
             gridTemplateColumns:
               "repeat(auto-fit, minmax(min(110px, 100%), 1fr))",
+
             gap: 10,
           }}
         >
@@ -305,6 +326,7 @@ export default function WaiterDashboardPage() {
                 onClick={() => handleTableClick(table)}
                 style={{
                   minHeight: 120,
+
                   padding: 9,
 
                   display: "flex",
@@ -324,17 +346,21 @@ export default function WaiterDashboardPage() {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                 }}
               >
-                {/* TOP — STATUS */}
+                {/* STATUS */}
+
                 <div
                   style={{
                     display: "flex",
+
                     justifyContent: "flex-end",
+
                     width: "100%",
                   }}
                 >
                   <div
                     style={{
                       padding: "3px 6px",
+
                       borderRadius: 6,
 
                       background: isOpen ? "#5AD7D9" : "#f3f4f6",
@@ -342,7 +368,9 @@ export default function WaiterDashboardPage() {
                       color: isOpen ? "#ffffff" : "#9ca3af",
 
                       fontSize: 9,
+
                       fontWeight: 900,
+
                       letterSpacing: 0.5,
                     }}
                   >
@@ -350,19 +378,24 @@ export default function WaiterDashboardPage() {
                   </div>
                 </div>
 
-                {/* CENTER — TABLE NUMBER */}
+                {/* TABLE NUMBER */}
+
                 <div
                   style={{
                     flex: 1,
 
                     display: "flex",
+
                     alignItems: "center",
+
                     justifyContent: "center",
 
                     width: "100%",
 
                     fontSize: 36,
+
                     lineHeight: 1,
+
                     fontWeight: 900,
 
                     color: "#111827",
@@ -371,41 +404,62 @@ export default function WaiterDashboardPage() {
                   {table.number}
                 </div>
 
-                {/* BOTTOM — TOTAL + TIME */}
+                {/* OPEN TABLE INFO */}
+
                 {isOpen && table.session ? (
                   <div
                     style={{
                       width: "100%",
+
                       display: "grid",
+
                       gridTemplateColumns: "minmax(0, 1fr) auto",
+
                       alignItems: "end",
+
                       gap: 4,
                     }}
                   >
+                    {/* TOTAL */}
+
                     <div
                       style={{
                         minWidth: 0,
+
                         flex: 1,
+
                         fontSize: "clamp(11px, 3vw, 14px)",
+
                         lineHeight: 1,
+
                         fontWeight: 900,
+
                         color: "#111827",
 
                         overflow: "hidden",
+
                         textOverflow: "ellipsis",
+
                         whiteSpace: "nowrap",
                       }}
                     >
                       {formatMoney(Number(table.session.total ?? 0))}
                     </div>
 
+                    {/* OPEN TIME */}
+
                     <div
                       style={{
                         flexShrink: 0,
+
                         fontSize: "clamp(8px, 2.4vw, 10px)",
+
                         lineHeight: 1,
+
                         color: "#6b7280",
+
                         fontWeight: 700,
+
                         whiteSpace: "nowrap",
                       }}
                     >
@@ -416,13 +470,17 @@ export default function WaiterDashboardPage() {
                   <div
                     style={{
                       width: "100%",
+
                       minHeight: 14,
 
                       display: "flex",
+
                       justifyContent: "center",
 
                       color: "#FA994F",
+
                       fontSize: 10,
+
                       fontWeight: 900,
                     }}
                   >

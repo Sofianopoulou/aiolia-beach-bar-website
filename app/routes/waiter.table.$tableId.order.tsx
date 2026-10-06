@@ -15,6 +15,7 @@ import {
   hasProductModifiers,
 } from "../utils/modifiers";
 import { createProductId } from "~/utils/productId";
+import { getCachedMenu, getMenu } from "~/utils/menuCache";
 
 type CartModifier = {
   groupId: string;
@@ -58,15 +59,17 @@ export default function WaiterOrderPage() {
   const { tableId } = useParams();
   const navigate = useNavigate();
 
-  const [menu, setMenu] = useState<MenuData | null>(null);
+  const [menu, setMenu] = useState<MenuData | null>(() => getCachedMenu());
 
-  const [selectedSectionName, setSelectedSectionName] = useState("");
+  const [selectedSectionName, setSelectedSectionName] = useState(
+    () => getCachedMenu()?.sections[0]?.name ?? "",
+  );
 
   const [searchQuery, setSearchQuery] = useState("");
 
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => getCachedMenu() === null);
 
   const [error, setError] = useState<string | null>(null);
 
@@ -96,13 +99,7 @@ export default function WaiterOrderPage() {
   useEffect(() => {
     async function loadMenu() {
       try {
-        const response = await fetch("/menu.json");
-
-        if (!response.ok) {
-          throw new Error("Could not load menu");
-        }
-
-        const data = (await response.json()) as MenuData;
+        const data = await getMenu();
 
         setMenu(data);
 
