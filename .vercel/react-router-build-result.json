@@ -12,9 +12,11 @@
     "routeIdToServerBundleId": {
       "routes/api.waiter.release-empty-table": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.waiter.table.$tableId": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.waiter.transfer-table": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.staff.items.$itemId": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.waiter.cancel-item": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.waiter.close-table": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.admin.analytics": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.waiter.payments": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/reservation-success": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.staff.my-shift": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -36,6 +38,7 @@
       "routes/waiter.table.$tableId.order": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/waiter._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/_index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.analytics": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin.orders": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin.shifts": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -71,6 +74,15 @@
           "runtime": "nodejs"
         }
       },
+      "routes/api.waiter.transfer-table": {
+        "id": "routes/api.waiter.transfer-table",
+        "parentId": "root",
+        "file": "app/routes/api.waiter.transfer-table.ts",
+        "path": "api/waiter/transfer-table",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
       "routes/api.staff.items.$itemId": {
         "id": "routes/api.staff.items.$itemId",
         "parentId": "root",
@@ -94,6 +106,15 @@
         "parentId": "root",
         "file": "app/routes/api.waiter.close-table.ts",
         "path": "api/waiter/close-table",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.admin.analytics": {
+        "id": "routes/api.admin.analytics",
+        "parentId": "root",
+        "file": "app/routes/api.admin.analytics.ts",
+        "path": "api/admin/analytics",
         "config": {
           "runtime": "nodejs"
         }
@@ -308,6 +329,15 @@
         "path": "admin",
         "config": {}
       },
+      "routes/admin.analytics": {
+        "id": "routes/admin.analytics",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.analytics.tsx",
+        "path": "analytics",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
       "routes/admin.orders": {
         "id": "routes/admin.orders",
         "parentId": "routes/admin",
@@ -422,6 +452,12 @@
         "file": "routes/api.waiter.table.$tableId.ts",
         "path": "api/waiter/table/:tableId"
       },
+      "routes/api.waiter.transfer-table": {
+        "id": "routes/api.waiter.transfer-table",
+        "parentId": "root",
+        "file": "routes/api.waiter.transfer-table.ts",
+        "path": "api/waiter/transfer-table"
+      },
       "routes/api.staff.items.$itemId": {
         "id": "routes/api.staff.items.$itemId",
         "parentId": "root",
@@ -439,6 +475,12 @@
         "parentId": "root",
         "file": "routes/api.waiter.close-table.ts",
         "path": "api/waiter/close-table"
+      },
+      "routes/api.admin.analytics": {
+        "id": "routes/api.admin.analytics",
+        "parentId": "root",
+        "file": "routes/api.admin.analytics.ts",
+        "path": "api/admin/analytics"
       },
       "routes/api.waiter.payments": {
         "id": "routes/api.waiter.payments",
@@ -584,6 +626,12 @@
         "file": "routes/admin.tsx",
         "path": "admin"
       },
+      "routes/admin.analytics": {
+        "id": "routes/admin.analytics",
+        "parentId": "routes/admin",
+        "file": "routes/admin.analytics.tsx",
+        "path": "analytics"
+      },
       "routes/admin.orders": {
         "id": "routes/admin.orders",
         "parentId": "routes/admin",
@@ -664,6 +712,11 @@
             "path": "api/waiter/table/:tableId"
           },
           {
+            "id": "routes/api.waiter.transfer-table",
+            "file": "routes/api.waiter.transfer-table.ts",
+            "path": "api/waiter/transfer-table"
+          },
+          {
             "id": "routes/api.staff.items.$itemId",
             "file": "routes/api.staff.items.$itemId.ts",
             "path": "api/staff/items/:itemId"
@@ -677,6 +730,11 @@
             "id": "routes/api.waiter.close-table",
             "file": "routes/api.waiter.close-table.ts",
             "path": "api/waiter/close-table"
+          },
+          {
+            "id": "routes/api.admin.analytics",
+            "file": "routes/api.admin.analytics.ts",
+            "path": "api/admin/analytics"
           },
           {
             "id": "routes/api.waiter.payments",
@@ -802,6 +860,11 @@
             "file": "routes/admin.tsx",
             "path": "admin",
             "children": [
+              {
+                "id": "routes/admin.analytics",
+                "file": "routes/admin.analytics.tsx",
+                "path": "analytics"
+              },
               {
                 "id": "routes/admin.orders",
                 "file": "routes/admin.orders.tsx",

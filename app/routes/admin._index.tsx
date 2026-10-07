@@ -43,7 +43,7 @@ function AdminDashboardContent() {
             color: "#6b7280",
           }}
         >
-          Manage orders and staff shifts.
+          Manage orders, shifts, and restaurant performance.
         </p>
       </header>
 
@@ -94,6 +94,24 @@ function AdminDashboardContent() {
           >
             Monitor BAR and KITCHEN production and manage order statuses.
           </div>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => navigate("/admin/analytics")}
+          style={{
+            minHeight: 180,
+            padding: 24,
+            textAlign: "left",
+            border: "1px solid #e5e7eb",
+            borderRadius: 16,
+            background: "#ffffff",
+            cursor: "pointer",
+          }}
+        >
+          <div style={{ fontSize: 24, fontWeight: 900, marginBottom: 14, color: "#FA994F" }}>A</div>
+          <div style={{ fontSize: 22, fontWeight: 900, marginBottom: 6 }}>Analytics</div>
+          <div style={{ color: "#6b7280" }}>Review sales, products, payments, and waiter activity.</div>
         </button>
 
         <button
