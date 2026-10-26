@@ -8,14 +8,14 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 export default function Index() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
-      <Box className="snap-start h-screen relative overflow-hidden">
+    <div className="w-full">
+      <Box className="h-screen relative overflow-hidden">
         <img
           src={img}
-          alt="Aiolia Beach Bar Background"
+          alt={t("Aiolia Beach Bar's warmly lit wooden terrace at night")}
           fetchPriority="high"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover object-center"
@@ -34,9 +34,9 @@ export default function Index() {
             direction="column"
             p="5"
           >
-            <Text className="text-white text-4xl font-bold text-center">
-              Welcome to Aiolia Beach Bar
-            </Text>
+            <h1 className="text-white text-4xl font-bold text-center">
+              {t("Welcome to Aiolia Beach Bar")}
+            </h1>
             <Text className="text-white text-lg my-4 text-center">
               Your ultimate seaside experience in Nea Anchialos
             </Text>
@@ -53,14 +53,14 @@ export default function Index() {
         </motion.div>
       </Box>
 
-      <Box className="snap-start">
+      <Box>
         <InteractiveGrid />
       </Box>
 
-      <Box className="snap-start h-screen relative overflow-hidden">
+      <Box className="h-screen relative overflow-hidden">
         <img
           src="/sea-gazing.webp"
-          alt="Sea Gazing View"
+          alt={t("A visitor looks out to sea from beneath a thatched beach umbrella")}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -79,26 +79,26 @@ export default function Index() {
             p="5"
           >
             <Text className="text-white text-xl leading-7 text-center mb-4">
-              ⏰ {t("From 19:00 till late at night October - April")}
+              {t("From 19:00 till late at night October - April")}
             </Text>
             <Text className="text-white text-xl leading-7 text-center mb-4">
-              ⏰ {t("From 10:00 till late at night May - September")}
+              {t("From 10:00 till late at night May - September")}
             </Text>
             <Text className="text-white text-xl leading-7 text-center mb-4">
-              🍸 {t("Coffee, Drinks, Cocktails")}
+              {t("Coffee, Drinks, Cocktails")}
             </Text>
             <Text className="text-white text-xl leading-7 text-center mb-4">
-              🥪 {t("Pizza, Salads, Desserts")}
+              {t("Pizza, Salads, Desserts")}
             </Text>
             <Text className="text-white text-xl leading-7 text-center ">
-              📌 {t("Nea Anchialos | Volos")}
+              {t("Nea Anchialos | Volos")}
             </Text>
           </Flex>
         </motion.div>
       </Box>
 
       {/* SPOTIFY SECTION */}
-      <Box className="snap-start h-screen bg-[#121212] relative overflow-hidden">
+      <Box className="h-screen bg-[#121212] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10" />
 
         <Flex

@@ -191,9 +191,4 @@ export const meta: MetaFunction = () => [
     content:
       "Discover Aiolia Beach Bar in Nea Anchialos. Enjoy signature cocktails, gourmet pizzas, and seaside bliss. Perfect for unforgettable moments.",
   },
-  {
-    name: "keywords",
-    content:
-      "Aiolia Beach Bar, Nea Anchialos, Volos, seaside bar, gourmet pizza, signature cocktails, beach vibes",
-  },
 ];

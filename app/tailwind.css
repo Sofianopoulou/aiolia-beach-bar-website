@@ -6,6 +6,15 @@
   --accent: #fa994f;
 }
 
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 .radix-themes {
   --my-brand-color: #fa994f;
   --orange-9: var(--my-brand-color);

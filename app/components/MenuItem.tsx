@@ -43,6 +43,10 @@ const MenuItem: React.FC<MenuItemProps> = ({
           <img
             src={item.image}
             alt={item.name}
+            width={70}
+            height={70}
+            loading="lazy"
+            decoding="async"
             onLoad={() => setImageLoaded(true)}
             className={`h-full w-full rounded-lg object-cover transition-opacity duration-300 ${
               imageLoaded ? "opacity-100" : "opacity-0"

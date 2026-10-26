@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Section as SectionType, type OrderableMenuItem } from "../types/types";
 import { Flex, Box } from "@radix-ui/themes";
 import MenuItem from "./MenuItem";
 import { useTranslation } from "react-i18next";
-import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Text } from "./ui/Text";
 import { createProductId, createSlug } from "~/utils/productId";
 
@@ -90,11 +91,12 @@ const Section: React.FC<SectionProps> = ({
         </Flex>
 
         <Flex justify="end" className="ml-auto">
-          {isOpen ? (
-            <ChevronUpIcon className="h-5 w-5 text-white" />
-          ) : (
+          <motion.div
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+          >
             <ChevronDownIcon className="h-5 w-5 text-white" />
-          )}
+          </motion.div>
         </Flex>
       </Flex>
 
@@ -107,40 +109,51 @@ const Section: React.FC<SectionProps> = ({
         />
       )}
 
-      {isOpen && (
-        <Box px="4" py="3">
-          {section.items.map((item, index) => {
-            const itemName = item.name ?? "";
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="section-content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <Box px="4" py="3">
+              {section.items.map((item, index) => {
+                const itemName = item.name ?? "";
 
-            const itemId = `menu-item-${createSlug(
-              section.name,
-            )}-${createSlug(itemName)}`;
+                const itemId = `menu-item-${createSlug(
+                  section.name,
+                )}-${createSlug(itemName)}`;
 
-            const productId = createProductId(section.name, itemName);
+                const productId = createProductId(section.name, itemName);
 
-            const isSelected = selectedItemName === itemName;
+                const isSelected = selectedItemName === itemName;
 
-            return (
-              <div
-                key={`${section.name}-${itemName || index}`}
-                id={itemId}
-                className={
-                  isSelected
-                    ? "rounded-xl ring-2 ring-[#5AD7D9]/40 transition-all"
-                    : ""
-                }
-              >
-                <MenuItem
-                  item={item}
-                  productId={productId}
-                  addToCart={addToCart}
-                  isOrdering={isOrdering}
-                />
-              </div>
-            );
-          })}
-        </Box>
-      )}
+                return (
+                  <div
+                    key={`${section.name}-${itemName || index}`}
+                    id={itemId}
+                    className={
+                      isSelected
+                        ? "rounded-xl ring-2 ring-[#5AD7D9]/40 transition-all"
+                        : ""
+                    }
+                  >
+                    <MenuItem
+                      item={item}
+                      productId={productId}
+                      addToCart={addToCart}
+                      isOrdering={isOrdering}
+                    />
+                  </div>
+                );
+              })}
+            </Box>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Box>
   );
 };
