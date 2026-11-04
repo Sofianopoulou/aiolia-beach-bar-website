@@ -1,13 +1,13 @@
 import { reactRouter } from "@react-router/dev/vite";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [
-    reactRouter(),
-    tsconfigPaths(),
-  ],
-  esbuild: {
+  plugins: [tailwindcss(), reactRouter()],
+  resolve: {
+    tsconfigPaths: true,
+  },
+  oxc: {
     target: "node16", // Ensures compatibility with top-level await
   },
   optimizeDeps: {

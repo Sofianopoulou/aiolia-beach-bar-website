@@ -166,7 +166,7 @@ export default function MenuPage() {
       .map((item) => ({
         name: item.name,
         sectionName: section.name,
-        price: item.price,
+        price: item.price ?? "",
         image: item.image,
       })),
   );

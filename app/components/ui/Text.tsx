@@ -1,18 +1,19 @@
 import { forwardRef } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { Text as RadixText, TextProps } from "@radix-ui/themes";
+import { Text as RadixText, type TextProps } from "@radix-ui/themes";
 
-type TextPropsFinal = Omit<TextProps, "color"> & {
+type TextPropsFinal = Omit<TextProps, "as" | "color"> & {
   color?: TextProps["color"] | "black";
   translate?: "yes" | "no";
+  values?: Record<string, unknown>;
 };
 
 const Text = forwardRef<
-  React.ElementRef<"span" | "div" | "label" | "p">,
+  React.ElementRef<"span">,
   TextPropsFinal
 >(
   (
-    { children, color, className = "", translate = "yes", ...props },
+    { children, color, className = "", translate = "yes", values, ...props },
     forwardedRef
   ) => {
     const { i18n } = useTranslation();
@@ -20,6 +21,7 @@ const Text = forwardRef<
     return (
       <RadixText
         ref={forwardedRef}
+        as="span"
         color={color === "black" ? undefined : color}
         className={className}
         {...props}
@@ -27,7 +29,7 @@ const Text = forwardRef<
         {translate === "no" ? (
           children
         ) : (
-          <Trans lang={i18n.language} values={props.values}>
+          <Trans lang={i18n.language} values={values}>
             {children}
           </Trans>
         )}

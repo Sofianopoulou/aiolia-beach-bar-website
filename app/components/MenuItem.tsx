@@ -87,7 +87,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
                   addToCart({
                     productId,
                     name: item.name,
-                    price: item.price,
+                    price: item.price ?? "",
                   })
                 }
                 className="rounded-md bg-[var(--accent-9)] px-2 py-1 text-sm text-white"

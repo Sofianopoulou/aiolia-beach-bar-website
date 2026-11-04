@@ -1,10 +1,6 @@
 import { Box, Flex } from "@radix-ui/themes";
 import { useTranslation } from "react-i18next";
 
-// import "swiper/css";
-// import "swiper/css/autoplay";
-// import "swiper/css/effect-fade";
-
 const images = [
   {
     src: "/carousel-images/optimized/aiolia-outdoors.webp",
@@ -74,9 +70,9 @@ const InteractiveGrid = () => {
               alt={t(alt)}
               loading="lazy"
               decoding="async"
-              className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
-            <Box className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <Box className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
               <Flex align="center" justify="center" className="h-full">
                 <Box className="text-white text-lg font-bold text-center">
                   {text}

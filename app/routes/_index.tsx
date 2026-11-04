@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Flex, Box } from "@radix-ui/themes";
 import img from "../assets/beach-bar.webp";
 import { Text } from "../components/ui/Text";
@@ -9,6 +9,7 @@ import { Link } from "react-router";
 
 export default function Index() {
   const { t } = useTranslation();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="w-full">
@@ -22,13 +23,13 @@ export default function Index() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }}
           className="absolute inset-0 w-full h-full"
         >
           <Flex
-            className="h-full bg-black bg-opacity-30"
+            className="h-full bg-black/30"
             align="center"
             justify="center"
             direction="column"
@@ -66,13 +67,14 @@ export default function Index() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }}
           className="absolute inset-0 w-full h-full"
         >
           <Flex
-            className="h-full bg-black bg-opacity-50"
+            className="h-full bg-black/50"
             align="center"
             justify="center"
             direction="column"
