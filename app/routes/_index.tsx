@@ -33,12 +33,13 @@ export default function Index() {
             align="center"
             justify="center"
             direction="column"
+            gap="4"
             p="5"
           >
             <h1 className="text-white text-4xl font-bold text-center">
               {t("Welcome to Aiolia Beach Bar")}
             </h1>
-            <Text className="text-white text-lg my-4 text-center">
+            <Text className="text-white text-lg text-center">
               Your ultimate seaside experience in Nea Anchialos
             </Text>
             <Button radius="full" size="3" variant="solid">

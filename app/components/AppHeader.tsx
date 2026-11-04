@@ -38,21 +38,21 @@ export default function AppHeader() {
         <Flex gap="2" align="center" className="ml-auto">
           {/* DESKTOP NAVIGATION */}
           <Flex gap="2" display={{ initial: "none", md: "flex" }}>
-            <Button radius="full" size="3" variant="outline">
+            <Button radius="full" size="3" variant="outline" color="orange">
               <Link to="/reservations">
-                <Text className="text-[--accent] font-bold">
+                <Text className="text-[var(--accent)] font-bold">
                   {t("Reservations")}
                 </Text>
               </Link>
             </Button>
-            <Button radius="full" size="3" variant="outline">
+            <Button radius="full" size="3" variant="outline" color="orange">
               <Link to="/menu">
-                <Text className="text-[--accent]  font-bold">{t("Menu")}</Text>
+                <Text className="text-[var(--accent)] font-bold">{t("Menu")}</Text>
               </Link>
             </Button>
-            <Button radius="full" size="3" variant="outline">
+            <Button radius="full" size="3" variant="outline" color="orange">
               <Link to="/blog">
-                <Text className="text-[--accent] font-bold">{t("Blog")}</Text>
+                <Text className="text-[var(--accent)] font-bold">{t("Blog")}</Text>
               </Link>
             </Button>
             <Select.Root
@@ -60,10 +60,10 @@ export default function AppHeader() {
               value={i18n.language}
               onValueChange={(lng) => changeLanguage(lng)}
             >
-              <Select.Trigger radius="full" aria-label="Select Language">
+              <Select.Trigger radius="full" color="orange" aria-label="Select Language">
                 <Flex as="span" align="center" gap="2">
-                  <GlobeAltIcon className="h-5 w-5 text-[--accent] " />
-                  <Text className="text-[--accent]  font-bold">
+                  <GlobeAltIcon className="h-5 w-5 text-[var(--accent)] " />
+                  <Text className="text-[var(--accent)]  font-bold">
                     {i18n.language === "en" ? t("English") : t("Greek")}
                   </Text>
                 </Flex>
@@ -89,12 +89,13 @@ export default function AppHeader() {
                   <Button
                     size="3"
                     variant="outline"
+                    color="orange"
                     onClick={() => {
                       setMobileMenuOpen(false);
                     }}
                   >
                     <Link to="/reservations" className="w-full text-center">
-                      <Text className="text-[--accent]  font-bold">
+                      <Text className="text-[var(--accent)]  font-bold">
                         {t("Reservations")}
                       </Text>
                     </Link>
@@ -102,12 +103,13 @@ export default function AppHeader() {
                   <Button
                     size="3"
                     variant="outline"
+                    color="orange"
                     onClick={() => {
                       setMobileMenuOpen(false);
                     }}
                   >
                     <Link to="/menu" className="w-full text-center">
-                      <Text className="text-[--accent]  font-bold">
+                      <Text className="text-[var(--accent)]  font-bold">
                         {t("Menu")}
                       </Text>
                     </Link>
@@ -115,21 +117,22 @@ export default function AppHeader() {
                   <Button
                     size="3"
                     variant="outline"
+                    color="orange"
                     onClick={() => {
                       setMobileMenuOpen(false);
                     }}
                   >
                     <Link to="/blog" className="w-full text-center">
-                      <Text className="text-[--accent] font-bold">
+                      <Text className="text-[var(--accent)] font-bold">
                         {t("Blog")}
                       </Text>
                     </Link>
                   </Button>
                   <Popover>
                     <PopoverTrigger aria-label="Change Language">
-                      <Button size="3" variant="outline">
+                      <Button size="3" variant="outline" color="orange">
                         <GlobeAltIcon className="h-5 w-5 text-[var(--accent)]" />
-                        <Text className="text-[--accent]  font-bold ml-1">
+                        <Text className="text-[var(--accent)]  font-bold ml-1">
                           {i18n.language === "el" ? t("Greek") : t("English")}
                         </Text>
                         <ChevronDownIcon className="h-4 w-4 text-[var(--accent)] ml-1" />
@@ -140,6 +143,7 @@ export default function AppHeader() {
                         <Button
                           size="3"
                           variant="outline"
+                          color="orange"
                           onClick={() => {
                             changeLanguage("el");
                             setMobileMenuOpen(false);
@@ -148,13 +152,14 @@ export default function AppHeader() {
                           {i18n.language === "el" && (
                             <CheckIcon className="h-4 w-4 text-[var(--accent)]" />
                           )}
-                          <Text className="text-[--accent]  font-bold">
+                          <Text className="text-[var(--accent)]  font-bold">
                             {t("Greek")}
                           </Text>
                         </Button>
                         <Button
                           size="3"
                           variant="outline"
+                          color="orange"
                           onClick={() => {
                             changeLanguage("en");
                             setMobileMenuOpen(false);
@@ -163,7 +168,7 @@ export default function AppHeader() {
                           {i18n.language === "en" && (
                             <CheckIcon className="h-4 w-4 text-[var(--accent)] " />
                           )}
-                          <Text className="text-[--accent] font-bold">
+                          <Text className="text-[var(--accent)] font-bold">
                             {t("English")}
                           </Text>
                         </Button>
